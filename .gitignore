@@ -1,0 +1,23 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Visual Studio Code
+.vscode/
+
+# Logs
+*.log
+
+# Temporary Files
+*.tmp
+*.temp
+
+# Cache
+.cache/
+
+# Environment Files
+.env
+.env.*
+
+# Package Lock (Only if used later)
+package-lock.json
