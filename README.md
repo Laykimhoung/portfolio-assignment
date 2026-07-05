@@ -15,7 +15,7 @@ Designed as a university Web Design assignment while following modern front-end 
 
 ---
 
-# 📚 Table of Contents
+## 📚 Table of Contents
 
 - [📖 Overview](#-overview)
 - [✨ Features](#-features)
@@ -26,12 +26,11 @@ Designed as a university Web Design assignment while following modern front-end 
 - [⚡ Performance](#-performance)
 - [📱 Responsive Design](#-responsive-design)
 - [🚀 Getting Started](#-getting-started)
-- [🗺 Roadmap](#-roadmap)
 - [📜 License](#-license)
 
 ---
 
-# 📖 Overview
+## 📖 Overview
 
 This project is a modern multi-page portfolio website created as part of a **Web Design** course assignment.
 
@@ -39,7 +38,7 @@ Although developed for academic purposes, the project follows real-world front-e
 
 ---
 
-# ✨ Features
+## ✨ Features
 
 - 🌑 Dark Mode (Default)
 - ☀️ Light Mode
@@ -54,22 +53,19 @@ Although developed for academic purposes, the project follows real-world front-e
 
 ---
 
-# 🛠 Tech Stack
+## 🛠 Tech Stack
 
 | Technology | Purpose |
 |------------|----------|
 | HTML5 | Structure |
 | CSS3 | Styling |
 | JavaScript (Vanilla) | Interactivity |
-| CSS Grid | Layout |
-| Flexbox | Layout |
-| CSS Variables | Theme System |
 | Google Fonts | Typography |
 | Font Awesome | Icons |
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
 ```text
 portfolio/
@@ -92,7 +88,7 @@ portfolio/
 
 ---
 
-# 📄 Pages
+## 📄 Pages
 
 ### 🏠 Home
 
@@ -139,23 +135,23 @@ portfolio/
 
 ---
 
-# 🎨 Design System
+## 🎨 Design System
 
-## Theme
+### Theme
 
 - Dark Mode (Default)
 - Light Mode
 
-## Accent Color
+### Accent Color
 
 Crimson Red
 
-## Fonts
+### Fonts
 
 - Bebas Neue
 - Inter
 
-## UI Style
+### UI Style
 
 - Glassmorphism
 - Modern Minimal
@@ -165,7 +161,7 @@ Crimson Red
 
 ---
 
-# ⚡ Performance
+## ⚡ Performance
 
 - Optimized WebP Images
 - SVG Icons
@@ -176,7 +172,7 @@ Crimson Red
 
 ---
 
-# 📱 Responsive Design
+## 📱 Responsive Design
 
 Designed for
 
@@ -187,12 +183,12 @@ Designed for
 
 ---
 
-# 🚀 Getting Started
+## 🚀 Getting Started
 
 Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/portfolio-assignment.git
+git clone https://github.com/Laykimhoung/portfolio-assignment.git
 ```
 
 Open the project
@@ -205,26 +201,8 @@ or run it using **Live Server** in Visual Studio Code.
 
 ---
 
-# 🗺 Roadmap
-
-- [x] Project Planning
-- [ ] Design System
-- [ ] Shared Components
-- [ ] Home Page
-- [ ] About Page
-- [ ] Skills Page
-- [ ] Projects Page
-- [ ] Contact Page
-- [ ] Theme Switching
-- [ ] Language Switching
-- [ ] Responsive Optimization
-- [ ] Performance Optimization
-- [ ] GitHub Pages Deployment
-
----
-
 # 📜 License
 
 This project was created for educational purposes as part of a university Web Design assignment.
 
-© 2026 XAKURAII. All Rights Reserved.
+© 2026 Lay Kimhoung. All Rights Reserved.
