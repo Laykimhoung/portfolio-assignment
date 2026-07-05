@@ -1,0 +1,90 @@
+:root {
+    /* Colors */
+    --color-bg-primary: #0b0b0d;
+    --color-bg-secondary: #15161a;
+    --color-surface: #1c1d22;
+    --color-surface-hover: #25262d;
+
+    --color-text-primary: #f5f5f5;
+    --color-text-secondary: #a1a1aa;
+
+    --color-accent: #c1121f;
+    --color-accent-hover: #ff3c5f;
+
+    --color-border: rgba(255, 255, 255, 0.08);
+
+    /* Typography */
+    --font-heading: "Bebas Neue", sans-serif;
+    --font-body: "Inter", sans-serif;
+
+    /* Font Size */
+    --fs-hero: clamp(3.5rem, 8vw, 6rem);
+    --fs-h1: clamp(2.8rem, 5vw, 4rem);
+    --fs-h2: clamp(2rem, 4vw, 3rem);
+    --fs-h3: clamp(1.5rem, 3vw, 2rem);
+    --fs-body: 1rem;
+    --fs-small: 0.875rem;
+
+    /* Font Weight */
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-semibold: 600;
+    --fw-bold: 700;
+
+    /* Space */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 4rem;
+    --space-3xl: 6rem;
+
+    /* Radius */
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+    --radius-full: 999px;
+
+    /* Shadow */
+    --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.25);
+    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.35);
+    --shadow-glow: 0 0 30px rgba(193, 18, 31, 0.35);
+
+    /* Border */
+    --border-primary: 1px solid var(--color-border);
+
+    /* Transition */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.35s ease;
+    --transition-slow: 0.5s ease;
+
+    /* Layout */
+    --container-width: 75rem;
+    --header-height: 5rem;
+
+    /* Layer */
+    --z-background: -1;
+    --z-default: 1;
+    --z-navbar: 100;
+    --z-dropdown: 500;
+    --z-modal: 1000;
+}
+
+[data-theme="light"] {
+    --color-bg-primary: #f8f8f8;
+    --color-bg-secondary: #ffffff;
+    --color-surface: #ffffff;
+    --color-surface-hover: #f2f2f2;
+
+    --color-text-primary: #111111;
+    --color-text-secondary: #666666;
+
+    --color-border: rgba(0, 0, 0, 0.08);
+
+    --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.16);
+}
