@@ -1,0 +1,32 @@
+.language-toggle {
+    min-width: 3rem;
+    height: 2.75rem;
+
+    padding-inline: 1rem;
+
+    display: grid;
+    place-items: center;
+
+    color: var(--color-text-primary);
+
+    border: var(--border-primary);
+    border-radius: var(--radius-full);
+
+    font-size: .875rem;
+    font-weight: var(--fw-semibold);
+
+    transition:
+        background-color var(--transition-normal),
+        transform var(--transition-fast);
+}
+
+.language-toggle:hover {
+    background: var(--color-accent);
+
+    color: #fff;
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow-glow);
+
+}
