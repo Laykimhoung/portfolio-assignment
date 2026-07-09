@@ -1,39 +1,46 @@
 :root {
-    /* Colors */
-    --color-bg-primary: #0b0b0d;
-    --color-bg-secondary: #15161a;
-    --color-surface: #1c1d22;
-    --color-surface-hover: #25262d;
+    /*  Colors  */
 
-    --color-text-primary: #f5f5f5;
-    --color-text-secondary: #a1a1aa;
+    --color-bg-primary: #09090B;
+    --color-bg-secondary: #111217;
 
-    --color-accent: #c1121f;
-    --color-accent-hover: #ff3c5f;
+    --color-surface: rgba(18, 19, 23, .65);
+    --color-surface-hover: rgba(28, 30, 36, .82);
 
-    --color-border: rgba(255, 255, 255, 0.08);
+    --color-text-primary: #FAFAFA;
+    --color-text-secondary: #B5B8C5;
 
-    /* Typography */
+    --color-accent: #DC2626;
+    --color-accent-hover: #EF4444;
+
+    --color-border: rgba(255,255,255,.08);
+
+    /*  Typography  */
+
     --font-heading: "Bebas Neue", sans-serif;
     --font-body: "Inter", sans-serif;
 
-    /* Font Size */
-    --fs-hero: clamp(3.5rem, 8vw, 6rem);
-    --fs-h1: clamp(2.8rem, 5vw, 4rem);
-    --fs-h2: clamp(2rem, 4vw, 3rem);
-    --fs-h3: clamp(1.5rem, 3vw, 2rem);
-    --fs-body: 1rem;
-    --fs-small: 0.875rem;
+    /*  Font Size  */
 
-    /* Font Weight */
+    --fs-hero: clamp(4rem, 8vw, 6.5rem);
+    --fs-h1: clamp(3rem, 5vw, 4.2rem);
+    --fs-h2: clamp(2.25rem, 4vw, 3rem);
+    --fs-h3: clamp(1.5rem, 3vw, 2rem);
+
+    --fs-body: 1rem;
+    --fs-small: .875rem;
+
+    /*  Font Weight  */
+
     --fw-light: 300;
     --fw-regular: 400;
     --fw-medium: 500;
     --fw-semibold: 600;
     --fw-bold: 700;
 
-    /* Space */
-    --space-xs: 0.5rem;
+    /*  Spacing  */
+
+    --space-xs: .5rem;
     --space-sm: 1rem;
     --space-md: 1.5rem;
     --space-lg: 2rem;
@@ -41,31 +48,38 @@
     --space-2xl: 4rem;
     --space-3xl: 6rem;
 
-    /* Radius */
-    --radius-sm: 0.5rem;
-    --radius-md: 0.75rem;
+    /*  Radius  */
+
+    --radius-sm: .5rem;
+    --radius-md: .75rem;
     --radius-lg: 1rem;
+    --radius-xl: 1.5rem;
     --radius-full: 999px;
 
-    /* Shadow */
-    --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.15);
-    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.25);
-    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.35);
-    --shadow-glow: 0 0 30px rgba(193, 18, 31, 0.35);
+    /*  Shadow  */
 
-    /* Border */
+    --shadow-sm: 0 .25rem .75rem rgba(0, 0, 0, .18);
+    --shadow-md: 0 .75rem 2rem rgba(0, 0, 0, .28);
+    --shadow-lg: 0 1.5rem 4rem rgba(0, 0, 0, .4);
+    --shadow-glow: 0 0 1.5rem rgba(209, 26, 42, .28);
+
+    /*  Border  */
+
     --border-primary: 1px solid var(--color-border);
 
-    /* Transition */
-    --transition-fast: 0.2s ease;
-    --transition-normal: 0.35s ease;
-    --transition-slow: 0.5s ease;
+    /*  Transition  */
 
-    /* Layout */
-    --container-width: 75rem;
+    --transition-fast: .2s ease;
+    --transition-normal: .35s ease;
+    --transition-slow: .5s ease;
+
+    /*  Layout  */
+
+    --container-width: 70rem;
     --header-height: 5.5rem;
 
-    /* Layer */
+    /*  Layer  */
+
     --z-background: -1;
     --z-default: 1;
     --z-navbar: 100;
@@ -74,17 +88,27 @@
 }
 
 [data-theme="light"] {
-    --color-bg-primary: #f8f8f8;
+
+    /*  Colors  */
+
+    --color-bg-primary: #f4f5f7;
     --color-bg-secondary: #ffffff;
-    --color-surface: #ffffff;
-    --color-surface-hover: #f2f2f2;
 
-    --color-text-primary: #111111;
-    --color-text-secondary: #666666;
+    --color-surface: rgba(255,255,255,.78);
+    --color-surface-hover: rgba(255,255,255,.95);
 
-    --color-border: rgba(0, 0, 0, 0.08);
+    --color-text-primary: #18181b;
+    --color-text-secondary: #676b73;
 
-    --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.08);
-    --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.12);
-    --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.16);
+    --color-accent: #d11a2a;
+    --color-accent-hover: #b3121f;
+
+    --color-border: rgba(0,0,0,.08);
+
+    /*  Shadow  */
+
+    --shadow-sm: 0 .25rem .75rem rgba(15,23,42,.06);
+    --shadow-md: 0 .75rem 2rem rgba(15,23,42,.10);
+    --shadow-lg: 0 1.5rem 4rem rgba(15,23,42,.15);
+    --shadow-glow: 0 0 1rem rgba(209,26,42,.12);
 }
