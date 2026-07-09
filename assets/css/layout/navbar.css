@@ -1,3 +1,5 @@
+/* ========== Navbar ========== */
+
 .navbar {
     position: fixed;
     inset: 0 0 auto;
@@ -33,29 +35,42 @@
     justify-content: space-between;
 }
 
+/* ========== Logo ========== */
+
 .logo {
     display: flex;
     align-items: center;
-    gap: 0.9rem;
+    gap: 1rem;
 
     text-decoration: none;
+
+    transition: transform .3s ease;
+}
+
+.logo:hover {
+    transform: translateY(-2px);
 }
 
 .logo-icon {
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 3.5rem;
+    height: 3.5rem;
 
     object-fit: contain;
 
+    padding-right: 1rem;
+    border-right: var(--border-primary);
+
+    animation: logo-float 4s ease-in-out infinite;
+
     transition:
-        transform var(--transition-normal),
-        filter var(--transition-normal);
+        transform .35s cubic-bezier(.175,.885,.32,1.275),
+        filter .35s ease;
 }
 
 .logo-text {
     font-family: var(--font-heading);
     font-size: 2rem;
-    letter-spacing: 0.03em;
+    letter-spacing: .03em;
 
     color: var(--color-text-primary);
 
@@ -64,22 +79,35 @@
 
 .logo-bracket {
     color: var(--color-accent);
+
+    transition:
+        color var(--transition-normal),
+        text-shadow var(--transition-normal);
 }
 
 .logo:hover .logo-icon {
-    transform: rotate(-8deg) scale(1.08);
+    transform: scale(1.18) rotate(-6deg);
 
-    filter: drop-shadow(0 0 0.75rem rgba(220, 38, 38, 0.35));
+    filter:
+        brightness(1.05)
+        drop-shadow(0 0 .35rem rgba(220,38,38,.55))
+        drop-shadow(0 0 .8rem rgba(220,38,38,.45))
+        drop-shadow(0 0 1.5rem rgba(220,38,38,.3));
 }
 
 .logo:hover .logo-text {
-    color: var(--color-accent);
+    color: var(--color-text-primary);
 }
 
-.logo-icon {
-    border-right: var(--border-primary);
-    padding-right: 0.9rem;
+.logo:hover .logo-bracket {
+    color: var(--color-accent-hover);
+
+    text-shadow:
+        0 0 .5rem rgba(220,38,38,.45),
+        0 0 1rem rgba(220,38,38,.35);
 }
+
+/* ========== Navigation ========== */
 
 .nav-menu {
     display: flex;
@@ -95,12 +123,16 @@
 
     color: var(--color-text-secondary);
 
-    transition: var(--transition-normal);
+    transition:
+        color var(--transition-normal),
+        text-shadow var(--transition-normal);
 }
 
 .nav-link:hover {
     color: var(--color-accent);
-    text-shadow: 0 0 .5rem rgba(220, 38, 38, .25);
+
+    text-shadow:
+        0 0 .5rem rgba(220,38,38,.3);
 }
 
 .nav-link.active {
@@ -131,6 +163,8 @@
     transform: scaleX(1);
 }
 
+/* ========== Actions ========== */
+
 .nav-actions {
     display: flex;
     align-items: center;
@@ -139,4 +173,19 @@
 
 .menu-toggle {
     display: none;
+}
+
+/* ========== Animation ========== */
+
+@keyframes logo-float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+
 }
