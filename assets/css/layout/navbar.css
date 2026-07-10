@@ -211,12 +211,15 @@
 
 }
 
+.menu-toggle{
+    display:none;
+}
 /* ========= Actions ========= */
 
 .nav-actions{
     display:flex;
     align-items:center;
-    gap:.65rem;
+    gap:.5rem;
 }
 
 

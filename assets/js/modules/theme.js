@@ -2,7 +2,7 @@ export function initTheme() {
 
     const html = document.documentElement;
 
-    const themeToggle = document.getElementById("input");
+    const themeToggle = document.getElementById("theme-toggle");
 
     if (!themeToggle) return;
 
