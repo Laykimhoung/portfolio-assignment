@@ -1,0 +1,209 @@
+/* Large Laptop */
+@media (max-width:1200px){
+
+    .container{
+        width:min(100% - 2rem,64rem);
+    }
+
+    .navbar{
+        width:min(95%,64rem);
+    }
+
+    .logo-text{
+        font-size:1.8rem;
+    }
+
+}
+
+/* Laptop */
+@media (max-width:992px){
+
+    html{
+        font-size:95%;
+    }
+
+    .navbar{
+        width:96%;
+    }
+
+    .navbar-container{
+        padding-inline:1rem;
+    }
+
+    .logo{
+        gap:.7rem;
+    }
+
+    .logo-icon{
+        width:2.7rem;
+        height:2.7rem;
+        padding-right:.7rem;
+    }
+
+    .logo-text{
+        font-size:1.55rem;
+    }
+
+    .nav-menu{
+        gap:.25rem;
+    }
+
+    .nav-link{
+        padding:.65rem .8rem;
+        font-size:.9rem;
+    }
+
+}
+
+/* Tablet */
+@media (max-width:768px){
+
+    html{
+        font-size:90%;
+    }
+
+    .navbar{
+        width:95%;
+        height:4.5rem;
+    }
+
+    .navbar-container{
+        padding-inline:.9rem;
+    }
+
+    .nav-center{
+        display:none;
+    }
+
+    .menu-toggle{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+
+        width:2.8rem;
+        height:2.8rem;
+
+        border:var(--border-primary);
+        border-radius:50%;
+
+        color:var(--color-text-primary);
+        background:transparent;
+
+        transition:.3s;
+    }
+
+    .menu-toggle:hover{
+        background:var(--color-accent);
+        color:#fff;
+        box-shadow:var(--shadow-glow);
+    }
+
+    .logo-text{
+        font-size:1.4rem;
+    }
+
+    .nav-actions{
+        gap:.7rem;
+    }
+
+}
+
+/* Mobile */
+@media (max-width:576px){
+
+    html{
+        font-size:87.5%;
+    }
+
+    .navbar{
+        top:.8rem;
+        height:4rem;
+    }
+
+    .navbar-container{
+        padding-inline:.8rem;
+    }
+
+    .logo{
+        gap:.55rem;
+    }
+
+    .logo-icon{
+        width:2.4rem;
+        height:2.4rem;
+        padding-right:.55rem;
+    }
+
+    .logo-text{
+        font-size:1.2rem;
+    }
+
+    .language-toggle{
+        min-width:2.6rem;
+        height:2.4rem;
+        padding-inline:.7rem;
+        font-size:.75rem;
+    }
+
+    .theme-switch{
+        --toggle-size:13px;
+    }
+
+    .section{
+        padding-block:4rem;
+    }
+
+}
+
+/* Small Mobile */
+@media (max-width:400px){
+
+    html{
+        font-size:85%;
+    }
+
+    .navbar{
+        width:96%;
+    }
+
+    .logo-text{
+        display:none;
+    }
+
+    .logo-icon{
+        border-right:none;
+        padding-right:0;
+    }
+
+    .nav-actions{
+        gap:.45rem;
+    }
+
+    .language-toggle{
+        min-width:2.4rem;
+        height:2.25rem;
+        padding-inline:.55rem;
+    }
+
+    .theme-switch{
+        --toggle-size:12px;
+    }
+
+}
+
+/* Very Small Devices */
+@media (max-width:320px){
+
+    .navbar{
+        width:98%;
+    }
+
+    .navbar-container{
+        padding-inline:.5rem;
+    }
+
+    .language-toggle{
+        display:none;
+    }
+
+}
