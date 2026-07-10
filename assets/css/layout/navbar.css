@@ -1,191 +1,245 @@
-/* ========== Navbar ========== */
+/* ========= Navbar ========= */
 
-.navbar {
-    position: fixed;
-    inset: 0 0 auto;
+.navbar{
+    position:fixed;
+    top:1rem;
+    left:50%;
+    transform:translateX(-50%);
 
-    width: 100%;
-    height: var(--header-height);
+    width:min(92%,72rem);
+    height:5rem;
 
-    z-index: var(--z-navbar);
+    z-index:var(--z-navbar);
 
-    background: var(--color-surface);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:1.35rem;
 
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    background:rgba(20,20,24,.58);
 
-    border-bottom: var(--border-primary);
+    backdrop-filter:blur(24px);
+    -webkit-backdrop-filter:blur(24px);
 
-    transition:
-        background var(--transition-normal),
-        box-shadow var(--transition-normal),
-        border-color var(--transition-normal);
-}
-
-.navbar.scrolled {
-    background: var(--color-surface-hover);
-    box-shadow: var(--shadow-md);
-}
-
-.navbar-container {
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-/* ========== Logo ========== */
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-
-    text-decoration: none;
-
-    transition: transform .3s ease;
-}
-
-.logo:hover {
-    transform: translateY(-2px);
-}
-
-.logo-icon {
-    width: 3.5rem;
-    height: 3.5rem;
-
-    object-fit: contain;
-
-    padding-right: 1rem;
-    border-right: var(--border-primary);
-
-    animation: logo-float 4s ease-in-out infinite;
+    box-shadow:
+        0 .75rem 2rem rgba(0,0,0,.22),
+        0 0 0 1px rgba(255,255,255,.02);
 
     transition:
-        transform .35s cubic-bezier(.175,.885,.32,1.275),
-        filter .35s ease;
+        background .35s,
+        box-shadow .35s,
+        transform .35s;
 }
 
-.logo-text {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    letter-spacing: .03em;
+[data-theme="light"] .navbar{
 
-    color: var(--color-text-primary);
+    background:rgba(255,255,255,.72);
 
-    transition: color var(--transition-normal);
+    border:1px solid rgba(255,255,255,.55);
+
+    box-shadow:
+        0 .75rem 2rem rgba(15,23,42,.08);
+
 }
 
-.logo-bracket {
-    color: var(--color-accent);
+.navbar.scrolled{
+
+    background:var(--color-surface-hover);
+
+    box-shadow:
+        var(--shadow-lg),
+        0 0 1rem rgba(220,38,38,.08);
+
+}
+
+.navbar-container{
+
+    width:100%;
+    height:100%;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding-inline:1.2rem;
+
+}
+
+/* ========= Logo ========= */
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:.9rem;
+
+    text-decoration:none;
+
+}
+
+.logo-icon{
+
+    width:3rem;
+    height:3rem;
+
+    object-fit:contain;
+
+    padding-right:.9rem;
+
+    border-right:var(--border-primary);
 
     transition:
-        color var(--transition-normal),
-        text-shadow var(--transition-normal);
+        transform .45s cubic-bezier(.175,.885,.32,1.35),
+        filter .45s;
+
 }
 
-.logo:hover .logo-icon {
-    transform: scale(1.18) rotate(-6deg);
+.logo-text{
+    font-family:var(--font-heading);
+    font-size:2rem;
+    letter-spacing:.03em;
+
+    color:var(--color-text-primary);
+
+    transition:
+        color .35s,
+        text-shadow .35s;
+}
+
+.logo-bracket{
+
+    color:var(--color-accent);
+
+    transition:.35s;
+
+}
+
+.logo:hover .logo-icon{
+
+    transform:
+        scale(1.15)
+        rotate(-8deg);
 
     filter:
-        brightness(1.05)
+        brightness(1.1)
         drop-shadow(0 0 .35rem rgba(220,38,38,.55))
-        drop-shadow(0 0 .8rem rgba(220,38,38,.45))
-        drop-shadow(0 0 1.5rem rgba(220,38,38,.3));
+        drop-shadow(0 0 .9rem rgba(220,38,38,.4))
+        drop-shadow(0 0 1.8rem rgba(220,38,38,.25));
+
 }
 
-.logo:hover .logo-text {
-    color: var(--color-text-primary);
+.logo:hover .logo-text{
+    color:var(--color-accent);
+
+    text-shadow:
+        0 0 .4rem rgba(220,38,38,.35);
 }
 
-.logo:hover .logo-bracket {
-    color: var(--color-accent-hover);
+.logo:hover .logo-bracket{
+
+    color:var(--color-accent-hover);
 
     text-shadow:
         0 0 .5rem rgba(220,38,38,.45),
-        0 0 1rem rgba(220,38,38,.35);
+        0 0 1rem rgba(220,38,38,.25);
+
 }
 
-/* ========== Navigation ========== */
+/* ========= Navigation ========= */
 
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+.nav-center{
+
+    display:flex;
+    align-items:center;
+
 }
 
-.nav-link {
-    position: relative;
+.nav-menu{
 
-    font-size: .95rem;
-    font-weight: var(--fw-semibold);
+    display:flex;
+    align-items:center;
 
-    color: var(--color-text-secondary);
+    gap:.55rem;
+
+}
+
+.nav-link{
+
+    padding:.7rem 1rem;
+
+    border-radius:.8rem;
+
+    font-size:.95rem;
+    font-weight:600;
+
+    color:var(--color-text-secondary);
 
     transition:
-        color var(--transition-normal),
-        text-shadow var(--transition-normal);
+        background .3s,
+        color .3s,
+        box-shadow .3s,
+        transform .3s;
+
 }
 
-.nav-link:hover {
-    color: var(--color-accent);
+.nav-link:hover{
 
-    text-shadow:
-        0 0 .5rem rgba(220,38,38,.3);
+    color:var(--color-accent);
+
+    background:rgba(220,38,38,.06);
+
 }
 
-.nav-link.active {
-    color: var(--color-text-primary);
+.nav-link.active{
+
+    color:#fff;
+
+    background:var(--color-accent);
+
+    box-shadow:
+        0 0 1rem rgba(220,38,38,.28);
+
 }
 
-.nav-link::after {
-    content: "";
+.nav-link:active{
 
-    position: absolute;
+    transform:scale(.96);
 
-    left: 0;
-    bottom: -.45rem;
-
-    width: 100%;
-    height: 2px;
-
-    background: var(--color-accent);
-
-    transform: scaleX(0);
-    transform-origin: center;
-
-    transition: transform var(--transition-fast);
 }
 
-.nav-link:hover::after,
-.nav-link.active::after {
-    transform: scaleX(1);
+.nav-link::after{
+
+    display:none;
+
 }
 
-/* ========== Actions ========== */
+/* ========= Actions ========= */
 
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: .75rem;
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:.65rem;
 }
 
-.menu-toggle {
-    display: none;
-}
 
-/* ========== Animation ========== */
+/* ========= Animation ========= */
 
-@keyframes logo-float {
+@keyframes logoFloat{
 
-    0%,
-    100% {
-        transform: translateY(0);
+    0%,100%{
+
+        transform:translateY(0);
+
     }
 
-    50% {
-        transform: translateY(-3px);
+    50%{
+
+        transform:translateY(-2px);
+
     }
+
+}
+
+.logo-icon{
+
+    animation:logoFloat 5s ease-in-out infinite;
 
 }

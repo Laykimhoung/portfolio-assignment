@@ -1,19 +1,22 @@
+/* Base */
 @import url("../base/reset.css");
 @import url("../base/variables.css");
 @import url("../base/typography.css");
 @import url("../base/utilities.css");
 @import url("../base/animations.css");
 
+/* Layout */
 @import url("../layout/navbar.css");
 @import url("../layout/footer.css");
 
+/* Components */
 @import url("../components/buttons.css");
 @import url("../components/cards.css");
-@import url("../components/inputs.css");
 @import url("../components/theme-toggle.css");
 @import url("../components/language-toggle.css");
-@import url("../components/reveal-mask.css");
 
+/* Pages */
+/* Home page styles go below */
+
+/* Responsive */
 @import url("../responsive.css");
-
-/* Home Page */
