@@ -1,11 +1,9 @@
 export async function loadComponent(id, file) {
-
     const element = document.getElementById(id);
 
     if (!element) return;
 
     try {
-
         const response = await fetch(file);
 
         if (!response.ok) {
@@ -15,9 +13,6 @@ export async function loadComponent(id, file) {
         element.innerHTML = await response.text();
 
     } catch (error) {
-
         console.error(error);
-
     }
-
 }

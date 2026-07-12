@@ -2,16 +2,16 @@ export function initTheme() {
 
     const html = document.documentElement;
 
-    const themeToggle = document.getElementById("theme-toggle");
+    const themeToggle =
+        document.getElementById("theme-toggle");
 
     if (!themeToggle) return;
 
-    const savedTheme =
-        localStorage.getItem("theme") || "dark";
+    const currentTheme =
+        html.getAttribute("data-theme") || "dark";
 
-    html.setAttribute("data-theme", savedTheme);
-
-    themeToggle.checked = savedTheme === "light";
+    themeToggle.checked =
+        currentTheme === "light";
 
     themeToggle.addEventListener("change", () => {
 
@@ -20,9 +20,15 @@ export function initTheme() {
                 ? "light"
                 : "dark";
 
-        html.setAttribute("data-theme", newTheme);
+        html.setAttribute(
+            "data-theme",
+            newTheme
+        );
 
-        localStorage.setItem("theme", newTheme);
+        localStorage.setItem(
+            "theme",
+            newTheme
+        );
 
     });
 

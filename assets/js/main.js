@@ -19,27 +19,18 @@ const currentPage =
 document
     .querySelectorAll(".nav-link, .mobile-nav-link")
     .forEach(link => {
-
         link.classList.remove("active");
 
         if (link.getAttribute("href") === currentPage) {
-
             link.classList.add("active");
-
         }
-
     });
 
 // Navbar Scroll
 const navbar = document.querySelector(".navbar");
 
 window.addEventListener("scroll", () => {
-
-    navbar?.classList.toggle(
-        "scrolled",
-        window.scrollY > 50
-    );
-
+    navbar?.classList.toggle("scrolled", window.scrollY > 50);
 });
 
 // Initialize Modules

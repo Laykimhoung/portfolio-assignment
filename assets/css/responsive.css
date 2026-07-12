@@ -1,33 +1,55 @@
-/* Large Laptop */
-@media (max-width:1200px){
+/* Large Desktop */
+
+@media (min-width:1400px){
 
     .container{
-        width:min(100% - 2rem,64rem);
+        width:min(100% - 2rem,80rem);
     }
 
     .navbar{
-        width:min(95%,64rem);
-    }
-
-    .logo-text{
-        font-size:1.8rem;
+        width:min(90%,80rem);
     }
 
 }
 
-/* Laptop */
-@media (max-width:992px){
+/* Desktop */
 
-    html{
-        font-size:95%;
+@media (max-width:1200px){
+
+    .container{
+        width:min(100% - 2rem,68rem);
     }
 
     .navbar{
-        width:96%;
+        width:94%;
     }
 
     .navbar-container{
         padding-inline:1rem;
+    }
+
+    .logo-icon{
+        width:2.8rem;
+        height:2.8rem;
+    }
+
+    .logo-text{
+        font-size:1.75rem;
+    }
+
+    .nav-link{
+        padding:.65rem .8rem;
+        font-size:.9rem;
+    }
+
+}
+
+/* Small Laptop */
+
+@media (max-width:1024px){
+
+    .navbar{
+        width:96%;
     }
 
     .logo{
@@ -45,30 +67,26 @@
     }
 
     .nav-menu{
-        gap:.25rem;
+        gap:.2rem;
     }
 
     .nav-link{
-        padding:.65rem .8rem;
-        font-size:.9rem;
+        padding:.6rem .65rem;
+        font-size:.88rem;
+    }
+
+    .nav-actions{
+        gap:.45rem;
     }
 
 }
 
 /* Tablet */
-@media (max-width:768px){
 
-    html{
-        font-size:90%;
-    }
+@media (max-width:900px){
 
     .navbar{
-        width:95%;
         height:4.5rem;
-    }
-
-    .navbar-container{
-        padding-inline:.9rem;
     }
 
     .nav-center{
@@ -80,43 +98,49 @@
         align-items:center;
         justify-content:center;
 
-        width:2.8rem;
-        height:2.8rem;
+        width:2.30rem;
+        height:2.30rem;
+
+        padding:0;
 
         border:var(--border-primary);
         border-radius:50%;
 
-        color:var(--color-text-primary);
         background:transparent;
+        color:var(--color-text-primary);
 
-        transition:.3s;
+        transition:
+            background .25s,
+            color .25s,
+            transform .25s,
+            box-shadow .25s;
+    }
+
+    .menu-icon{
+        width:1.2rem;
+        height:1.2rem;
     }
 
     .menu-toggle:hover{
         background:var(--color-accent);
         color:#fff;
         box-shadow:var(--shadow-glow);
+        transform:scale(1.05);
     }
 
-    .logo-text{
-        font-size:1.4rem;
-    }
-
-    .nav-actions{
-        gap:.7rem;
+    .mobile-nav{
+        width:100%;
     }
 
 }
 
 /* Mobile */
-@media (max-width:576px){
 
-    html{
-        font-size:87.5%;
-    }
+@media (max-width:576px){
 
     .navbar{
         top:.8rem;
+        width:95%;
         height:4rem;
     }
 
@@ -125,7 +149,7 @@
     }
 
     .logo{
-        gap:.55rem;
+        gap:.6rem;
     }
 
     .logo-icon{
@@ -135,13 +159,13 @@
     }
 
     .logo-text{
-        font-size:1.2rem;
+        font-size:1.25rem;
     }
 
     .language-toggle{
-        min-width:2.6rem;
-        height:2.4rem;
-        padding-inline:.7rem;
+        min-width:2.5rem;
+        height:2.35rem;
+        padding-inline:.65rem;
         font-size:.75rem;
     }
 
@@ -156,54 +180,79 @@
 }
 
 /* Small Mobile */
-@media (max-width:400px){
 
-    html{
-        font-size:85%;
-    }
+@media (max-width:400px){
 
     .navbar{
         width:96%;
     }
 
-    .logo-text{
-        display:none;
+    .logo-icon{
+        width:2.2rem;
+        height:2.2rem;
+        padding-right:.45rem;
     }
 
-    .logo-icon{
-        border-right:none;
-        padding-right:0;
+    .logo-text{
+        font-size:1rem;
     }
 
     .nav-actions{
-        gap:.45rem;
+        gap:.35rem;
     }
 
     .language-toggle{
-        min-width:2.4rem;
-        height:2.25rem;
-        padding-inline:.55rem;
+        min-width:2.2rem;
+        padding-inline:.45rem;
+        font-size:.7rem;
     }
 
     .theme-switch{
-        --toggle-size:12px;
+        --toggle-size:11px;
     }
 
 }
 
-/* Very Small Devices */
-@media (max-width:320px){
+/* Very Small */
 
-    .navbar{
-        width:98%;
-    }
+@media (max-width:340px){
 
-    .navbar-container{
-        padding-inline:.5rem;
+    .logo-text{
+        font-size:.9rem;
     }
 
     .language-toggle{
         display:none;
+    }
+
+}
+
+/* Landscape */
+
+@media (max-height:650px) and (orientation:landscape){
+
+    .navbar{
+        top:.5rem;
+        height:4rem;
+    }
+
+    .mobile-nav{
+        max-height:70vh;
+        overflow-y:auto;
+    }
+
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation:none !important;
+        transition:none !important;
+        scroll-behavior:auto !important;
     }
 
 }

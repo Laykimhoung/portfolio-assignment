@@ -51,7 +51,6 @@
 }
 
 .navbar-container{
-
     width:100%;
     height:100%;
 
@@ -59,20 +58,22 @@
     align-items:center;
     justify-content:space-between;
 
-    padding-inline:1.2rem;
+    gap:1rem;
 
+    padding-inline:1.2rem;
 }
 
 /* ========= Logo ========= */
 
 .logo{
-
     display:flex;
     align-items:center;
+
     gap:.9rem;
 
-    text-decoration:none;
+    flex-shrink:0;
 
+    text-decoration:none;
 }
 
 .logo-icon{
@@ -93,11 +94,18 @@
 }
 
 .logo-text{
+    display:flex;
+    align-items:center;
+
+    white-space:nowrap;
+
     font-family:var(--font-heading);
-    font-size:2rem;
+    font-size:clamp(1.2rem,1vw + 1rem,2rem);
     letter-spacing:.03em;
 
     color:var(--color-text-primary);
+
+    flex-shrink:0;
 
     transition:
         color .35s,
@@ -146,19 +154,22 @@
 /* ========= Navigation ========= */
 
 .nav-center{
+    flex:1;
 
     display:flex;
     align-items:center;
+    justify-content:center;
 
+    min-width:0;
 }
 
 .nav-menu{
-
     display:flex;
     align-items:center;
 
-    gap:.55rem;
+    flex-wrap:nowrap;
 
+    gap:.35rem;
 }
 
 .nav-link{
@@ -219,7 +230,10 @@
 .nav-actions{
     display:flex;
     align-items:center;
+
     gap:.5rem;
+
+    flex-shrink:0;
 }
 
 
