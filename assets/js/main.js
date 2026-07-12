@@ -1,6 +1,7 @@
 import { loadComponent } from "./modules/component-loader.js";
 import { initTheme } from "./modules/theme.js";
 import { initLanguage } from "./modules/language.js";
+import { initMobileMenu } from "./modules/mobile-menu.js";
 
 // Load Components
 await Promise.all([
@@ -15,13 +16,19 @@ lucide.createIcons();
 const currentPage =
     window.location.pathname.split("/").pop() || "index.html";
 
-document.querySelectorAll(".nav-link").forEach(link => {
+document
+    .querySelectorAll(".nav-link, .mobile-nav-link")
+    .forEach(link => {
 
-    if (link.getAttribute("href") === currentPage) {
-        link.classList.add("active");
-    }
+        link.classList.remove("active");
 
-});
+        if (link.getAttribute("href") === currentPage) {
+
+            link.classList.add("active");
+
+        }
+
+    });
 
 // Navbar Scroll
 const navbar = document.querySelector(".navbar");
@@ -38,3 +45,4 @@ window.addEventListener("scroll", () => {
 // Initialize Modules
 initTheme();
 initLanguage();
+initMobileMenu();

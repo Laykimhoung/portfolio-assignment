@@ -1,0 +1,188 @@
+/* Menu Toggle Button */
+
+.menu-toggle{
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    width:2.85rem;
+    height:2.85rem;
+
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:50%;
+
+    background:transparent;
+
+    color:var(--color-text-primary);
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+    will-change:transform;
+
+    transition:
+        transform .25s cubic-bezier(.22,1,.36,1),
+        background .25s ease,
+        border-color .25s ease,
+        color .25s ease,
+        box-shadow .25s ease;
+}
+
+.menu-toggle:hover{
+
+    transform:
+        translateY(-2px);
+
+    background:rgba(220,38,38,.08);
+
+    color:var(--color-accent);
+
+    border-color:rgba(220,38,38,.3);
+
+    box-shadow:
+        0 .45rem 1rem rgba(220,38,38,.12),
+        0 0 1rem rgba(220,38,38,.18);
+
+}
+
+.menu-toggle:active{
+
+    transform:
+        scale(.92);
+
+}
+
+.menu-icon{
+
+    width:1.5rem;
+    height:1.5rem;
+
+    overflow:visible;
+
+    transition:
+
+        transform .35s cubic-bezier(.22,1,.36,1),
+
+        filter .35s ease;
+
+}
+
+.menu-toggle:hover .menu-icon{
+
+    transform:
+
+        scale(1.18);
+
+
+    filter:
+
+        drop-shadow(0 0 .45rem rgba(220,38,38,.35));
+
+}
+
+.line{
+
+    stroke:currentColor;
+
+    stroke-width:2.4;
+
+    fill:none;
+
+    transform-box:fill-box;
+
+    transform-origin:center;
+
+    transition:
+
+        transform .45s cubic-bezier(.22,1,.36,1),
+
+        opacity .22s ease;
+
+}
+
+.menu-toggle.active{
+
+    animation:
+
+        menu-pop .45s cubic-bezier(.22,1,.36,1);
+
+}
+
+.menu-toggle.active .menu-icon{
+
+    transform:
+
+        rotate(180deg)
+
+        scale(1.08);
+
+}
+
+.menu-toggle.active .line-top{
+
+    transform:
+
+        translateY(5px)
+
+        rotate(45deg);
+
+}
+
+.menu-toggle.active .line-middle{
+
+    opacity:0;
+
+    transform:
+
+        scaleX(.1);
+
+}
+
+.menu-toggle.active .line-bottom{
+
+    transform:
+
+        translateY(-5px)
+
+        rotate(-45deg);
+
+}
+
+@keyframes menu-pop{
+
+    0%{
+
+        transform:
+
+            scale(1);
+
+    }
+
+    35%{
+
+        transform:
+
+            scale(1.12);
+
+    }
+
+    65%{
+
+        transform:
+
+            scale(.94);
+
+    }
+
+    100%{
+
+        transform:
+
+            scale(1);
+
+    }
+
+}
