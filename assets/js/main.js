@@ -3,37 +3,37 @@ import { initTheme } from "./modules/theme.js";
 import { initLanguage } from "./modules/language.js";
 import { initMobileMenu } from "./modules/mobile-menu.js";
 
-// Load Components
+/* Load Components */
 await Promise.all([
+    loadComponent("background", "assets/components/background.html"),
     loadComponent("navbar", "assets/components/navbar.html"),
     loadComponent("footer", "assets/components/footer.html")
 ]);
 
-// Initialize Lucide Icons
+/* Initialize Icons */
 lucide.createIcons();
 
-// Active Navigation
+/* Navigation */
 const currentPage =
     window.location.pathname.split("/").pop() || "index.html";
 
 document
     .querySelectorAll(".nav-link, .mobile-nav-link")
     .forEach(link => {
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === currentPage) {
-            link.classList.add("active");
-        }
+        link.classList.toggle(
+            "active",
+            link.getAttribute("href") === currentPage
+        );
     });
 
-// Navbar Scroll
+/* Navbar Scroll */
 const navbar = document.querySelector(".navbar");
 
 window.addEventListener("scroll", () => {
     navbar?.classList.toggle("scrolled", window.scrollY > 50);
 });
 
-// Initialize Modules
+/* Initialize Modules */
 initTheme();
 initLanguage();
 initMobileMenu();

@@ -1,18 +1,27 @@
+const cache = new Map();
+
 export async function loadComponent(id, file) {
     const element = document.getElementById(id);
 
     if (!element) return;
 
     try {
-        const response = await fetch(file);
+        let html = cache.get(file);
 
-        if (!response.ok) {
-            throw new Error(`Failed to fetch ${file}`);
+        if (!html) {
+            const response = await fetch(file);
+
+            if (!response.ok) {
+                throw new Error(`Failed to fetch ${file}`);
+            }
+
+            html = await response.text();
+            cache.set(file, html);
         }
 
-        element.innerHTML = await response.text();
+        element.innerHTML = html;
 
     } catch (error) {
-        console.error(error);
+        console.error(`Component Error (${file}):`, error);
     }
 }

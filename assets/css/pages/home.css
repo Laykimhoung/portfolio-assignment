@@ -8,6 +8,7 @@
 /* Layout */
 @import url("../layout/navbar.css");
 @import url("../layout/footer.css");
+@import url("../layout/background.css");
 
 /* Components */
 @import url("../components/buttons.css");

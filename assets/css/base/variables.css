@@ -15,6 +15,13 @@
 
     --color-border: rgba(255,255,255,.08);
 
+    /* Background */
+
+    --background-start: #180d10;
+    --background-end: #09090b;
+    --background-glow: rgba(220,38,38,.06);
+    --star-color: #ffffff;
+
     /*  Typography  */
 
     --font-heading: "Bebas Neue", sans-serif;
@@ -111,4 +118,11 @@
     --shadow-md: 0 .75rem 2rem rgba(15,23,42,.10);
     --shadow-lg: 0 1.5rem 4rem rgba(15,23,42,.15);
     --shadow-glow: 0 0 1rem rgba(209,26,42,.12);
+
+    /* Background */
+
+    --background-start: #ffffff;
+--background-end: #f6f7fa;
+--background-glow: rgba(220,38,38,.025);
+--star-color: rgba(150,35,35,.22);
 }
