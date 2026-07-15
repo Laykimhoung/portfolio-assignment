@@ -1,41 +1,40 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Home | XAKURAII</title>
 
     <meta
-        name="description"
-        content="Modern responsive portfolio website by XAKURAII"
+      name="description"
+      content="Modern responsive portfolio website by XAKURAII"
     />
     <meta name="author" content="XAKURAII" />
     <meta name="theme-color" content="#0B0B0D" />
 
     <!-- Theme (Run BEFORE CSS) -->
     <script>
-    (() => {
+      (() => {
         const savedTheme = localStorage.getItem("theme");
         const theme = savedTheme ? savedTheme : "dark";
         document.documentElement.setAttribute("data-theme", theme);
-    })();
+      })();
     </script>
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100..900&display=swap"
-        rel="stylesheet"
-    >
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/pages/home.css">
-</head>
+    <link rel="stylesheet" href="assets/css/pages/home.css" />
+  </head>
 
-  
   <body>
     <!-- Background -->
     <div id="background"></div>
@@ -44,7 +43,69 @@
     <div id="navbar"></div>
 
     <!-- Main -->
-    <main></main>
+    <main>
+      <section class="hero">
+        <div class="container hero-container">
+          <!-- Hero Content -->
+          <div class="hero-content">
+            <p class="hero-greeting">Hi, I'm</p>
+
+            <h1 class="hero-title">Lay Kimhoung</h1>
+
+            <h2 class="hero-subtitle">
+              Computer Science Student
+              <span>&</span>
+              Aspiring Full Stack Web Developer
+            </h2>
+
+            <p class="hero-description">
+              I build modern, responsive, and user-focused web experiences with
+              clean design, efficient code, and a passion for continuous
+              learning.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="projects.html" class="btn btn-primary">
+                View Projects
+              </a>
+
+              <a href="contact.html" class="btn btn-secondary"> Contact Me </a>
+            </div>
+
+            <div class="hero-social">
+              <a href="#" aria-label="GitHub">
+                <i data-lucide="github"></i>
+              </a>
+
+              <a href="#" aria-label="LinkedIn">
+                <i data-lucide="linkedin"></i>
+              </a>
+
+              <a href="#" aria-label="Facebook">
+                <i data-lucide="facebook"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Hero Image -->
+          <div class="hero-image">
+            <div class="reveal-mask">
+              <img
+                src="assets/images/profile/samurai-version.webp"
+                alt="Samurai Version"
+                class="portrait portrait-samurai"
+              />
+
+              <img
+                src="assets/images/profile/real-version.webp"
+                alt="Lay Kimhoung"
+                class="portrait portrait-real"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer -->
     <div id="footer"></div>

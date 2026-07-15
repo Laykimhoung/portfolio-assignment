@@ -1,0 +1,188 @@
+/* ===========================
+   Hero
+=========================== */
+
+.hero {
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    align-items: center;
+    padding: var(--space-3xl) 0;
+}
+
+.hero-container {
+    width: min(100%, var(--container-width));
+    margin: 0 auto;
+    padding: 0 var(--space-lg);
+
+    display: grid;
+    grid-template-columns: 1fr .85fr;
+    align-items: center;
+    gap: 4rem;
+}
+
+/* ===========================
+   Hero Content
+=========================== */
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+}
+
+.hero-greeting {
+    font-size: 1.2rem;
+    font-weight: var(--fw-medium);
+    color: var(--color-text-secondary);
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: var(--fs-hero);
+    line-height: .9;
+    letter-spacing: .05em;
+    color: var(--color-text-primary);
+}
+
+.hero-title span {
+    color: var(--color-accent);
+}
+
+.hero-subtitle {
+    font-size: 1.4rem;
+    font-weight: var(--fw-medium);
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}
+
+.hero-description {
+    max-width: 34rem;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: .75rem;
+}
+
+/* ===========================
+   Social
+=========================== */
+
+.hero-social {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+}
+
+.hero-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.75rem;
+    height: 2.75rem;
+
+    border-radius: 50%;
+
+    color: var(--color-text-secondary);
+
+    transition: var(--transition-normal);
+}
+
+.hero-social a:hover {
+    color: var(--color-accent);
+    transform: translateY(-3px);
+}
+
+/* ===========================
+   Hero Image
+=========================== */
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===========================
+   Reveal Mask
+=========================== */
+
+.reveal-mask {
+    position: relative;
+
+    width: min(28rem, 100%);
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+}
+
+/* ===========================
+   Portrait
+=========================== */
+
+.portrait {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    user-select: none;
+    pointer-events: none;
+}
+
+.portrait-samurai {
+    z-index: 1;
+}
+
+.portrait-real {
+    z-index: 2;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 992px) {
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero-content {
+        align-items: center;
+        order: 2;
+    }
+
+    .hero-image {
+        order: 1;
+        margin-bottom: 2rem;
+    }
+
+    .hero-description {
+        max-width: 40rem;
+    }
+
+    .hero-buttons,
+    .hero-social {
+        justify-content: center;
+    }
+
+    .reveal-mask {
+        width: min(22rem, 100%);
+    }
+}
