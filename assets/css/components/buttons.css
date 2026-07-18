@@ -186,3 +186,208 @@
     }
 
 }
+
+/* Hero Button */
+/* ==========================================
+   BUTTON COMPONENT
+========================================== */
+
+.btn{
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:.65rem;
+
+    padding:.95rem 1.8rem;
+
+    border:none;
+    border-radius:999rem;
+
+    font-family:var(--font-body);
+    font-size:1rem;
+    font-weight:600;
+    text-decoration:none;
+    white-space:nowrap;
+
+    cursor:pointer;
+    overflow:hidden;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        background .35s ease,
+        color .35s ease,
+        border-color .35s ease;
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.btn i,
+.btn span{
+    transition:
+        transform .35s ease;
+}
+
+/* ==========================================
+   PRIMARY
+========================================== */
+
+.btn-primary{
+
+    color:#fff;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff5454,
+        #dc2626
+    );
+
+    box-shadow:
+        0 .75rem 2rem rgba(220,38,38,.28);
+
+}
+
+/* Hover */
+
+.btn-primary:hover{
+
+    transform:
+        translateY(-.25rem);
+
+    box-shadow:
+        0 1.25rem 2.8rem rgba(220,38,38,.45);
+
+}
+
+/* Active */
+
+.btn-primary:active{
+
+    transform:
+        translateY(-.05rem);
+
+}
+
+/* Arrow */
+
+.btn-primary:hover span{
+
+    transform:
+        translateX(.4rem);
+
+}
+
+/* ==========================================
+   SECONDARY
+========================================== */
+
+.btn-secondary{
+
+    color:var(--color-text-primary);
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        .0625rem solid rgba(255,255,255,.14);
+
+    backdrop-filter:
+        blur(.75rem);
+
+}
+
+.btn-secondary:hover{
+
+    transform:
+        translateY(-.25rem);
+
+    border-color:
+        rgba(255,255,255,.35);
+
+    background:
+        rgba(255,255,255,.08);
+
+}
+
+/* ==========================================
+   FOCUS
+========================================== */
+
+.btn:focus-visible{
+
+    outline:none;
+
+    box-shadow:
+        0 0 0 .25rem rgba(220,38,38,.35);
+
+}
+
+/* ==========================================
+   DISABLED
+========================================== */
+
+.btn:disabled{
+
+    opacity:.55;
+
+    cursor:not-allowed;
+
+    pointer-events:none;
+
+}
+
+/* ==========================================
+   RIPPLE
+========================================== */
+
+.btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+
+    transform:
+        translateX(-140%);
+
+    transition:
+        transform .8s ease;
+
+}
+
+.btn:hover::before{
+
+    transform:
+        translateX(140%);
+
+}
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width:48rem){
+
+    .btn{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+}

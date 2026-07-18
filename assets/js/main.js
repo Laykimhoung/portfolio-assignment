@@ -1,6 +1,5 @@
 import { loadComponent } from "./modules/component-loader.js";
 import { initTheme } from "./modules/theme.js";
-import { initLanguage } from "./modules/language.js";
 import { initMobileMenu } from "./modules/mobile-menu.js";
 
 /* Load Components */
@@ -35,5 +34,4 @@ window.addEventListener("scroll", () => {
 
 /* Initialize Modules */
 initTheme();
-initLanguage();
 initMobileMenu();

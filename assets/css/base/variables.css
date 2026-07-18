@@ -92,6 +92,16 @@
     --z-navbar: 100;
     --z-dropdown: 500;
     --z-modal: 1000;
+
+    /* Hero */
+
+    --hero-content-width: 40rem;
+    --hero-image-width: 30rem;
+
+    /* Buttons */
+
+    --btn-padding-y: .95rem;
+    --btn-padding-x: 1.8rem;
 }
 
 [data-theme="light"] {
@@ -122,7 +132,8 @@
     /* Background */
 
     --background-start: #ffffff;
---background-end: #f6f7fa;
---background-glow: rgba(220,38,38,.025);
---star-color: rgba(150,35,35,.22);
+    --background-end: #f6f7fa;
+    --background-glow: rgba(220,38,38,.025);
+    --star-color: rgba(150,35,35,.22);
 }
+

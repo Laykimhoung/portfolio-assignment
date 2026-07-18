@@ -46,61 +46,65 @@
     <main>
       <section class="hero">
         <div class="container hero-container">
-          <!-- Hero Content -->
+          <!-- Left Side -->
           <div class="hero-content">
-            <p class="hero-greeting">Hi, I'm</p>
+            <span class="hero-greeting"> Hello, I'm </span>
 
-            <h1 class="hero-title">Lay Kimhoung</h1>
+            <h1 class="hero-title">
+              <span class="name-first">LAY</span>
+              <span class="name-last">KIMHOUNG</span>
+            </h1>
 
             <h2 class="hero-subtitle">
-              Computer Science Student
-              <span>&</span>
-              Aspiring Full Stack Web Developer
+              <span class="subtitle-line">Computer Science Student</span>
+              <span class="subtitle-line"
+                >& Future Full-Stack Web Developer</span
+              >
             </h2>
 
+            <p class="hero-alias">
+              You can call me <span>XAKURAII</span>, my digital identity and
+              developer alias.
+            </p>
+
             <p class="hero-description">
-              I build modern, responsive, and user-focused web experiences with
-              clean design, efficient code, and a passion for continuous
-              learning.
+              I enjoy creating modern, responsive, and user-friendly web
+              applications with clean code, clean project structure, modern
+              UI/UX design, smooth animations, interactive components,
+              attractive user interfaces, and a passion for learning new
+              technologies and improving every day.
             </p>
 
             <div class="hero-buttons">
               <a href="projects.html" class="btn btn-primary">
                 View Projects
+                <span>→</span>
               </a>
 
               <a href="contact.html" class="btn btn-secondary"> Contact Me </a>
             </div>
-
-            <div class="hero-social">
-              <a href="#" aria-label="GitHub">
-                <i data-lucide="github"></i>
-              </a>
-
-              <a href="#" aria-label="LinkedIn">
-                <i data-lucide="linkedin"></i>
-              </a>
-
-              <a href="#" aria-label="Facebook">
-                <i data-lucide="facebook"></i>
-              </a>
-            </div>
           </div>
 
-          <!-- Hero Image -->
+          <!-- Right Side -->
           <div class="hero-image">
-            <div class="reveal-mask">
-              <img
-                src="assets/images/profile/samurai-version.webp"
-                alt="Samurai Version"
-                class="portrait portrait-samurai"
-              />
-
+            <div class="image-wrapper">
+              <!-- Real Image -->
               <img
                 src="assets/images/profile/real-version.webp"
                 alt="Lay Kimhoung"
-                class="portrait portrait-real"
+                class="profile-image real-image"
               />
+
+              <!-- Samurai Image -->
+              <img
+                src="assets/images/profile/samurai-version.webp"
+                alt="Samurai Version"
+                class="profile-image samurai-image"
+                aria-hidden="true"
+              />
+              <div class="slash"></div>
+              <div class="hero-glow"></div>
+              <div class="reveal-mask"></div>
             </div>
           </div>
         </div>

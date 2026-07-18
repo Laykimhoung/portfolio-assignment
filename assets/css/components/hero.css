@@ -1,137 +1,209 @@
-/* ===========================
-   Hero
-=========================== */
+/* Hero */
 
 .hero {
-    min-height: calc(100vh - var(--header-height));
-    display: flex;
-    align-items: center;
-    padding: var(--space-3xl) 0;
-}
-
-.hero-container {
-    width: min(100%, var(--container-width));
-    margin: 0 auto;
-    padding: 0 var(--space-lg);
-
-    display: grid;
-    grid-template-columns: 1fr .85fr;
-    align-items: center;
-    gap: 4rem;
-}
-
-/* ===========================
-   Hero Content
-=========================== */
-
-.hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.25rem;
-}
-
-.hero-greeting {
-    font-size: 1.2rem;
-    font-weight: var(--fw-medium);
-    color: var(--color-text-secondary);
-}
-
-.hero-title {
-    font-family: var(--font-heading);
-    font-size: var(--fs-hero);
-    line-height: .9;
-    letter-spacing: .05em;
-    color: var(--color-text-primary);
-}
-
-.hero-title span {
-    color: var(--color-accent);
-}
-
-.hero-subtitle {
-    font-size: 1.4rem;
-    font-weight: var(--fw-medium);
-    line-height: 1.5;
-    color: var(--color-text-secondary);
-}
-
-.hero-description {
-    max-width: 34rem;
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--color-text-secondary);
-}
-
-/* ===========================
-   Buttons
-=========================== */
-
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
-    margin-top: .75rem;
-}
-
-/* ===========================
-   Social
-=========================== */
-
-.hero-social {
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-    margin-top: 1.5rem;
-}
-
-.hero-social a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 2.75rem;
-    height: 2.75rem;
-
-    border-radius: 50%;
-
-    color: var(--color-text-secondary);
-
-    transition: var(--transition-normal);
-}
-
-.hero-social a:hover {
-    color: var(--color-accent);
-    transform: translateY(-3px);
-}
-
-/* ===========================
-   Hero Image
-=========================== */
-
-.hero-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* ===========================
-   Reveal Mask
-=========================== */
-
-.reveal-mask {
     position: relative;
-
-    width: min(28rem, 100%);
-    aspect-ratio: 4 / 5;
-
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - var(--navbar-height));
     overflow: hidden;
 }
 
-/* ===========================
-   Portrait
-=========================== */
+/* Container */
 
-.portrait {
+.hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+    width: 100%;
+    padding-block: 4rem;
+}
+
+/* Content */
+
+.hero-content {
+    flex: 1;
+    max-width: 40rem;
+    padding-top: 4rem;
+}
+
+/* Greeting */
+
+.hero-greeting {
+    display: inline-block;
+    margin-bottom: 1rem;
+
+    color: var(--color-text-secondary);
+
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: .12rem;
+    text-transform: uppercase;
+
+    opacity: 0;
+    animation: fade-up .8s ease forwards;
+}
+
+/* Title */
+
+.hero-title {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+
+    margin-bottom: .75rem;
+
+    font-family: var(--font-heading);
+    font-size: var(--fs-hero);
+    line-height: .92;
+}
+
+/* Name */
+
+.name-first,
+.name-last {
+    display: inline-block;
+
+    transition:
+        color var(--transition-normal),
+        transform var(--transition-normal);
+}
+
+.name-first {
+    color: var(--color-text-primary);
+
+    opacity: 0;
+
+    animation:
+        reveal-name .8s .2s forwards;
+}
+
+.name-last {
+    color: var(--color-accent);
+
+    opacity: 0;
+
+    animation:
+        reveal-accent .9s .45s forwards;
+}
+
+/* Title Hover */
+
+.hero-title:hover .name-first {
+    color: var(--color-accent);
+    transform: translateY(-.08rem);
+}
+
+.hero-title:hover .name-last {
+    color: var(--color-text-primary);
+    transform: translateY(.08rem);
+}
+
+/* Alias */
+
+.hero-alias {
+    margin-bottom: 1.4rem;
+
+    color: var(--color-text-secondary);
+
+    font-size: .95rem;
+    line-height: 1.8;
+
+    opacity: 0;
+    animation: fade-up .8s .7s forwards;
+}
+
+.hero-alias span {
+    color: var(--color-accent);
+    font-weight: var(--fw-semibold);
+}
+
+/* Subtitle */
+
+.hero-subtitle {
+    margin-bottom: 2rem;
+
+    font-size: 1.6rem;
+    font-weight: var(--fw-semibold);
+    line-height: 1.45;
+
+    opacity: 0;
+    animation: fade-up .8s .9s forwards;
+}
+
+.subtitle-line {
+    display: block;
+}
+
+.subtitle-line:last-child {
+    color: var(--color-accent);
+}
+
+/* Description */
+
+.hero-description {
+    max-width: 34rem;
+
+    margin-bottom: 2.5rem;
+
+    color: var(--color-text-secondary);
+
+    font-size: 1.05rem;
+    line-height: 1.9;
+
+    opacity: 0;
+    animation: fade-up .8s 1.1s forwards;
+}
+
+/* Buttons */
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    opacity: 0;
+    animation: fade-up .8s 1.3s forwards;
+}
+
+/* Hero Image */
+
+.hero-image {
+    flex: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transform: translateY(-1rem);
+
+    opacity: 0;
+    animation: fade-right 1s .5s forwards;
+}
+
+/* Image Wrapper */
+
+.image-wrapper {
+    position: relative;
+
+    width: min(var(--hero-image-width), 90vw);
+
+    aspect-ratio: 1;
+
+    transition:
+        transform var(--transition-normal),
+        filter var(--transition-normal);
+}
+
+/* Image Hover */
+
+.image-wrapper:hover {
+    transform: scale(1.02);
+}
+
+/* Profile Images */
+
+.profile-image {
     position: absolute;
     inset: 0;
 
@@ -142,47 +214,167 @@
 
     user-select: none;
     pointer-events: none;
+
+    transition:
+        opacity .5s ease,
+        transform .5s ease,
+        filter .5s ease;
 }
 
-.portrait-samurai {
-    z-index: 1;
-}
+/* Real Image */
 
-.portrait-real {
+.real-image {
+    opacity: 1;
     z-index: 2;
 }
 
-/* ===========================
-   Responsive
-=========================== */
+/* Samurai Image */
 
-@media (max-width: 992px) {
+.samurai-image {
+    opacity: 0;
+    z-index: 1;
+    transform: scale(.96);
+}
+
+/* Future Reveal */
+
+.reveal-mask {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Glow */
+
+.hero-glow {
+    position: absolute;
+    inset: 18%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(220,38,38,.35),
+            transparent 70%
+        );
+
+    filter: blur(4rem);
+
+    z-index: -1;
+
+    animation: hero-glow 6s ease-in-out infinite;
+}
+
+/* Hover Effects */
+
+.image-wrapper:hover .real-image {
+    filter: brightness(1.05);
+}
+
+.image-wrapper:hover .hero-glow {
+    opacity: .9;
+    transform: scale(1.08);
+}
+
+/* Tablet */
+
+@media (max-width: 62rem) {
+
+    .hero {
+        min-height: auto;
+        padding-block: 5rem;
+    }
 
     .hero-container {
-        grid-template-columns: 1fr;
+        flex-direction: column-reverse;
+        gap: 4rem;
         text-align: center;
     }
 
     .hero-content {
-        align-items: center;
-        order: 2;
+        max-width: 100%;
+        padding-top: 0;
     }
 
-    .hero-image {
-        order: 1;
-        margin-bottom: 2rem;
-    }
-
-    .hero-description {
-        max-width: 40rem;
-    }
-
-    .hero-buttons,
-    .hero-social {
+    .hero-title {
         justify-content: center;
     }
 
-    .reveal-mask {
-        width: min(22rem, 100%);
+    .hero-subtitle {
+        justify-content: center;
     }
+
+    .hero-description {
+        margin-inline: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-image {
+        transform: none;
+    }
+
+    .image-wrapper {
+        width: min(26rem, 85vw);
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width: 40rem) {
+
+    .hero {
+        padding-block: 4rem;
+    }
+
+    .hero-container {
+        gap: 3rem;
+    }
+
+    .hero-title {
+        justify-content: center;
+        gap: .45rem;
+
+        font-size: clamp(3rem, 11vw, 4rem);
+
+        line-height: 1;
+    }
+
+    .hero-greeting {
+        font-size: .85rem;
+        letter-spacing: .1rem;
+    }
+
+    .hero-alias {
+        font-size: .9rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 18rem;
+    }
+
+    .image-wrapper {
+        width: min(22rem, 90vw);
+    }
+
 }

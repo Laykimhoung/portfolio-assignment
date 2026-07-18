@@ -1,3 +1,5 @@
+/* Fade */
+
 @keyframes fade-in {
     from {
         opacity: 0;
@@ -56,6 +58,8 @@
     }
 }
 
+/* Scale */
+
 @keyframes zoom-in {
     from {
         opacity: 0;
@@ -68,27 +72,92 @@
     }
 }
 
-@keyframes float {
+/* Hero Name Reveal */
+
+@keyframes reveal-name {
+    from {
+        clip-path: inset(0 100% 0 0);
+        opacity: 0;
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+    }
+}
+
+@keyframes reveal-accent {
+    from {
+        clip-path: inset(0 100% 0 0);
+        opacity: 0;
+        filter: blur(.5rem);
+    }
+
+    70% {
+        filter: blur(.1rem);
+    }
+
+    to {
+        clip-path: inset(0 0 0 0);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+/* Glow */
+
+@keyframes hero-glow {
     0%,
     100% {
-        transform: translateY(0);
+        opacity: .4;
+        transform: scale(1);
     }
 
     50% {
-        transform: translateY(-0.75rem);
+        opacity: .8;
+        transform: scale(1.15);
     }
 }
 
 @keyframes pulse-glow {
     0%,
     100% {
-        box-shadow: 0 0 0 rgba(193, 18, 31, 0);
+        box-shadow: 0 0 0 rgba(193,18,31,0);
     }
 
     50% {
         box-shadow: var(--shadow-glow);
     }
 }
+
+/* Hover */
+
+@keyframes pulse {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.03);
+    }
+}
+
+/* For logo */
+
+@keyframes rotate-in {
+    from {
+        opacity: 0;
+        transform: rotate(-8deg) scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+    }
+}
+
+/* Utility Classes */
 
 .fade-in {
     animation: fade-in .8s ease forwards;
@@ -112,10 +181,6 @@
 
 .zoom-in {
     animation: zoom-in .8s ease forwards;
-}
-
-.float {
-    animation: float 4s ease-in-out infinite;
 }
 
 .glow {
