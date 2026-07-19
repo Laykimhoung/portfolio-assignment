@@ -1,15 +1,7 @@
 /* Image Wrapper */
 
 .image-wrapper {
-    transition:
-        transform var(--transition-normal),
-        filter var(--transition-normal);
-}
-
-/* Image Hover */
-
-.image-wrapper:hover {
-    transform: scale(1.02);
+    transition: filter .35s ease;
 }
 
 /* Image Container */
@@ -38,12 +30,6 @@
 
     user-select: none;
     pointer-events: none;
-
-    transition:
-        opacity .6s ease,
-        transform .6s ease,
-        filter .6s ease,
-        clip-path .7s ease;
 }
 
 /* Real Image */
@@ -51,93 +37,77 @@
 .real-image {
     z-index: 2;
 
-    opacity: 1;
-
-    transform: scale(1);
+    transition: filter .35s ease;
 }
 
 /* Samurai Image */
 
 .samurai-image {
-    z-index: 1;
-
-    opacity: 1;
-
-    transform: scale(.98);
-
-    clip-path: polygon(
-        0 0,
-        0 0,
-        0 100%,
-        0 100%
-    );
-}
-
-/* Revealed */
-
-.image-wrapper.revealed .samurai-image {
-    clip-path: polygon(
-        0 0,
-        100% 0,
-        100% 100%,
-        0 100%
-    );
-
-    transform: scale(1);
-}
-
-/* Slash */
-
-.slash {
     position: absolute;
+    inset: 0;
 
-    top: 50%;
-    left: -160%;
+    z-index: 3;
 
-    width: 180%;
-    height: .35rem;
+    width: 100%;
+    height: 100%;
 
-    opacity: 0;
+    object-fit: contain;
+    object-position: center;
 
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #fff,
-        var(--color-accent),
-        #fff,
-        transparent
-    );
+    pointer-events: none;
 
-    filter: blur(.12rem);
+    /* Bigger reveal area */
+    mask-image:
+        radial-gradient(
+            ellipse var(--reveal-size, 0px) calc(var(--reveal-size, 0px) * .8)
+            at var(--mouse-x, 50%) var(--mouse-y, 50%),
 
-    transform:
-        translateY(-50%)
-        rotate(-22deg);
+            rgba(255,255,255,1) 0%,
+            rgba(255,180,180,1) 20%,
+            rgba(255,90,90,.95) 40%,
+            rgba(255,0,0,.75) 60%,
+            rgba(255,0,0,.35) 80%,
+            transparent 100%
+        );
 
-    z-index: 10;
+    -webkit-mask-image:
+        radial-gradient(
+            ellipse var(--reveal-size, 0px) calc(var(--reveal-size, 0px) * .8)
+            at var(--mouse-x, 50%) var(--mouse-y, 50%),
+
+            rgba(255,255,255,1) 0%,
+            rgba(255,180,180,1) 20%,
+            rgba(255,90,90,.95) 40%,
+            rgba(255,0,0,.75) 60%,
+            rgba(255,0,0,.35) 80%,
+            transparent 100%
+        );
+
+    filter:
+        drop-shadow(0 0 .6rem rgba(255, 0, 0, .45))
+        drop-shadow(0 0 1.6rem rgba(255, 0, 0, .30))
+        drop-shadow(0 0 3rem rgba(255, 0, 0, .15));
 
     transition:
-        left .75s ease,
-        opacity .2s ease;
+        mask-image .45s cubic-bezier(.22, 1, .36, 1),
+        -webkit-mask-image .45s cubic-bezier(.22, 1, .36, 1),
+        filter .35s ease;
 }
 
 /* Hover Effects */
 
 .image-wrapper:hover .real-image {
-    filter: brightness(1.05);
+    filter: brightness(.9);
+}
+
+.image-wrapper:hover .samurai-image {
+    filter:
+        drop-shadow(0 0 .9rem rgba(255, 30, 30, .65))
+        drop-shadow(0 0 2rem rgba(255, 0, 0, .45))
+        drop-shadow(0 0 4rem rgba(255, 0, 0, .25));
 }
 
 .image-wrapper:hover .hero-glow {
-    opacity: .9;
-    transform: scale(1.08);
-}
-
-.image-wrapper.revealed .real-image {
-    opacity: .15;
-    transform: scale(1.02);
-}
-
-.image-wrapper.revealed .slash {
-    left: 120%;
     opacity: 1;
+    transform: scale(1.1);
 }

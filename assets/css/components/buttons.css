@@ -1,4 +1,4 @@
-/* Menu Toggle Button */
+/* =================== Menu Toggle Button ================== */
 
 .menu-toggle{
 
@@ -187,21 +187,20 @@
 
 }
 
-/* Hero Button */
-/* ==========================================
-   BUTTON COMPONENT
-========================================== */
+/* =================== Hero Button ================== */
+
+/* Buttons */
 
 .btn{
     position:relative;
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    gap:.65rem;
+    gap:.75rem;
 
     padding:.95rem 1.8rem;
 
-    border:none;
+    border:.08rem solid transparent;
     border-radius:999rem;
 
     font-family:var(--font-body);
@@ -214,152 +213,43 @@
     overflow:hidden;
 
     transition:
-        transform .35s ease,
-        box-shadow .35s ease,
+        transform .35s cubic-bezier(.22,1,.36,1),
         background .35s ease,
+        border-color .35s ease,
         color .35s ease,
-        border-color .35s ease;
+        box-shadow .35s ease;
 }
 
-/* ==========================================
-   ICON
-========================================== */
+/* Shared */
 
-.btn i,
-.btn span{
+.btn span,
+.btn svg{
+
     transition:
-        transform .35s ease;
-}
-
-/* ==========================================
-   PRIMARY
-========================================== */
-
-.btn-primary{
-
-    color:#fff;
-
-    background:
-    linear-gradient(
-        135deg,
-        #ff5454,
-        #dc2626
-    );
-
-    box-shadow:
-        0 .75rem 2rem rgba(220,38,38,.28);
+        transform .35s cubic-bezier(.22,1,.36,1),
+        opacity .35s ease,
+        filter .35s ease;
 
 }
 
-/* Hover */
-
-.btn-primary:hover{
-
-    transform:
-        translateY(-.25rem);
-
-    box-shadow:
-        0 1.25rem 2.8rem rgba(220,38,38,.45);
-
-}
-
-/* Active */
-
-.btn-primary:active{
-
-    transform:
-        translateY(-.05rem);
-
-}
-
-/* Arrow */
-
-.btn-primary:hover span{
-
-    transform:
-        translateX(.4rem);
-
-}
-
-/* ==========================================
-   SECONDARY
-========================================== */
-
-.btn-secondary{
-
-    color:var(--color-text-primary);
-
-    background:
-        rgba(255,255,255,.05);
-
-    border:
-        .0625rem solid rgba(255,255,255,.14);
-
-    backdrop-filter:
-        blur(.75rem);
-
-}
-
-.btn-secondary:hover{
-
-    transform:
-        translateY(-.25rem);
-
-    border-color:
-        rgba(255,255,255,.35);
-
-    background:
-        rgba(255,255,255,.08);
-
-}
-
-/* ==========================================
-   FOCUS
-========================================== */
-
-.btn:focus-visible{
-
-    outline:none;
-
-    box-shadow:
-        0 0 0 .25rem rgba(220,38,38,.35);
-
-}
-
-/* ==========================================
-   DISABLED
-========================================== */
-
-.btn:disabled{
-
-    opacity:.55;
-
-    cursor:not-allowed;
-
-    pointer-events:none;
-
-}
-
-/* ==========================================
-   RIPPLE
-========================================== */
+/* Ripple */
 
 .btn::before{
 
     content:"";
 
     position:absolute;
-
     inset:0;
 
     background:
-
-    linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,.25),
-        transparent
-    );
+        linear-gradient(
+            120deg,
+            transparent,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.24),
+            rgba(255,255,255,.12),
+            transparent
+        );
 
     transform:
         translateX(-140%);
@@ -376,17 +266,349 @@
 
 }
 
-/* ==========================================
-   RESPONSIVE
-========================================== */
+/* Project Button */
+
+.btn-project{
+
+    min-width:11rem;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--color-accent-light),
+            var(--color-accent)
+        );
+
+    color:var(--btn-project-text,#fff);
+
+    border:.08rem solid rgba(220,38,38,.35);
+
+    box-shadow:
+        0 .45rem 1rem rgba(0,0,0,.18),
+        0 0 .8rem rgba(220,38,38,.12);
+
+}
+
+/* Hover */
+
+.btn-project:hover{
+
+    transform:
+        translateY(-.2rem);
+
+    border-color:rgba(220,38,38,.65);
+
+    box-shadow:
+        0 .8rem 1.8rem rgba(0,0,0,.24),
+        0 0 1rem rgba(220,38,38,.22);
+
+}
+
+/* Active */
+
+.btn-project:active{
+
+    transform:
+        translateY(0)
+        scale(.98);
+
+}
+
+/* Arrow */
+
+.btn-project span{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+}
+
+.btn-project:hover span{
+
+    transform:
+        translateX(.35rem)
+        rotate(-8deg);
+
+}
+
+/* Focus */
+
+.btn:focus-visible{
+
+    outline:none;
+
+    box-shadow:
+        0 0 0 .22rem rgba(220,38,38,.28);
+
+}
+
+/* Disabled */
+
+.btn:disabled,
+.btn.disabled{
+
+    opacity:.5;
+
+    filter:grayscale(.3);
+
+    pointer-events:none;
+
+}
+
+/* Mobile */
 
 @media (max-width:48rem){
+
+    .hero-buttons{
+
+        display:flex;
+        flex-direction:column;
+
+        width:100%;
+
+    }
 
     .btn{
 
         width:100%;
 
         justify-content:center;
+
+    }
+
+}
+
+/* Contact Button */
+
+.btn-contact{
+
+    color:var(--color-text-primary);
+
+    border:.08rem solid rgba(220,38,38,.35);
+
+    backdrop-filter:blur(1rem);
+
+    -webkit-backdrop-filter:blur(1rem);
+
+    box-shadow:
+        0 .45rem 1rem rgba(0,0,0,.18),
+        0 0 .8rem rgba(220,38,38,.12);
+
+}
+
+/* Wrapper */
+
+.btn-contact .svg-wrapper{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+/* SVG */
+
+.btn-contact svg{
+
+    display:block;
+
+    transform-origin:center center;
+
+    transition:
+        transform .3s cubic-bezier(.22,1,.36,1);
+
+}
+
+/* Text */
+
+.btn-contact__text{
+
+    margin-left:.35rem;
+
+    transition:
+        transform .3s cubic-bezier(.22,1,.36,1);
+
+}
+
+/* Hover */
+
+.btn-contact:hover{
+
+    border-color:rgba(220,38,38,.45);
+
+    transform:
+        translateY(-.2rem);
+
+    box-shadow:
+        0 .8rem 1.6rem rgba(0,0,0,.2);
+
+}
+
+/* Floating Wrapper */
+
+.btn-contact:hover .svg-wrapper{
+
+    animation:
+        fly-1 .6s ease-in-out infinite alternate;
+
+}
+
+/* Plane */
+
+.btn-contact:hover svg{
+
+    transform:
+        translateX(.8rem)
+        rotate(45deg)
+        scale(1.08);
+
+}
+
+/* Text */
+
+.btn-contact:hover .btn-contact__text{
+
+    transform:
+
+        translateX(.35rem);
+
+}
+
+/* Click */
+
+.btn-contact:active{
+
+    transform:
+        scale(.96);
+
+}
+
+/* Animation */
+
+@keyframes fly-1{
+
+    from{
+
+        transform:
+            translateY(.08rem);
+
+    }
+
+    to{
+
+        transform:
+            translateY(-.08rem);
+
+    }
+
+}
+
+/* Project Layout */
+
+.btn-project{
+
+    min-width:11rem;
+
+}
+
+/* Icon */
+
+.btn-project__icon{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:
+
+        transform .35s cubic-bezier(.22,1,.36,1);
+
+}
+
+.btn-project__icon svg{
+
+    display:block;
+
+    transition:
+
+        transform .35s cubic-bezier(.22,1,.36,1);
+
+}
+
+/* Text */
+
+.btn-project__text{
+
+    transition:
+
+        transform .35s cubic-bezier(.22,1,.36,1),
+
+        opacity .35s ease;
+
+}
+
+/* Hover */
+
+.btn-project:hover{
+
+    transform:
+
+        translateY(-.2rem);
+
+}
+
+/* Float like Contact */
+
+.btn-project:hover .btn-project__icon{
+
+    animation:
+
+        arrow-float .6s ease-in-out infinite alternate;
+
+}
+
+/* Arrow */
+
+.btn-project:hover svg{
+
+    transform:
+
+        translateX(.75rem)
+
+        scale(1.08);
+
+}
+
+/* Text */
+
+.btn-project:hover .btn-project__text{
+
+    transform:
+
+        translateX(.3rem);
+
+}
+
+@keyframes arrow-float{
+
+    from{
+
+        transform:
+
+            translateY(.08rem);
+
+    }
+
+    to{
+
+        transform:
+
+            translateY(-.08rem);
 
     }
 

@@ -102,6 +102,8 @@
 
     --btn-padding-y: .95rem;
     --btn-padding-x: 1.8rem;
+
+    --btn-project-text: #ffffff;
 }
 
 [data-theme="light"] {
@@ -121,6 +123,8 @@
     --color-accent-hover: #b3121f;
 
     --color-border: rgba(0,0,0,.08);
+    --btn-project-text: #18181b;
+    
 
     /*  Shadow  */
 
