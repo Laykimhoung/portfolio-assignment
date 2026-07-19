@@ -1,0 +1,143 @@
+/* Image Wrapper */
+
+.image-wrapper {
+    transition:
+        transform var(--transition-normal),
+        filter var(--transition-normal);
+}
+
+/* Image Hover */
+
+.image-wrapper:hover {
+    transform: scale(1.02);
+}
+
+/* Image Container */
+
+.image-container {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Profile Images */
+
+.profile-image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    user-select: none;
+    pointer-events: none;
+
+    transition:
+        opacity .6s ease,
+        transform .6s ease,
+        filter .6s ease,
+        clip-path .7s ease;
+}
+
+/* Real Image */
+
+.real-image {
+    z-index: 2;
+
+    opacity: 1;
+
+    transform: scale(1);
+}
+
+/* Samurai Image */
+
+.samurai-image {
+    z-index: 1;
+
+    opacity: 1;
+
+    transform: scale(.98);
+
+    clip-path: polygon(
+        0 0,
+        0 0,
+        0 100%,
+        0 100%
+    );
+}
+
+/* Revealed */
+
+.image-wrapper.revealed .samurai-image {
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        0 100%
+    );
+
+    transform: scale(1);
+}
+
+/* Slash */
+
+.slash {
+    position: absolute;
+
+    top: 50%;
+    left: -160%;
+
+    width: 180%;
+    height: .35rem;
+
+    opacity: 0;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #fff,
+        var(--color-accent),
+        #fff,
+        transparent
+    );
+
+    filter: blur(.12rem);
+
+    transform:
+        translateY(-50%)
+        rotate(-22deg);
+
+    z-index: 10;
+
+    transition:
+        left .75s ease,
+        opacity .2s ease;
+}
+
+/* Hover Effects */
+
+.image-wrapper:hover .real-image {
+    filter: brightness(1.05);
+}
+
+.image-wrapper:hover .hero-glow {
+    opacity: .9;
+    transform: scale(1.08);
+}
+
+.image-wrapper.revealed .real-image {
+    opacity: .15;
+    transform: scale(1.02);
+}
+
+.image-wrapper.revealed .slash {
+    left: 120%;
+    opacity: 1;
+}

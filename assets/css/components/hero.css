@@ -185,64 +185,8 @@
 
 .image-wrapper {
     position: relative;
-
     width: min(var(--hero-image-width), 90vw);
-
     aspect-ratio: 1;
-
-    transition:
-        transform var(--transition-normal),
-        filter var(--transition-normal);
-}
-
-/* Image Hover */
-
-.image-wrapper:hover {
-    transform: scale(1.02);
-}
-
-/* Profile Images */
-
-.profile-image {
-    position: absolute;
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    user-select: none;
-    pointer-events: none;
-
-    transition:
-        opacity .5s ease,
-        transform .5s ease,
-        filter .5s ease;
-}
-
-/* Real Image */
-
-.real-image {
-    opacity: 1;
-    z-index: 2;
-}
-
-/* Samurai Image */
-
-.samurai-image {
-    opacity: 0;
-    z-index: 1;
-    transform: scale(.96);
-}
-
-/* Future Reveal */
-
-.reveal-mask {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 3;
 }
 
 /* Glow */
@@ -265,17 +209,6 @@
     z-index: -1;
 
     animation: hero-glow 6s ease-in-out infinite;
-}
-
-/* Hover Effects */
-
-.image-wrapper:hover .real-image {
-    filter: brightness(1.05);
-}
-
-.image-wrapper:hover .hero-glow {
-    opacity: .9;
-    transform: scale(1.08);
 }
 
 /* Tablet */

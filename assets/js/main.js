@@ -1,6 +1,7 @@
 import { loadComponent } from "./modules/component-loader.js";
 import { initTheme } from "./modules/theme.js";
 import { initMobileMenu } from "./modules/mobile-menu.js";
+import "./modules/reveal-mask.js";
 
 /* Load Components */
 await Promise.all([
