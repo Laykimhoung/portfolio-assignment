@@ -211,6 +211,92 @@
     animation: hero-glow 6s ease-in-out infinite;
 }
 
+/* Hover Hint */
+
+.image-container{
+    position: relative;
+    overflow: hidden;
+}
+
+.hover-hint{
+    position: absolute;
+    top: .2rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .15rem;
+
+    z-index: 100;
+
+    pointer-events: none;
+    user-select: none;
+    white-space: nowrap;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity .15s ease,
+        visibility .15s ease;
+}
+
+/* Hide immediately on hover */
+
+.image-container:hover .hover-hint{
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Text */
+
+.hover-hint span:first-child{
+
+    font-family:"Space Grotesk",sans-serif;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
+    color:var(--color-text-primary);
+
+}
+
+/* Arrow */
+
+.hint-arrow{
+    font-family: "Inter", sans-serif;
+
+    color: #DC2626;
+
+    font-size: 1.25rem;
+    line-height: 1;
+
+    animation: arrowBounce 1.5s ease-in-out infinite;
+}
+
+/* Arrow Animation */
+
+@keyframes arrowBounce{
+
+    0%,
+    100%{
+        transform: translateY(0);
+    }
+
+    50%{
+        transform: translateY(.35rem);
+    }
+
+}
+
 /* Tablet */
 
 @media (max-width: 62rem) {
