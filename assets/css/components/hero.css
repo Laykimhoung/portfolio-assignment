@@ -46,16 +46,20 @@
 
 /* Title */
 
-.hero-title {
-    display: flex;
-    flex-wrap: wrap;
-    gap: .8rem;
+.hero-title{
+    display:flex;
+    flex-wrap:nowrap;          /* Never wrap */
+    justify-content:flex-start;
+    align-items:center;
+    gap:.5rem;
 
-    margin-bottom: .75rem;
+    margin-bottom:.75rem;
 
-    font-family: var(--font-heading);
-    font-size: var(--fs-hero);
-    line-height: .92;
+    font-family:var(--font-heading);
+    font-size:clamp(2rem,6vw,var(--fs-hero));
+    line-height:.92;
+
+    white-space:nowrap;        /* Keep on one line */
 }
 
 /* Name */
@@ -355,14 +359,16 @@
         gap: 3rem;
     }
 
-    .hero-title {
-        justify-content: center;
-        gap: .45rem;
+    .hero-title{
+    justify-content:center;
+    gap:.35rem;
 
-        font-size: clamp(3rem, 11vw, 4rem);
+    font-size:clamp(1.8rem,8vw,3rem);
 
-        line-height: 1;
-    }
+    line-height:1;
+
+    white-space:nowrap;
+}
 
     .hero-greeting {
         font-size: .85rem;

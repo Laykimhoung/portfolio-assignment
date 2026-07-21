@@ -1,8 +1,11 @@
 /* Container */
 
 .container{
-    width:min(100% - 2rem,var(--container-width));
+    max-width:var(--container-width);
     margin-inline:auto;
+    padding-inline:1.5rem;
+    width:100%;
+    box-sizing:border-box;
 }
 
 /* Section */
