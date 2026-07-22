@@ -2073,50 +2073,11 @@ body {
     287px 1272px var(--star-color);
 }
 
-#title {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  color: var(--star-color);
-  text-align: center;
-  font-family: "lato", sans-serif;
-  font-weight: 300;
-  font-size: 50px;
-  letter-spacing: 10px;
-  margin-top: -60px;
-  padding-left: 10px;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: introFadeUp 1.2s ease-out forwards;
-}
-
-#title span {
-    background: linear-gradient(white, #38495a);
-
-    background-clip: text;          /* Standard */
-    -webkit-background-clip: text; /* Safari/Chrome */
-
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-}
-
 @keyframes animStar {
   from {
     transform: translateY(0px);
   }
   to {
     transform: translateY(-2000px);
-  }
-}
-
-@keyframes introFadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

@@ -5,6 +5,9 @@ Thumbs.db
 # Visual Studio Code
 .vscode/
 
+# Antigravity Agent Workspace
+.agents/
+
 # Logs
 *.log
 

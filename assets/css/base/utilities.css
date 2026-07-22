@@ -125,3 +125,22 @@
 .absolute{
     position:absolute;
 }
+
+/* Responsive Overrides */
+@media (min-width: 1400px) {
+    .container {
+        width: min(100% - 2rem, 80rem);
+    }
+}
+
+@media (max-width: 1200px) {
+    .container {
+        width: min(100% - 2rem, 68rem);
+    }
+}
+
+@media (max-width: 576px) {
+    .section {
+        padding-block: 4rem;
+    }
+}

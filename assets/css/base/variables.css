@@ -12,6 +12,7 @@
 
     --color-accent: #DC2626;
     --color-accent-hover: #EF4444;
+    --color-accent-light: #EF4444;
 
     --color-border: rgba(255,255,255,.08);
 
@@ -121,6 +122,7 @@
 
     --color-accent: #d11a2a;
     --color-accent-hover: #b3121f;
+    --color-accent-light: #f87171;
 
     --color-border: rgba(0,0,0,.08);
     --btn-project-text: #18181b;

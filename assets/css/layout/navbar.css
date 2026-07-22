@@ -256,7 +256,147 @@
 }
 
 .logo-icon{
-
     animation:logoFloat 5s ease-in-out infinite;
+}
 
+/* =================== Responsive Overrides ================== */
+
+/* Large Desktop */
+@media (min-width: 1400px) {
+    .navbar {
+        width: min(90%, 80rem);
+    }
+}
+
+/* Desktop */
+@media (max-width: 1200px) {
+    .navbar {
+        width: 94%;
+    }
+
+    .navbar-container {
+        padding-inline: 1rem;
+    }
+
+    .logo-icon {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+
+    .logo-text {
+        font-size: 1.75rem;
+    }
+
+    .nav-link {
+        padding: .65rem .8rem;
+        font-size: .9rem;
+    }
+}
+
+/* Small Laptop */
+@media (max-width: 1024px) {
+    .navbar {
+        width: 96%;
+    }
+
+    .logo {
+        gap: .7rem;
+    }
+
+    .logo-icon {
+        width: 2.7rem;
+        height: 2.7rem;
+        padding-right: .7rem;
+    }
+
+    .logo-text {
+        font-size: 1.55rem;
+    }
+
+    .nav-menu {
+        gap: .2rem;
+    }
+
+    .nav-link {
+        padding: .6rem .65rem;
+        font-size: .88rem;
+    }
+
+    .nav-actions {
+        gap: .45rem;
+    }
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .navbar {
+        height: 4.5rem;
+    }
+
+    .nav-center {
+        display: none;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .navbar {
+        top: .8rem;
+        width: 95%;
+        height: 4rem;
+    }
+
+    .navbar-container {
+        padding-inline: .8rem;
+    }
+
+    .logo {
+        gap: .6rem;
+    }
+
+    .logo-icon {
+        width: 2.4rem;
+        height: 2.4rem;
+        padding-right: .55rem;
+    }
+
+    .logo-text {
+        font-size: 1.25rem;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 400px) {
+    .navbar {
+        width: 96%;
+    }
+
+    .logo-icon {
+        width: 2.2rem;
+        height: 2.2rem;
+        padding-right: .45rem;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    .nav-actions {
+        gap: .35rem;
+    }
+}
+
+/* Very Small Mobile */
+@media (max-width: 340px) {
+    .logo-text {
+        font-size: .9rem;
+    }
+}
+
+/* Landscape orientation */
+@media (max-height: 650px) and (orientation: landscape) {
+    .navbar {
+        top: .5rem;
+        height: 4rem;
+    }
 }

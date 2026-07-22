@@ -1,4 +1,4 @@
-function initRevealMask() {
+export function initRevealMask() {
     const wrapper = document.querySelector(".image-wrapper");
 
     if (!wrapper) return;
@@ -33,6 +33,4 @@ function initRevealMask() {
     wrapper.addEventListener("mouseleave", () => {
         wrapper.style.setProperty("--reveal-size", "0px");
     });
-}
-
-initRevealMask();
+}

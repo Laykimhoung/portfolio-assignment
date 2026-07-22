@@ -150,5 +150,12 @@
         font-size:.84rem;
         border-radius:.8rem;
     }
-
 }
+
+/* Landscape Max Height */
+@media (max-height: 650px) and (orientation: landscape) {
+    .mobile-nav {
+        max-height: 70vh;
+        overflow-y: auto;
+    }
+}

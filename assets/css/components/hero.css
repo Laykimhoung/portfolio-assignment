@@ -347,6 +347,23 @@
 
 }
 
+/* Small Tablet / Large Mobile */
+
+@media (max-width: 48rem) {
+
+    .hero-buttons {
+
+        display: flex;
+
+        flex-direction: column;
+
+        width: 100%;
+
+    }
+
+}
+
+
 /* Mobile */
 
 @media (max-width: 40rem) {

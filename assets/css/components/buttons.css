@@ -272,46 +272,6 @@
 
     min-width:11rem;
 
-    background:
-        linear-gradient(
-            135deg,
-            var(--color-accent-light),
-            var(--color-accent)
-        );
-
-    color:var(--btn-project-text,#fff);
-
-    border:.08rem solid rgba(220,38,38,.35);
-
-    box-shadow:
-        0 .45rem 1rem rgba(0,0,0,.18),
-        0 0 .8rem rgba(220,38,38,.12);
-
-}
-
-/* Hover */
-
-.btn-project:hover{
-
-    transform:
-        translateY(-.2rem);
-
-    border-color:rgba(220,38,38,.65);
-
-    box-shadow:
-        0 .8rem 1.8rem rgba(0,0,0,.24),
-        0 0 1rem rgba(220,38,38,.22);
-
-}
-
-/* Active */
-
-.btn-project:active{
-
-    transform:
-        translateY(0)
-        scale(.98);
-
 }
 
 /* Arrow */
@@ -360,15 +320,6 @@
 
 @media (max-width:48rem){
 
-    .hero-buttons{
-
-        display:flex;
-        flex-direction:column;
-
-        width:100%;
-
-    }
-
     .btn{
 
         width:100%;
@@ -381,7 +332,8 @@
 
 /* Contact Button */
 
-.btn-contact{
+.btn-contact,
+.btn-project{
 
     color:var(--color-text-primary);
 
@@ -435,7 +387,8 @@
 
 /* Hover */
 
-.btn-contact:hover{
+.btn-contact:hover,
+.btn-project:hover{
 
     border-color:rgba(220,38,38,.45);
 
@@ -479,7 +432,8 @@
 
 /* Click */
 
-.btn-contact:active{
+.btn-contact:active,
+.btn-project:active{
 
     transform:
         scale(.96);
@@ -552,16 +506,6 @@
 
 }
 
-/* Hover */
-
-.btn-project:hover{
-
-    transform:
-
-        translateY(-.2rem);
-
-}
-
 /* Float like Contact */
 
 .btn-project:hover .btn-project__icon{
@@ -613,3 +557,24 @@
     }
 
 }
+
+/* Responsive Overrides */
+@media (max-width: 900px) {
+    .menu-toggle {
+        display: flex;
+        width: 2.30rem;
+        height: 2.30rem;
+    }
+
+    .menu-icon {
+        width: 1.20rem;
+        height: 1.20rem;
+    }
+
+    .menu-toggle:hover {
+        background: var(--color-accent);
+        color: #fff;
+        box-shadow: var(--shadow-glow);
+        transform: scale(1.05);
+    }
+}

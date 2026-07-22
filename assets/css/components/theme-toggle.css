@@ -564,3 +564,17 @@
     transform: translateY(-100%) translateX(50%);
   }
 }
+
+/* Responsive Overrides */
+@media (max-width: 576px) {
+  .theme-switch {
+    --toggle-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .theme-switch {
+    --toggle-size: 11px;
+  }
+}
+

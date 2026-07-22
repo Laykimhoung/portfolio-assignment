@@ -1,7 +1,7 @@
 import { loadComponent } from "./modules/component-loader.js";
 import { initTheme } from "./modules/theme.js";
 import { initMobileMenu } from "./modules/mobile-menu.js";
-import "./modules/reveal-mask.js";
+import { initRevealMask } from "./modules/reveal-mask.js";
 
 /* Load Components */
 await Promise.all([
@@ -36,3 +36,4 @@ window.addEventListener("scroll", () => {
 /* Initialize Modules */
 initTheme();
 initMobileMenu();
+initRevealMask();
