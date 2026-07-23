@@ -1,7 +1,7 @@
 /**
  * ==========================================
  * SCROLL ANIMATIONS MODULE
- * Uses Intersection Observer for reveal animations.
+ * Uses Intersection Observer for reveal animations based on data attributes.
  * ==========================================
  */
 
@@ -16,27 +16,23 @@ export function initScrollAnimations() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('in-view');
-                // Optional: Stop observing after it appears once
-                // observer.unobserve(entry.target); 
+                
+                // Add staggered delay if attribute is present
+                const delay = entry.target.getAttribute('data-delay');
+                if (delay) {
+                    entry.target.style.transitionDelay = `${delay}ms`;
+                    
+                    // Clear the inline transitionDelay after animation finishes (duration 800ms + delay)
+                    setTimeout(() => {
+                        entry.target.style.transitionDelay = '';
+                    }, parseInt(delay) + 1000);
+                }
             }
         });
     }, options);
 
-    // Elements to observe
-    const elementsToObserve = document.querySelectorAll(`
-        .timeline-item, 
-        .quote-block, 
-        .value-card, 
-        .about-hero-title, 
-        .about-hero-subtitle, 
-        .about-me-image-wrapper, 
-        .about-me-content,
-        .section-header,
-        .identity-content,
-        .goal-item,
-        .cta-text,
-        .cta-button-wrapper
-    `);
+    // Observe elements with data-animation attribute
+    const elementsToObserve = document.querySelectorAll('[data-animation]');
 
     elementsToObserve.forEach(el => {
         observer.observe(el);

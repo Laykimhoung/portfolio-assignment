@@ -3,13 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>About | XAKURAII</title>
-
-    <meta
-        name="description"
-        content="Modern responsive portfolio website by XAKURAII"
-    />
+    <meta name="description" content="Modern responsive portfolio website by XAKURAII" />
     <meta name="author" content="XAKURAII" />
     <meta name="theme-color" content="#0B0B0D" />
 
@@ -25,19 +20,14 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100..900&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/pages/about.css">
 </head>
-
   
-  <body>
+<body>
     <!-- Background -->
     <div id="background"></div>
 
@@ -46,44 +36,59 @@
 
     <!-- Main -->
     <main>
-      <!-- 1. About Hero -->
-      <section class="about-hero">
-        <div class="about-hero-content">
-          <h1 class="about-hero-title">The Journey Behind</h1>
-          <h2 class="about-hero-subtitle">XAKURAII</h2>
-        </div>
-      </section>
-
-      <!-- 2. About Me (Required Section) -->
+      <!-- 1. About Me (Split Layout + Interests) -->
       <section class="page-section about-me-section">
-        <div class="container about-me-container">
-          <figure class="about-me-image-wrapper">
-            <img src="assets/images/profile/real-version.webp" alt="Lay Kimhoung" class="about-me-image" />
-          </figure>
-          
-          <article class="about-me-content">
-            <span class="section-label">Who I Am</span>
-            <h2 class="section-title">About Me</h2>
-            <p class="about-me-text">
-              Lay Kimhoung is a Computer Science student from Siem Reap, Cambodia, who enjoys transforming ideas into functional software and polished user experiences. Programming, to me, is more than writing code—it is a way to solve problems, express creativity, and continuously improve through learning.
-            </p>
-            <p class="about-me-text">
-              Rather than chasing shortcuts, I prefer understanding how things work from the ground up, building strong foundations, and refining every project with attention to detail and quality.
-            </p>
-          </article>
+        <div class="container">
+          <div class="about-split-layout">
+            <div class="about-me-left">
+              <figure class="about-me-image-wrapper" data-animation="reveal-image-slow">
+                <div class="image-glow"></div>
+                <img src="assets/images/profile/real-version.webp" alt="Lay Kimhoung" class="about-me-image" />
+              </figure>
+            </div>
+            
+            <div class="about-me-right">
+              <header class="section-header-left" data-animation="fade-up-slow" data-delay="100">
+                <span class="section-label">01. Who I Am</span>
+                <h2 class="section-title">Lay Kimhoung</h2>
+              </header>
+              <div class="about-text-content" data-animation="fade-up-slow" data-delay="300">
+                <p class="about-me-text">
+                  I am a Computer Science student from Siem Reap, Cambodia, who enjoys transforming ideas into functional software and polished user experiences. Programming, to me, is more than writing code—it is a way to solve problems, express creativity, and continuously improve through learning.
+                </p>
+                <p class="about-me-text">
+                  Rather than chasing shortcuts, I prefer understanding how things work from the ground up, building strong foundations, and refining every project with attention to detail and quality.
+                </p>
+              </div>
+
+              <div class="interests-block" data-animation="fade-up-slow" data-delay="500">
+                <h3 class="interests-title">Interests & Hobbies</h3>
+                <div class="interests-tags">
+                  <span class="interest-tag"><i data-lucide="code"></i> Web Development</span>
+                  <span class="interest-tag"><i data-lucide="cpu"></i> Artificial Intelligence</span>
+                  <span class="interest-tag"><i data-lucide="layout"></i> UI/UX Design</span>
+                  <span class="interest-tag"><i data-lucide="goal"></i> Football (FCB)</span>
+                  <span class="interest-tag"><i data-lucide="tv"></i> Anime</span>
+                  <span class="interest-tag"><i data-lucide="gamepad-2"></i> Gaming</span>
+                  <span class="interest-tag"><i data-lucide="search"></i> Tech Research</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- 3. My Journey -->
-      <section class="page-section">
+      <!-- 2. My Journey (Timeline) -->
+      <section class="page-section journey-section">
         <div class="container">
-          <header class="section-header">
-            <span class="section-label">The Story</span>
+          <header class="section-header center" data-animation="fade-up">
+            <span class="section-label">02. The Origin</span>
             <h2 class="section-title">My Journey</h2>
+            <p class="section-subtitle">How I went from a different path to discovering a passion for code.</p>
           </header>
 
           <div class="timeline">
-            <div class="timeline-item timeline-left">
+            <div class="timeline-item timeline-left" data-animation="fade-right">
               <div class="timeline-content">
                 <span class="timeline-date">The Beginning</span>
                 <h3 class="timeline-title">Unexpected Path</h3>
@@ -91,7 +96,7 @@
               </div>
             </div>
 
-            <div class="timeline-item timeline-right">
+            <div class="timeline-item timeline-right" data-animation="fade-left">
               <div class="timeline-content">
                 <span class="timeline-date">High School</span>
                 <h3 class="timeline-title">Discovering Tech</h3>
@@ -99,7 +104,7 @@
               </div>
             </div>
 
-            <div class="timeline-item timeline-left">
+            <div class="timeline-item timeline-left" data-animation="fade-right">
               <div class="timeline-content">
                 <span class="timeline-date">The Choice</span>
                 <h3 class="timeline-title">Building Software</h3>
@@ -107,7 +112,7 @@
               </div>
             </div>
 
-            <div class="timeline-item timeline-right">
+            <div class="timeline-item timeline-right" data-animation="fade-left">
               <div class="timeline-content">
                 <span class="timeline-date">Turning Point</span>
                 <h3 class="timeline-title">Hello World</h3>
@@ -115,7 +120,7 @@
               </div>
             </div>
 
-            <div class="timeline-item timeline-left">
+            <div class="timeline-item timeline-left" data-animation="fade-right">
               <div class="timeline-content">
                 <span class="timeline-date">Collaboration</span>
                 <h3 class="timeline-title">Embracing GitHub</h3>
@@ -126,183 +131,157 @@
         </div>
       </section>
 
-      <!-- 4. Education -->
-      <section class="page-section">
+      <!-- 3. Education (Stepped Layout) -->
+      <section class="page-section education-section">
         <div class="container">
-          <header class="section-header">
-            <span class="section-label">Academic Path</span>
-            <h2 class="section-title">Education</h2>
-          </header>
-
-          <div class="values-grid">
-            <div class="value-card">
-              <div class="value-icon-wrapper">
-                <i data-lucide="book-open"></i>
-              </div>
-              <h3 class="value-title">Banteaychas Primary School</h3>
-              <p class="value-desc">Siem Reap (2013–2018)</p>
+          <div class="education-layout">
+            <div class="education-info" data-animation="fade-right">
+              <header class="section-header-left">
+                <span class="section-label">03. Academic Path</span>
+                <h2 class="section-title">Education</h2>
+              </header>
+              <p class="education-intro">My academic journey has always been rooted in Siem Reap, building a foundation of knowledge and discipline step by step.</p>
             </div>
-            <div class="value-card">
-              <div class="value-icon-wrapper">
-                <i data-lucide="graduation-cap"></i>
+            
+            <div class="education-steps">
+              <div class="edu-step" data-animation="fade-up" data-delay="0">
+                <div class="edu-icon"><i data-lucide="book-open"></i></div>
+                <div class="edu-details">
+                  <span class="edu-year">2013 &ndash; 2018</span>
+                  <h3 class="edu-school">Banteaychas Primary School</h3>
+                  <p class="edu-location">Siem Reap</p>
+                </div>
               </div>
-              <h3 class="value-title">Angkor High School</h3>
-              <p class="value-desc">Siem Reap (2019–2024)</p>
-            </div>
-            <div class="value-card">
-              <div class="value-icon-wrapper">
-                <i data-lucide="university"></i>
+              <div class="edu-step" data-animation="fade-up" data-delay="150">
+                <div class="edu-icon"><i data-lucide="graduation-cap"></i></div>
+                <div class="edu-details">
+                  <span class="edu-year">2019 &ndash; 2024</span>
+                  <h3 class="edu-school">Angkor High School</h3>
+                  <p class="edu-location">Siem Reap</p>
+                </div>
               </div>
-              <h3 class="value-title">Angkor University</h3>
-              <p class="value-desc">Bachelor of Computer Science (2025–Present)</p>
+              <div class="edu-step highlight-step" data-animation="fade-up" data-delay="300">
+                <div class="edu-icon"><i data-lucide="university"></i></div>
+                <div class="edu-details">
+                  <span class="edu-year">2025 &ndash; Present</span>
+                  <h3 class="edu-school">Angkor University</h3>
+                  <p class="edu-location">Bachelor of Computer Science</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 5. The Story Behind XAKURAII -->
-      <section class="page-section identity-section">
+      <!-- 4. What Drives Me (Values Masonry/Grid) -->
+      <section class="page-section drives-section">
         <div class="container">
-          <div class="identity-content">
-            <header class="section-header">
-              <span class="section-label">Digital Identity</span>
-              <h2 class="section-title">The Name XAKURAII</h2>
-            </header>
-            <p class="identity-text">
-              <span class="identity-highlight">XAKURAII</span> represents creativity, discipline, continuous learning, and inspiration drawn from Samurai culture. 
-            </p>
-            <p class="identity-text">
-              It is not just an alias, but a reminder to approach development with precision, honor the craft, and constantly sharpen my skills.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 6. My Philosophy -->
-      <section class="page-section">
-        <div class="container">
-          <div class="quote-block">
-            <div class="quote-icon">
-              <i data-lucide="quote"></i>
+          <div class="drives-layout">
+            <div class="drives-intro" data-animation="fade-right">
+              <header class="section-header-left">
+                <span class="section-label">04. Core Values</span>
+                <h2 class="section-title">What Drives Me</h2>
+              </header>
+              <p class="drives-text">
+                These core principles guide my work ethic, design decisions, and continuous pursuit of excellence in software engineering.
+              </p>
             </div>
-            <h2 class="quote-text"><span>Learning</span> every day, <span>growing</span> every step.</h2>
-            <p class="quote-subtext">"Study with curiosity to discover deeper meaning, not just to memorize without understanding."</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- 7. What Drives Me -->
-      <section class="page-section">
-        <div class="container">
-          <header class="section-header">
-            <span class="section-label">Core Values</span>
-            <h2 class="section-title">What Drives Me</h2>
-          </header>
-          
-          <div class="values-grid">
-            <div class="value-card">
-              <div class="value-icon-wrapper">
-                <i data-lucide="search"></i>
+            
+            <div class="values-grid">
+              <div class="value-card" data-animation="fade-up" data-delay="0">
+                <div class="value-icon-wrapper"><i data-lucide="search"></i></div>
+                <h3 class="value-title">Curiosity</h3>
+                <p class="value-desc">Exploring how systems work beneath the surface.</p>
               </div>
-              <h3 class="value-title">Curiosity</h3>
-              <p class="value-desc">Exploring how systems work beneath the surface.</p>
-            </div>
-            <div class="value-card">
-              <div class="value-icon-wrapper">
-                <i data-lucide="award"></i>
+              <div class="value-card" data-animation="fade-up" data-delay="100">
+                <div class="value-icon-wrapper"><i data-lucide="award"></i></div>
+                <h3 class="value-title">Quality</h3>
+                <p class="value-desc">Crafting reliable and well-architected solutions.</p>
               </div>
-              <h3 class="value-title">Quality</h3>
-              <p class="value-desc">Crafting reliable and well-architected solutions.</p>
-            </div>
-            <div class="value-card">
-              <div class="value-icon-wrapper">
-                <i data-lucide="zap"></i>
+              <div class="value-card" data-animation="fade-up" data-delay="200">
+                <div class="value-icon-wrapper"><i data-lucide="zap"></i></div>
+                <h3 class="value-title">Continuous Learning</h3>
+                <p class="value-desc">Embracing new technologies every day.</p>
               </div>
-              <h3 class="value-title">Continuous Learning</h3>
-              <p class="value-desc">Embracing new technologies every day.</p>
-            </div>
-            <div class="value-card">
-              <div class="value-icon-wrapper">
-                <i data-lucide="palette"></i>
+              <div class="value-card" data-animation="fade-up" data-delay="0">
+                <div class="value-icon-wrapper"><i data-lucide="palette"></i></div>
+                <h3 class="value-title">Creativity</h3>
+                <p class="value-desc">Designing interfaces that are functional and beautiful.</p>
               </div>
-              <h3 class="value-title">Creativity</h3>
-              <p class="value-desc">Designing interfaces that are functional and beautiful.</p>
-            </div>
-            <div class="value-card">
-              <div class="value-icon-wrapper">
-                <i data-lucide="puzzle"></i>
+              <div class="value-card" data-animation="fade-up" data-delay="100">
+                <div class="value-icon-wrapper"><i data-lucide="puzzle"></i></div>
+                <h3 class="value-title">Problem Solving</h3>
+                <p class="value-desc">Turning complex challenges into simple, elegant code.</p>
               </div>
-              <h3 class="value-title">Problem Solving</h3>
-              <p class="value-desc">Turning complex challenges into simple, elegant code.</p>
-            </div>
-            <div class="value-card">
-              <div class="value-icon-wrapper">
-                <i data-lucide="shield"></i>
+              <div class="value-card" data-animation="fade-up" data-delay="200">
+                <div class="value-icon-wrapper"><i data-lucide="shield"></i></div>
+                <h3 class="value-title">Discipline</h3>
+                <p class="value-desc">Staying focused and consistent on long-term goals.</p>
               </div>
-              <h3 class="value-title">Discipline</h3>
-              <p class="value-desc">Staying focused and consistent on long-term goals.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 8. Future Goals -->
-      <section class="page-section">
+      <!-- 5. Future Goals & Current Goal (Numbered Premium List) -->
+      <section class="page-section goals-section">
         <div class="container">
-          <header class="section-header">
-            <span class="section-label">Looking Ahead</span>
-            <h2 class="section-title">Future Goals</h2>
-          </header>
+          <div class="goals-layout">
+            <div class="goals-list-wrapper">
+              <header class="section-header-left" data-animation="fade-up">
+                <span class="section-label">05. Looking Ahead</span>
+                <h2 class="section-title">Future Goals</h2>
+              </header>
 
-          <ul class="goals-list">
-            <li class="goal-item">
-              <div class="goal-icon">
-                <i data-lucide="code-2"></i>
+              <div class="premium-goals-list">
+                <div class="premium-goal-item" data-animation="fade-up" data-delay="0">
+                  <span class="goal-number">01</span>
+                  <h4 class="goal-text">Become a Full Stack Developer</h4>
+                </div>
+                <div class="premium-goal-item" data-animation="fade-up" data-delay="100">
+                  <span class="goal-number">02</span>
+                  <h4 class="goal-text">Learn AI & Machine Learning</h4>
+                </div>
+                <div class="premium-goal-item" data-animation="fade-up" data-delay="200">
+                  <span class="goal-number">03</span>
+                  <h4 class="goal-text">Build Real-World Software</h4>
+                </div>
+                <div class="premium-goal-item" data-animation="fade-up" data-delay="300">
+                  <span class="goal-number">04</span>
+                  <h4 class="goal-text">Secure an Internship</h4>
+                </div>
+                <div class="premium-goal-item" data-animation="fade-up" data-delay="400">
+                  <span class="goal-number">05</span>
+                  <h4 class="goal-text">Continue Improving Every Day</h4>
+                </div>
               </div>
-              <span class="goal-text">Become a Full Stack Developer</span>
-            </li>
-            <li class="goal-item">
-              <div class="goal-icon">
-                <i data-lucide="brain-circuit"></i>
+            </div>
+            
+            <!-- Highlighted Current Goal Card -->
+            <div class="current-goal-card" data-animation="fade-left">
+              <div class="current-goal-glow"></div>
+              <div class="current-goal-content">
+                <div class="current-icon"><i data-lucide="target"></i></div>
+                <h3 class="current-title">Current Focus</h3>
+                <p class="current-desc">
+                  Actively looking for internship opportunities while continuously improving my technical skills and building a strong foundation.
+                </p>
               </div>
-              <span class="goal-text">Learn AI & Machine Learning</span>
-            </li>
-            <li class="goal-item">
-              <div class="goal-icon">
-                <i data-lucide="monitor-smartphone"></i>
-              </div>
-              <span class="goal-text">Build real-world software</span>
-            </li>
-            <li class="goal-item">
-              <div class="goal-icon">
-                <i data-lucide="briefcase"></i>
-              </div>
-              <span class="goal-text">Secure an internship</span>
-            </li>
-            <li class="goal-item">
-              <div class="goal-icon">
-                <i data-lucide="trending-up"></i>
-              </div>
-              <span class="goal-text">Continue improving every day</span>
-            </li>
-          </ul>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- 9. Call To Action -->
-      <section class="cta-section">
+      <!-- 6. My Philosophy (Massive Quote, Moved to end and scaled down slightly) -->
+      <section class="page-section philosophy-section">
         <div class="container">
-          <h2 class="cta-text">Now that you know my story, let's explore the technologies I use.</h2>
-          <div class="cta-button-wrapper">
-            <a href="skills.html" class="btn btn-project">
-              <span class="btn-project__text">View Skills</span>
-              <span class="btn-project__icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                  <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M13 6L19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </span>
-            </a>
+          <div class="quote-block" data-animation="scale-in">
+            <div class="quote-bg-icon"><i data-lucide="quote"></i></div>
+            <div class="quote-content">
+              <h2 class="quote-text"><span>Learning</span> every day,<br/><span>growing</span> every step.</h2>
+              <div class="quote-divider"></div>
+              <p class="quote-subtext">"Study with curiosity to discover deeper meaning, not just to memorize without understanding."</p>
+            </div>
           </div>
         </div>
       </section>
@@ -316,5 +295,5 @@
 
     <!-- Main Script -->
     <script type="module" src="assets/js/main.js"></script>
-  </body>
+</body>
 </html>

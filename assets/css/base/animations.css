@@ -186,3 +186,79 @@
 .glow {
     animation: pulse-glow 2.5s ease-in-out infinite;
 }
+
+/* Data-Animation Utilities (Triggered by .in-view) */
+[data-animation] {
+    opacity: 0; /* Hide initially */
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-animation="fade-up"] {
+    transform: translateY(2rem);
+}
+[data-animation="fade-up"].in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-animation="fade-down"] {
+    transform: translateY(-2rem);
+}
+[data-animation="fade-down"].in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-animation="fade-left"] {
+    transform: translateX(-2rem);
+}
+[data-animation="fade-left"].in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+[data-animation="fade-right"] {
+    transform: translateX(2rem);
+}
+[data-animation="fade-right"].in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+[data-animation="scale-in"] {
+    transform: scale(0.95);
+}
+[data-animation="scale-in"].in-view {
+    opacity: 1;
+    transform: scale(1);
+}
+
+[data-animation="fade-in"].in-view {
+    opacity: 1;
+}
+
+[data-animation="fade-up-slow"] {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-animation="fade-up-slow"].in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Slow Image Reveal Animation */
+[data-animation="reveal-image-slow"] {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+    transition: opacity 1.6s cubic-bezier(0.16, 1, 0.3, 1), transform 1.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-animation="reveal-image-slow"].in-view {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+
+
