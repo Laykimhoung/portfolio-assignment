@@ -1,0 +1,157 @@
+/* ==========================================
+   TIMELINE COMPONENT
+   Reusable vertical timeline layout.
+   ========================================== */
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--space-xl) 0;
+}
+
+/* Central Line */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--color-border);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+    z-index: var(--z-default);
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    opacity: 0; /* For scroll animation */
+    transform: translateY(30px);
+}
+
+/* Circles on the timeline */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    right: -8px;
+    background-color: var(--color-bg-primary);
+    border: 3px solid var(--color-border);
+    top: 24px;
+    border-radius: 50%;
+    z-index: calc(var(--z-default) + 1);
+    transition: var(--transition-normal);
+}
+
+.timeline-item.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item.in-view::after {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent);
+    box-shadow: 0 0 10px var(--color-accent);
+}
+
+/* Left/Right alignments */
+.timeline-left {
+    left: 0;
+}
+
+.timeline-right {
+    left: 50%;
+}
+
+.timeline-right::after {
+    left: -8px;
+}
+
+.timeline-content {
+    padding: var(--space-lg);
+    background: var(--color-surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: var(--border-primary);
+    border-radius: var(--radius-lg);
+    position: relative;
+    transition: var(--transition-normal);
+}
+
+.timeline-content:hover {
+    border-color: rgba(255,255,255,0.15);
+    background: var(--color-surface-hover);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.timeline-date {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(220, 38, 38, 0.1);
+    color: var(--color-accent);
+    border-radius: var(--radius-full);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-semibold);
+    margin-bottom: var(--space-sm);
+    border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+.timeline-title {
+    font-family: var(--font-heading);
+    font-size: var(--fs-h3);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-xs);
+    letter-spacing: 0.5px;
+}
+
+.timeline-desc {
+    color: var(--color-text-secondary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+}
+
+/* Responsive Timeline */
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-right {
+        left: 0%;
+    }
+
+    .timeline-left::after, .timeline-right::after {
+        left: 23px;
+    }
+}
+
+/* Light Theme Overrides */
+[data-theme="light"] .timeline::after {
+    background-color: var(--color-border);
+}
+[data-theme="light"] .timeline-item::after {
+    background-color: var(--color-bg-primary);
+    border-color: var(--color-border);
+}
+[data-theme="light"] .timeline-item.in-view::after {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent);
+}
+[data-theme="light"] .timeline-content {
+    background: var(--color-surface);
+}
+[data-theme="light"] .timeline-content:hover {
+    border-color: rgba(0,0,0,0.15);
+    background: var(--color-surface-hover);
+}

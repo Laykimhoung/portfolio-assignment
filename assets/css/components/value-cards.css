@@ -1,0 +1,86 @@
+/* ==========================================
+   VALUE CARDS COMPONENT
+   Reusable grid of cards for values/goals.
+   ========================================== */
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    width: 100%;
+}
+
+.value-card {
+    background: var(--color-surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl) var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.value-card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.value-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.03);
+    border: var(--border-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-lg);
+    transition: var(--transition-normal);
+}
+
+.value-card:hover {
+    background: var(--color-surface-hover);
+    border-color: rgba(255,255,255,0.15);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.value-card:hover .value-icon-wrapper {
+    background: var(--color-accent);
+    color: #fff;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 15px rgba(220, 38, 38, 0.5);
+    transform: scale(1.1);
+}
+
+.value-title {
+    font-family: var(--font-heading);
+    font-size: var(--fs-h3);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-sm);
+    letter-spacing: 0.5px;
+}
+
+.value-desc {
+    color: var(--color-text-secondary);
+    font-size: var(--fs-small);
+    line-height: 1.6;
+}
+
+/* Light Theme Overrides */
+[data-theme="light"] .value-card {
+    background: var(--color-surface);
+}
+[data-theme="light"] .value-card:hover {
+    background: var(--color-surface-hover);
+    border-color: rgba(0,0,0,0.1);
+}
+[data-theme="light"] .value-icon-wrapper {
+    background: rgba(0,0,0,0.02);
+}

@@ -1,2 +1,256 @@
-/* About Page Styles */
+/* ==========================================
+   ABOUT PAGE SPECIFIC STYLES
+   ========================================== */
+
 @import url("../global.css");
+
+/* ------------------------------------------
+   1. HERO SECTION
+   ------------------------------------------ */
+.about-hero {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding-top: var(--header-height);
+}
+
+.about-hero-content {
+    max-width: 800px;
+    padding: 0 var(--space-lg);
+    z-index: var(--z-default);
+}
+
+.about-hero-title {
+    font-family: var(--font-heading);
+    font-size: var(--fs-hero);
+    color: var(--color-text-primary);
+    line-height: 0.9;
+    letter-spacing: 2px;
+    margin-bottom: var(--space-sm);
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.about-hero-subtitle {
+    font-size: var(--fs-h3);
+    color: var(--color-accent);
+    font-weight: var(--fw-medium);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* ------------------------------------------
+   2. ABOUT ME (FLEXBOX PROFILE)
+   ------------------------------------------ */
+.about-me-section {
+    padding: var(--space-3xl) 0;
+    position: relative;
+}
+
+.about-me-container {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3xl);
+}
+
+.about-me-image-wrapper {
+    flex: 1;
+    max-width: 450px;
+    position: relative;
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.about-me-image-wrapper::before {
+    content: '';
+    position: absolute;
+    inset: -15px;
+    background: var(--background-glow);
+    border-radius: var(--radius-lg);
+    z-index: -1;
+    filter: blur(20px);
+}
+
+.about-me-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    border: var(--border-primary);
+    background: var(--color-surface);
+    object-fit: cover;
+    aspect-ratio: 4/5;
+}
+
+.about-me-content {
+    flex: 1.5;
+    opacity: 0;
+    transform: translateX(30px);
+}
+
+.section-label {
+    display: inline-block;
+    color: var(--color-accent);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--space-sm);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: var(--fs-h1);
+    color: var(--color-text-primary);
+    margin-bottom: var(--space-md);
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.about-me-text {
+    color: var(--color-text-secondary);
+    font-size: var(--fs-body);
+    line-height: 1.8;
+    margin-bottom: var(--space-lg);
+}
+
+/* ------------------------------------------
+   3. SECTIONS (Shared)
+   ------------------------------------------ */
+.page-section {
+    padding: var(--space-3xl) 0;
+    position: relative;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* ------------------------------------------
+   4. THE STORY BEHIND XAKURAII
+   ------------------------------------------ */
+.identity-section {
+    background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.02), transparent);
+    border-top: 1px solid rgba(255,255,255,0.05);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.identity-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.identity-text {
+    color: var(--color-text-secondary);
+    font-size: var(--fs-h3);
+    line-height: 1.6;
+    margin-bottom: var(--space-lg);
+}
+
+.identity-highlight {
+    color: var(--color-text-primary);
+    font-weight: var(--fw-medium);
+}
+
+/* ------------------------------------------
+   5. FUTURE GOALS (List)
+   ------------------------------------------ */
+.goals-list {
+    max-width: 700px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.goal-item {
+    background: var(--color-surface);
+    border: var(--border-primary);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg) var(--space-xl);
+    margin-bottom: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    opacity: 0;
+    transform: translateX(-20px);
+    transition: var(--transition-normal);
+}
+
+.goal-item:hover {
+    background: var(--color-surface-hover);
+    border-color: var(--color-accent);
+    transform: translateX(10px) !important;
+}
+
+.goal-icon {
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.goal-text {
+    color: var(--color-text-primary);
+    font-size: var(--fs-body);
+    font-weight: var(--fw-medium);
+}
+
+/* ------------------------------------------
+   6. CTA SECTION
+   ------------------------------------------ */
+.cta-section {
+    text-align: center;
+    padding: var(--space-3xl) 0 calc(var(--space-3xl) * 2);
+}
+
+.cta-text {
+    color: var(--color-text-secondary);
+    font-size: var(--fs-h3);
+    margin-bottom: var(--space-lg);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.cta-button-wrapper {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* ------------------------------------------
+   RESPONSIVE (Mobile)
+   ------------------------------------------ */
+@media screen and (max-width: 992px) {
+    .about-me-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-me-image-wrapper {
+        margin: 0 auto;
+    }
+}
+
+/* Light Theme Overrides */
+[data-theme="light"] .identity-section {
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.02), transparent);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+[data-theme="light"] .goal-item {
+    background: var(--color-surface);
+}
+
+[data-theme="light"] .goal-item:hover {
+    background: var(--color-surface-hover);
+}

@@ -1,0 +1,59 @@
+/* ==========================================
+   QUOTE COMPONENT
+   Reusable elegant quote block.
+   ========================================== */
+
+.quote-block {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--space-2xl) var(--space-lg);
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.95);
+}
+
+.quote-block.in-view {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quote-icon {
+    display: inline-flex;
+    color: var(--color-accent);
+    margin-bottom: var(--space-lg);
+    opacity: 0.5;
+    background: rgba(220, 38, 38, 0.1);
+    padding: 16px;
+    border-radius: 50%;
+    border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+.quote-text {
+    font-family: var(--font-heading);
+    font-size: var(--fs-h2);
+    color: var(--color-text-primary);
+    line-height: 1.2;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-md);
+    text-transform: uppercase;
+}
+
+.quote-text span {
+    color: var(--color-accent);
+}
+
+.quote-subtext {
+    font-size: var(--fs-body);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+/* Light Theme Overrides */
+[data-theme="light"] .quote-icon {
+    background: rgba(209, 26, 42, 0.05);
+}

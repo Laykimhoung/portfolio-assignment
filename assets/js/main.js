@@ -3,6 +3,7 @@ import { initTheme } from "./modules/theme.js";
 import { initMobileMenu } from "./modules/mobile-menu.js";
 import { initRevealMask } from "./modules/reveal-mask.js";
 import { initScroll } from "./modules/scroll.js";
+import { initScrollAnimations } from "./modules/scroll-animations.js";
 
 /* Load Components */
 await Promise.all([
@@ -39,3 +40,4 @@ initTheme();
 initMobileMenu();
 initRevealMask();
 initScroll();
+initScrollAnimations();
