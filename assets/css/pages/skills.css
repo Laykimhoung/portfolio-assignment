@@ -137,10 +137,13 @@
     transition: var(--transition-normal);
 }
 
+.tech-card-icon img,
 .tech-card-icon svg {
     width: 24px;
     height: 24px;
     display: block;
+    object-fit: contain;
+    transition: var(--transition-normal);
 }
 
 .tech-card:hover {
@@ -156,6 +159,10 @@
     color: var(--color-accent);
     transform: scale(1.1);
     box-shadow: 0 0 16px rgba(220, 38, 38, 0.4);
+}
+
+.tech-card:hover .tech-card-icon img {
+    filter: brightness(0) saturate(100%) invert(21%) sepia(91%) saturate(3025%) hue-rotate(348deg) brightness(96%) contrast(92%);
 }
 
 .tech-card-badge {
@@ -247,6 +254,14 @@
 
 [data-theme="light"] .tech-card-icon {
     background: rgba(0, 0, 0, 0.025);
+}
+
+[data-theme="light"] .tech-card-icon img {
+    filter: brightness(0) opacity(0.85);
+}
+
+[data-theme="light"] .tech-card:hover .tech-card-icon img {
+    filter: brightness(0) saturate(100%) invert(21%) sepia(91%) saturate(3025%) hue-rotate(348deg) brightness(96%) contrast(92%);
 }
 
 [data-theme="light"] .tech-card-badge {

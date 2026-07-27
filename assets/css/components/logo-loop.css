@@ -80,10 +80,13 @@
     transition: transform var(--transition-normal), color var(--transition-normal);
 }
 
+.logo-loop-icon img,
 .logo-loop-icon svg {
     width: 100%;
     height: 100%;
     display: block;
+    object-fit: contain;
+    transition: var(--transition-normal);
 }
 
 /* Scale on Hover & Highlight */
@@ -102,10 +105,22 @@
     color: var(--color-accent);
 }
 
+.logo-loop-item:hover .logo-loop-icon img {
+    filter: brightness(0) saturate(100%) invert(21%) sepia(91%) saturate(3025%) hue-rotate(348deg) brightness(96%) contrast(92%);
+}
+
 /* Light Theme Overrides */
 [data-theme="light"] .logo-loop-item {
     background: var(--color-surface);
     border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .logo-loop-icon img {
+    filter: brightness(0) opacity(0.85);
+}
+
+[data-theme="light"] .logo-loop-item:hover .logo-loop-icon img {
+    filter: brightness(0) saturate(100%) invert(21%) sepia(91%) saturate(3025%) hue-rotate(348deg) brightness(96%) contrast(92%);
 }
 
 [data-theme="light"] .logo-loop-item:hover {

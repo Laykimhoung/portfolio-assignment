@@ -89,11 +89,23 @@
     transition: var(--transition-normal);
 }
 
+.progress-tech-icon img {
+    width: 20px;
+    height: 20px;
+    display: block;
+    object-fit: contain;
+    transition: var(--transition-normal);
+}
+
 .progress-card:hover .progress-tech-icon {
     border-color: rgba(220, 38, 38, 0.4);
     background: rgba(220, 38, 38, 0.1);
     color: var(--color-accent);
     transform: scale(1.08);
+}
+
+.progress-card:hover .progress-tech-icon img {
+    filter: brightness(0) saturate(100%) invert(21%) sepia(91%) saturate(3025%) hue-rotate(348deg) brightness(96%) contrast(92%);
 }
 
 .progress-tech-name {
@@ -167,6 +179,14 @@
 
 [data-theme="light"] .progress-tech-icon {
     background: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .progress-tech-icon img {
+    filter: brightness(0) opacity(0.85);
+}
+
+[data-theme="light"] .progress-card:hover .progress-tech-icon img {
+    filter: brightness(0) saturate(100%) invert(21%) sepia(91%) saturate(3025%) hue-rotate(348deg) brightness(96%) contrast(92%);
 }
 
 [data-theme="light"] .progress-track {
