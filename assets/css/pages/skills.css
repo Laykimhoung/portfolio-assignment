@@ -1,2 +1,451 @@
-/* Skills Page Styles */
+/* ==========================================
+   SKILLS PAGE SPECIFIC STYLES
+   ========================================== */
+
 @import url("../global.css");
+
+/* ------------------------------------------
+   SHARED SECTION FORMATTING
+   ------------------------------------------ */
+.page-section {
+    padding: var(--space-3xl) 0;
+    position: relative;
+}
+
+.section-header-left {
+    margin-bottom: var(--space-xl);
+}
+
+.section-label {
+    display: inline-block;
+    color: var(--color-accent);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--space-xs);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: var(--fs-h1);
+    color: var(--color-text-primary);
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    color: var(--color-text-secondary);
+    font-size: var(--fs-body);
+    margin-top: var(--space-sm);
+    max-width: 640px;
+    line-height: 1.7;
+}
+
+.section-header.center {
+    text-align: center;
+    margin-bottom: var(--space-2xl);
+}
+
+.section-header.center .section-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ------------------------------------------
+   1. SKILLS HERO
+   ------------------------------------------ */
+.skills-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: calc(85vh - var(--header-height));
+    padding-top: calc(var(--header-height) + var(--space-lg));
+    padding-bottom: var(--space-2xl);
+    overflow: hidden;
+}
+
+.skills-hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 55rem;
+    position: relative;
+    z-index: var(--z-default);
+}
+
+.skills-hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.75rem, 7.5vw, var(--fs-hero));
+    line-height: 0.94;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-md);
+    color: var(--color-text-primary);
+}
+
+.skills-hero-title .title-line {
+    display: block;
+}
+
+.skills-hero-title .highlight-accent {
+    color: var(--color-accent);
+}
+
+.skills-hero-subtitle {
+    font-size: clamp(1.15rem, 2vw, 1.4rem);
+    color: var(--color-text-secondary);
+    line-height: 1.65;
+    max-width: 44rem;
+    margin-bottom: var(--space-xl);
+}
+
+/* Hero Ambient Glow */
+.skills-hero-glow {
+    position: absolute;
+    top: 15%;
+    left: -10%;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+    opacity: 0.12;
+    filter: blur(80px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Scroll Indicator */
+.hero-scroll-indicator {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    color: var(--color-text-secondary);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-medium);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-top: var(--space-2xl);
+    transition: var(--transition-normal);
+}
+
+.hero-scroll-indicator:hover {
+    color: var(--color-text-primary);
+    opacity: 1;
+}
+
+.scroll-arrow-icon {
+    display: inline-flex;
+    animation: scroll-bounce 2s infinite cubic-bezier(0.45, 0, 0.55, 1);
+    color: var(--color-accent);
+}
+
+@keyframes scroll-bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(6px);
+    }
+    60% {
+        transform: translateY(3px);
+    }
+}
+
+/* ------------------------------------------
+   2. CORE TECHNOLOGIES
+   ------------------------------------------ */
+.core-tech-section {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-3xl);
+}
+
+/* ------------------------------------------
+   3. MY FUTURE TECH STACK
+   ------------------------------------------ */
+.future-stack-section {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-3xl);
+    position: relative;
+}
+
+.future-stack-categories {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3xl);
+}
+
+.tech-category-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.tech-category-title {
+    font-family: var(--font-heading);
+    font-size: var(--fs-h2);
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    letter-spacing: 1px;
+    padding-bottom: var(--space-xs);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.tech-category-title i {
+    color: var(--color-accent);
+}
+
+.tech-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-lg);
+    width: 100%;
+}
+
+.tech-card {
+    background: var(--color-surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl) var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.tech-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.tech-card-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: rgba(255, 255, 255, 0.035);
+    border: var(--border-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-primary);
+    transition: var(--transition-normal);
+}
+
+.tech-card:hover {
+    background: var(--color-surface-hover);
+    border-color: rgba(255, 255, 255, 0.16);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg), var(--shadow-glow);
+}
+
+.tech-card:hover .tech-card-icon {
+    border-color: var(--color-accent);
+    background: rgba(220, 38, 38, 0.15);
+    color: var(--color-accent);
+    transform: scale(1.1);
+    box-shadow: 0 0 16px rgba(220, 38, 38, 0.4);
+}
+
+.tech-card-badge {
+    font-size: 0.75rem;
+    font-weight: var(--fw-semibold);
+    color: var(--color-text-secondary);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: var(--transition-normal);
+}
+
+.tech-card:hover .tech-card-badge {
+    background: rgba(220, 38, 38, 0.15);
+    border-color: rgba(220, 38, 38, 0.4);
+    color: #ffffff;
+}
+
+.tech-card-title {
+    font-family: var(--font-heading);
+    font-size: var(--fs-h3);
+    color: var(--color-text-primary);
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+    margin-bottom: 2px;
+}
+
+.tech-card-desc {
+    font-size: var(--fs-small);
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+}
+
+/* ------------------------------------------
+   4. TECHNOLOGY LOGO LOOP
+   ------------------------------------------ */
+.logo-loop-section {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-3xl);
+    position: relative;
+}
+
+/* ------------------------------------------
+   5. SKILLS CTA SECTION
+   ------------------------------------------ */
+.skills-cta-section {
+    padding-top: var(--space-xl);
+    padding-bottom: var(--space-3xl);
+    position: relative;
+}
+
+.skills-cta-card {
+    position: relative;
+    max-width: 880px;
+    margin: 0 auto;
+    padding: var(--space-3xl) var(--space-xl);
+    border-radius: var(--radius-xl);
+    background: var(--color-surface);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: var(--border-primary);
+    text-align: center;
+    overflow: hidden;
+}
+
+.cta-glow {
+    position: absolute;
+    inset: -30px;
+    background: radial-gradient(circle, var(--color-accent) 0%, transparent 65%);
+    opacity: 0.14;
+    z-index: -1;
+    filter: blur(35px);
+}
+
+.skills-cta-label {
+    display: inline-block;
+    color: var(--color-accent);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--space-xs);
+}
+
+.skills-cta-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 5vw, 3.25rem);
+    color: var(--color-text-primary);
+    line-height: 1.1;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-md);
+}
+
+.skills-cta-text {
+    font-size: var(--fs-body);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    max-width: 580px;
+    margin: 0 auto var(--space-xl);
+}
+
+.skills-cta-button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------------------------------------
+   6. RESPONSIVE DESIGN BREAKPOINTS
+   ------------------------------------------ */
+
+@media (max-width: 992px) {
+    .skills-hero {
+        min-height: auto;
+        padding-top: calc(var(--header-height) + var(--space-lg));
+        padding-bottom: var(--space-xl);
+    }
+    
+    .tech-cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-cta-card {
+        padding: var(--space-2xl) var(--space-lg);
+    }
+    
+    .section-header-left {
+        margin-bottom: var(--space-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .page-section {
+        padding: var(--space-2xl) 0;
+    }
+    
+    .skills-hero-title {
+        font-size: clamp(2.25rem, 11vw, 3rem);
+    }
+    
+    .tech-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skills-cta-card {
+        padding: var(--space-xl) var(--space-md);
+    }
+}
+
+@media (max-width: 340px) {
+    /* Special support for small 320px screens */
+    .skills-hero-title {
+        font-size: 2rem;
+    }
+    
+    .skills-hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .tech-card {
+        padding: var(--space-lg) var(--space-sm);
+    }
+}
+
+/* ------------------------------------------
+   7. LIGHT THEME OVERRIDES
+   ------------------------------------------ */
+[data-theme="light"] .skills-hero-title {
+    color: #18181b;
+}
+
+[data-theme="light"] .tech-card {
+    background: var(--color-surface);
+}
+
+[data-theme="light"] .tech-card:hover {
+    background: var(--color-surface-hover);
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .tech-card-icon {
+    background: rgba(0, 0, 0, 0.025);
+}
+
+[data-theme="light"] .tech-card-badge {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .skills-cta-card {
+    background: var(--color-surface);
+}

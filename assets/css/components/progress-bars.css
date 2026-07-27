@@ -1,0 +1,174 @@
+/* ==========================================
+   PROGRESS BARS COMPONENT
+   Reusable animated progress dashboard & bars
+   for Core Technologies proficiency.
+   ========================================== */
+
+.progress-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+    width: 100%;
+}
+
+.progress-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.progress-group-title {
+    font-family: var(--font-heading);
+    font-size: var(--fs-h3);
+    color: var(--color-text-primary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+    letter-spacing: 0.5px;
+    padding-bottom: var(--space-xs);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.progress-group-title i {
+    color: var(--color-accent);
+}
+
+.progress-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: var(--space-lg);
+    width: 100%;
+}
+
+.progress-card {
+    background: var(--color-surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: var(--border-primary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-card:hover {
+    background: var(--color-surface-hover);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md), var(--shadow-glow);
+}
+
+.progress-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm);
+}
+
+.progress-tech-info {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+}
+
+.progress-tech-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-sm);
+    background: rgba(255, 255, 255, 0.04);
+    border: var(--border-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-primary);
+    flex-shrink: 0;
+    transition: var(--transition-normal);
+}
+
+.progress-card:hover .progress-tech-icon {
+    border-color: rgba(220, 38, 38, 0.4);
+    background: rgba(220, 38, 38, 0.1);
+    color: var(--color-accent);
+    transform: scale(1.08);
+}
+
+.progress-tech-name {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    color: var(--color-text-primary);
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+}
+
+.progress-percentage {
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    color: var(--color-accent);
+    letter-spacing: 1px;
+    font-weight: var(--fw-bold);
+    min-width: 3rem;
+    text-align: right;
+}
+
+.progress-track {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-full);
+    position: relative;
+    overflow: visible;
+    margin-top: var(--space-xs);
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    border-radius: var(--radius-full);
+    background: linear-gradient(90deg, var(--color-accent) 0%, #ff5252 100%);
+    position: relative;
+    transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.progress-glow-tip {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) scale(0.6);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 
+        0 0 10px var(--color-accent),
+        0 0 20px var(--color-accent),
+        0 0 30px rgba(220, 38, 38, 0.8);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.progress-card.in-view .progress-glow-tip {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
+
+/* Light Theme Overrides */
+[data-theme="light"] .progress-card {
+    background: var(--color-surface);
+}
+
+[data-theme="light"] .progress-card:hover {
+    background: var(--color-surface-hover);
+    border-color: rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .progress-tech-icon {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .progress-track {
+    background: rgba(0, 0, 0, 0.08);
+}

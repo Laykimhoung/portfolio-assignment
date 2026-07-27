@@ -1,0 +1,109 @@
+/* ==========================================
+   LOGO LOOP COMPONENT
+   Infinite seamless scrolling ecosystem ribbon
+   recreated from ReactBits LogoLoop in Vanilla JS.
+   ========================================== */
+
+.logo-loop-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: var(--space-md) 0;
+}
+
+.logo-loop-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Theme-agnostic fade-out edges using CSS masks */
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 12%,
+        black 88%,
+        transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 12%,
+        black 88%,
+        transparent 100%
+    );
+}
+
+.logo-loop-track {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    width: max-content;
+    will-change: transform;
+    cursor: default;
+    padding: 0.75rem 0;
+}
+
+.logo-loop-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.4rem;
+    background: rgba(255, 255, 255, 0.035);
+    border: var(--border-primary);
+    border-radius: var(--radius-full);
+    flex-shrink: 0;
+    transition: 
+        transform var(--transition-normal),
+        border-color var(--transition-normal),
+        background-color var(--transition-normal),
+        box-shadow var(--transition-normal);
+    user-select: none;
+    position: relative;
+}
+
+.logo-loop-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    color: var(--color-text-primary);
+    transition: transform var(--transition-normal);
+}
+
+.logo-loop-name {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--color-text-primary);
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+}
+
+/* Scale on Hover & Highlight */
+.logo-loop-item:hover {
+    transform: scale(1.14);
+    background: var(--color-surface-hover);
+    border-color: var(--color-accent);
+    box-shadow: 
+        0 8px 24px rgba(0, 0, 0, 0.35),
+        0 0 18px rgba(220, 38, 38, 0.38);
+    z-index: 5;
+}
+
+.logo-loop-item:hover .logo-loop-icon {
+    transform: scale(1.1);
+    color: var(--color-accent);
+}
+
+/* Light Theme Overrides */
+[data-theme="light"] .logo-loop-item {
+    background: rgba(0, 0, 0, 0.025);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .logo-loop-item:hover {
+    background: #ffffff;
+    border-color: var(--color-accent);
+    box-shadow: 
+        0 8px 24px rgba(15, 23, 42, 0.12),
+        0 0 16px rgba(209, 26, 42, 0.18);
+}

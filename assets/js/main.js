@@ -4,6 +4,8 @@ import { initMobileMenu } from "./modules/mobile-menu.js";
 import { initRevealMask } from "./modules/reveal-mask.js";
 import { initScroll } from "./modules/scroll.js";
 import { initScrollAnimations } from "./modules/scroll-animations.js";
+import { initProgressBars } from "./modules/progress-bars.js";
+import { initLogoLoop } from "./modules/logo-loop.js";
 
 /* Load Components */
 await Promise.all([
@@ -41,3 +43,5 @@ initMobileMenu();
 initRevealMask();
 initScroll();
 initScrollAnimations();
+initProgressBars();
+initLogoLoop();
