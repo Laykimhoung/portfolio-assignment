@@ -45,36 +45,10 @@
 
     <!-- Main -->
     <main>
-        <!-- 1. Skills Hero -->
-        <section class="skills-hero">
-            <div class="container skills-hero-container">
-                <div class="skills-hero-glow" aria-hidden="true"></div>
-
-                <header class="section-header-left" data-animation="fade-up">
-                    <span class="section-label">01. Technical Abilities</span>
-                    <h1 class="skills-hero-title">
-                        <span class="title-line">Building Ideas</span>
-                        <span class="title-line highlight-accent">Into Reality.</span>
-                    </h1>
-                    <p class="skills-hero-subtitle">
-                        Every technology I learn becomes another tool for transforming ideas into meaningful software.
-                    </p>
-                </header>
-
-                <div class="hero-scroll-indicator" data-animation="fade-up" data-delay="300">
-                    <span>Explore Proficiency</span>
-                    <span class="scroll-arrow-icon" aria-hidden="true">
-                        <i data-lucide="arrow-down"></i>
-                    </span>
-                </div>
-            </div>
-        </section>
-
-        <!-- 2. Core Technologies (Progress Dashboard) -->
+        <!-- 1. Core Technologies (Progress Dashboard) -->
         <section class="page-section core-tech-section" aria-labelledby="core-tech-heading">
             <div class="container">
                 <header class="section-header-left" data-animation="fade-up">
-                    <span class="section-label">02. Proven Proficiency</span>
                     <h2 id="core-tech-heading" class="section-title">Core Technologies</h2>
                     <p class="section-subtitle">
                         Technologies I have genuinely learned, applied in academic and team projects, and use with confidence as a Year 2 Computer Science student.
@@ -232,11 +206,11 @@
                         </div>
                     </article>
 
-                    <!-- Frameworks & Platforms Group -->
+                    <!-- Frameworks Group -->
                     <article class="progress-group" data-animation="fade-up">
                         <h3 class="progress-group-title">
                             <i data-lucide="layers"></i>
-                            <span>Frameworks & Platforms</span>
+                            <span>Frameworks</span>
                         </h3>
 
                         <div class="progress-grid">
@@ -315,12 +289,11 @@
             </div>
         </section>
 
-        <!-- 3. My Future Tech Stack (Categorized Interactive Cards Grid) -->
+        <!-- 2. Future Learning Roadmap -->
         <section class="page-section future-stack-section" aria-labelledby="future-stack-heading">
             <div class="container">
                 <header class="section-header-left" data-animation="fade-up">
-                    <span class="section-label">03. Learning Horizon</span>
-                    <h2 id="future-stack-heading" class="section-title">My Future Tech Stack</h2>
+                    <h2 id="future-stack-heading" class="section-title">Future Learning Roadmap</h2>
                     <p class="section-subtitle">
                         The technologies below represent the tools I plan to explore as I continue growing as a developer.
                     </p>
@@ -716,109 +689,237 @@
             </div>
         </section>
 
-        <!-- 4. Technology Logo Loop -->
-        <section class="page-section logo-loop-section" aria-label="Continuous learning technology ecosystem">
+        <!-- 3. My Future Tech Stack (Logo Loop) -->
+        <section class="page-section logo-loop-section" aria-label="My Future Tech Stack Ecosystem">
             <div class="container">
                 <header class="section-header center" data-animation="fade-up">
-                    <span class="section-label">04. Continuous Evolution</span>
-                    <h2 class="section-title">The Complete Ecosystem</h2>
-                    <p class="section-subtitle">
-                        Symbolizing continuous learning across both my core foundational technologies and future tech stack.
+                    <h2 class="section-title">My Future Tech Stack</h2>
+                    <p class="section-subtitle quote-style">
+                        "The technologies below represent the tools I plan to explore as I continue growing as a developer."
                     </p>
                 </header>
             </div>
 
             <div class="logo-loop-wrapper" data-animation="fade-up" data-delay="150">
                 <div class="logo-loop-container">
-                    <div class="logo-loop-track">
-                        <!-- Core & Future Tech Loop Items -->
-                        <div class="logo-loop-item">
-                            <span class="logo-loop-icon"><i data-lucide="code-2"></i></span>
-                            <span class="logo-loop-name">HTML5</span>
+                    <div class="logo-loop-tracks-wrapper">
+                        <!-- Top Loop: Right to Left -->
+                        <div class="logo-loop-track" data-direction="left">
+                            <div class="logo-loop-item" title="HTML5" aria-label="HTML5">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 17.56l4.07-1.13.55-6.1H7.38L7.2 8.3h9.61l.2-2.03H5l.56 6.07h9.09l-.3 3.32-2.35.63-2.35-.63-.15-1.66H7.38l.27 3.36L12 18.56l4.35-1.21.73-8.08H5L4.23 2h15.54l-1.54 16.78L12 22l-6.23-3.22L5.22 13h2.03l.35 4.02L12 18.17z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="CSS3" aria-label="CSS3">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M5 3l-.65 3.34h13.59L17.5 11H6.8l-.66 3.33h10.7l-.84 4.31-4 1.33-4-1.33-.42-2.17H4.25L4.9 20.33 12 23l7.1-2.67 1.65-8.33H10.18l.66-3.33h10.7L19.5 3H5z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="JavaScript" aria-label="JavaScript">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M3 3h18v18H3V3zm4.73 15.04c.4.85 1.19 1.55 2.54 1.55 1.5 0 2.58-.68 2.58-3.32V8.78H10.6v7.35c0 1.05-.28 1.48-.95 1.48-.55 0-.9-.33-1.15-.83l-0.77 1.26zm6.82-0.2c.6.65 1.45 1.15 2.68 1.15 1.68 0 2.78-.85 2.78-2.28 0-1.23-.75-1.93-2.18-2.55l-.68-.3c-.83-.35-1.28-.75-1.28-1.45 0-.7.63-1.25 1.48-1.25.8 0 1.4.38 1.8 1.03l1.83-1.15c-.78-1.3-2.03-1.88-3.63-1.88-1.85 0-3.38 1.03-3.38 2.8 0 1.33.88 2.15 2.3 2.75l.68.3c.98.43 1.38.83 1.38 1.55 0 .8-.75 1.28-1.63 1.28-1 0-1.78-.5-2.25-1.25l-1.55 1.25z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="TypeScript" aria-label="TypeScript">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M3 3h18v18H3V3zm14.12 15.19c1.61 0 2.75-.72 2.75-2.28 0-1.48-1.24-1.95-2.58-2.31-1.03-.27-1.47-.51-1.47-.99 0-.48.45-.81 1.15-.81.74 0 1.34.33 1.64.95l1.41-.75c-.53-1.05-1.55-1.68-3.04-1.68-1.65 0-2.76.84-2.76 2.22 0 1.39 1.09 1.95 2.45 2.3 1.16.29 1.6.57 1.6 1.08 0 .54-.57.87-1.33.87-.89 0-1.57-.45-1.93-1.14l-1.43.78c.55 1.14 1.73 1.76 3.48 1.76zm-7.79-1.47h2.09V10.29h2.51V8.64h-7.1v1.65h2.5v7.43z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="React" aria-label="React">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 10.11c1.04 0 1.89.85 1.89 1.89s-.85 1.89-1.89 1.89-1.89-.85-1.89-1.89.85-1.89 1.89-1.89M12 8c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4zm10.74 3.7c-.12-.86-.54-1.64-1.18-2.22-1.2-1.1-2.97-1.62-5.06-1.53-.78-2.02-2.1-3.66-3.79-4.71-1.38-.85-3.04-1.24-4.71-1.24s-3.33.39-4.71 1.24c-1.69 1.05-3.01 2.69-3.79 4.71-2.09-.09-3.86.43-5.06 1.53-.64.58-1.06 1.36-1.18 2.22-.17 1.21.13 2.45.85 3.52 1.05 1.57 2.82 2.62 5.14 3.03.79 2.02 2.11 3.66 3.79 4.71 1.38.85 3.04 1.24 4.71 1.24s3.33-.39 4.71-1.24c1.69-1.05 3.01-2.69 3.79-4.71 2.32-.41 4.09-1.46 5.14-3.03.72-1.07 1.02-2.31.85-3.52z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="Next.js" aria-label="Next.js">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2a10 10 0 00-10 10 10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2zm-2.4 6.8h1.6v8.4H9.6V8.8zm4.8 0h1.6L20.4 17h-1.8l-4.2-8.2z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="Vue.js" aria-label="Vue.js">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M2 3h3.5l6.5 11.26L18.5 3H22L12 20.34 2 3zm4.5 0l5.5 9.53L17.5 3h-3.35L12 6.78 9.85 3H6.5z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="Nuxt.js" aria-label="Nuxt.js">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M16.32 5h-3.13c-.36 0-.68.18-.86.48L5.7 17.5h3.42l5.51-9.58 3.51 6.08H14.5l-1.42 2.5H22L16.32 5zM8.34 9.53L4.2 16.7h2.84l2.72-4.72-1.42-2.45z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="Angular" aria-label="Angular">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2.5l9.3 3.3-1.4 12.1L12 21.5l-7.9-3.6L2.7 5.8 12 2.5zm0 2.55L5.45 7.4l1.05 9 5.5 2.5 5.5-2.5 1.05-9L12 5.05zm0 2.6l4.25 10.3h-2.15l-1-2.5h-4.2l-1 2.5H5.75L12 7.65zm0 3.3l-1.3 3.3h2.6L12 10.95z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="Tailwind CSS" aria-label="Tailwind CSS">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624-1.177-1.194-2.538-2.576-5.512-2.576z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="Bootstrap" aria-label="Bootstrap">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M16.5 10.5c0-.98-.56-1.77-1.55-2.11C15.65 7.9 16 7.02 16 6c0-2.21-1.79-4-4-4H5v20h7.5c2.48 0 4.5-2.02 4.5-4.5 0-1.82-1.08-3.39-2.66-4.11.72-.61 1.16-1.52 1.16-2.89zM8 5h3.8c1 0 1.7.75 1.7 1.76 0 1.05-.72 1.79-1.75 1.79H8V5zm4.5 14H8v-4h4.5c1.15 0 2 .85 2 2 0 1.15-.85 2-2 2z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="Node.js" aria-label="Node.js">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2l9 5.2v10.4L12 22.8 3 17.6V7.2L12 2zm0 2.3L4.8 8.1v7.8l7.2 4.1 7.2-4.1V8.1L12 4.3z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="Express" aria-label="Express">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M22 12c0 5.52-4.48 10-10 10S2 17.52 2 12 6.48 2 12 2s10 4.48 10 10zm-6 1h-2v4h-2v-4h-2v4H8v-4H6V9h12v4z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="Python" aria-label="Python">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M14.25 19.5v-1.5h-4.5v1.5h4.5zm-4.5-15v1.5h4.5V4.5h-4.5zM12 2c3.04 0 5.5 1.63 5.5 4.5 0 1.21-.5 2.27-1.31 3 1.05.8 1.81 2.06 1.81 3.5 0 2.76-2.46 4.5-5.5 4.5h-5c-.83 0-1.5-.67-1.5-1.5v-12c0-.83.67-1.5 1.5-1.5h4.5zM12 9.5c1.66 0 3-1.12 3-2.5S13.66 4.5 12 4.5h-3.5v5H12zm0 8c1.66 0 3-1.12 3-2.5S13.66 12.5 12 12.5h-3.5v5H12z"/>
+                                    </svg>
+                                </span>
+                            </div>
                         </div>
-                        <div class="logo-loop-item">
-                            <span class="logo-loop-icon"><i data-lucide="palette"></i></span>
-                            <span class="logo-loop-name">CSS3</span>
-                        </div>
-                        <div class="logo-loop-item">
-                            <span class="logo-loop-icon"><i data-lucide="terminal"></i></span>
-                            <span class="logo-loop-name">JavaScript</span>
-                        </div>
-                        <div class="logo-loop-item">
-                            <span class="logo-loop-icon"><i data-lucide="cpu"></i></span>
-                            <span class="logo-loop-name">Python</span>
-                        </div>
-                        <div class="logo-loop-item">
-                            <span class="logo-loop-icon"><i data-lucide="file-code"></i></span>
-                            <span class="logo-loop-name">C / C++</span>
-                        </div>
-                        <div class="logo-loop-item">
-                            <span class="logo-loop-icon"><i data-lucide="layers"></i></span>
-                            <span class="logo-loop-name">C# & .NET</span>
-                        </div>
-                        <div class="logo-loop-item">
-                            <span class="logo-loop-icon"><i data-lucide="database"></i></span>
-                            <span class="logo-loop-name">SQL Server</span>
-                        </div>
-                        <div class="logo-loop-item">
-                            <span class="logo-loop-icon"><i data-lucide="hard-drive"></i></span>
-                            <span class="logo-loop-name">SQLite</span>
-                        </div>
-                        <div class="logo-loop-item">
-                            <span class="logo-loop-icon"><i data-lucide="box"></i></span>
-                            <span class="logo-loop-name">TypeScript</span>
-                        </div>
-                        <div class="logo-loop-item">
-                            <span class="logo-loop-icon"><i data-lucide="atom"></i></span>
-                            <span class="logo-loop-name">React</span>
-                        </div>
-                        <div class="logo-loop-item">
-                            <span class="logo-loop-icon"><i data-lucide="globe"></i></span>
-                            <span class="logo-loop-name">Next.js</span>
-                        </div>
-                        <div class="logo-loop-item">
-                            <span class="logo-loop-icon"><i data-lucide="wind"></i></span>
-                            <span class="logo-loop-name">Tailwind CSS</span>
-                        </div>
-                        <div class="logo-loop-item">
-                            <span class="logo-loop-icon"><i data-lucide="server"></i></span>
-                            <span class="logo-loop-name">Node.js</span>
-                        </div>
-                        <div class="logo-loop-item">
-                            <span class="logo-loop-icon"><i data-lucide="database"></i></span>
-                            <span class="logo-loop-name">PostgreSQL</span>
-                        </div>
-                        <div class="logo-loop-item">
-                            <span class="logo-loop-icon"><i data-lucide="smartphone"></i></span>
-                            <span class="logo-loop-name">Flutter</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- 5. CTA Section (Next Step into Projects) -->
-        <section class="page-section skills-cta-section" aria-label="Explore Projects Call to Action">
-            <div class="container">
-                <div class="skills-cta-card" data-animation="scale-in">
-                    <div class="cta-glow" aria-hidden="true"></div>
-
-                    <span class="skills-cta-label">05. Next Step</span>
-                    <h2 class="skills-cta-title">Ready to see these technologies in action?</h2>
-                    <p class="skills-cta-text">
-                        Explore my projects to see how I apply these languages, concepts, and tools to build practical, real-world software.
-                    </p>
-
-                    <div class="skills-cta-button-wrapper">
-                        <a href="projects.html" class="btn btn-project">
-                            <span class="btn-project__text">Explore My Projects</span>
-                            <span class="btn-project__icon" aria-hidden="true">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <path d="M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                                    <path d="M13 6L19 12L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </span>
-                        </a>
+                        <!-- Bottom Loop: Left to Right -->
+                        <div class="logo-loop-track" data-direction="right">
+                            <div class="logo-loop-item" title="C" aria-label="C">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 14.59L12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5c.52 0 1.01.09 1.48.24l-1.02 1.7C12.16 8.87 11.85 8.8 11.5 8.8 9.73 8.8 8.3 10.23 8.3 12s1.43 3.2 3.2 3.2c.4 0 .78-.08 1.13-.21l.78 1.6z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="C++" aria-label="C++">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M11 7h2v3h3v2h-3v3h-2v-3H8v-2h3V7zm-2 5c0-1.66 1.34-3 3-3 .35 0 .68.06 1 .17l.63-1.63C12.98 7.19 12.5 7 12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5c.53 0 1.03-.09 1.5-.24l-.65-1.63c-.27.08-.55.13-.85.13-1.66 0-3-1.34-3-3zm11-5h-1v2h-2v1h2v2h1v-2h2V9h-2V7z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="C#" aria-label="C#">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M11 7H9v3H6v2h3v3H6v2h3v3h2v-3h3v3h2v-3h3v-2h-3v-3h3V9h-3V6h-2v3h-3V7zm3 5v3h-3v-3h3zm-4 0c0-1.66-1.34-3-3-3-.35 0-.68.06-1 .17l.63-1.63C7.98 7.19 7.5 7 7 7c-2.76 0-5 2.24-5 5s2.24 5 5 5c.53 0 1.03-.09 1.5-.24l-.65-1.63c-.27.08-.55.13-.85.13-1.66 0-3-1.34-3-3z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title=".NET" aria-label=".NET">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12zm8.5 4V8h-2v8h2zm3-8l3 5V8h2v8h-1.8l-3.2-5.3V16h-2V8h2z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="PHP" aria-label="PHP">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 11.5h-2v3h-2v-7h4c1.1 0 2 .9 2 2s-.9 2-2 2zm-7 0h-2v3h-2v-7h4c1.1 0 2 .9 2 2s-.9 2-2 2z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="Laravel" aria-label="Laravel">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M2 3l10 6 10-6v15L12 21 2 18V3zm10 8.5L5 7.3v8.4l7 2.1 7-2.1V7.3L12 11.5z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="Django" aria-label="Django">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 14.5c0 .83-.67 1.5-1.5 1.5S10 17.33 10 16.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="Java" aria-label="Java">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M8 18c0 1.66 1.79 3 4 3s4-1.34 4-3c0-.88-.5-1.67-1.3-2.22.42-.32.7-.82.7-1.38 0-1.1-.9-2-2-2s-2 .9-2 2c0 .56.28 1.06.7 1.38-.8.55-1.3 1.34-1.3 2.22zm4-16C9.24 2 7 4.24 7 7s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="Kotlin" aria-label="Kotlin">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M2 2h20L12 12 22 22H2V2z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="Dart" aria-label="Dart">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M4 3l14 7-6 10-8-17zm11 8.5L9 16l3 4 3-8.5z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="Flutter" aria-label="Flutter">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M14.314 0L2.3 12 6 15.7 21.684 0h-7.37zM17 11.5l-4.8 4.8 4.8 4.7H24l-7-7L24 11.5h-7z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="React Native" aria-label="React Native">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 10.11c1.04 0 1.89.85 1.89 1.89s-.85 1.89-1.89 1.89-1.89-.85-1.89-1.89.85-1.89 1.89-1.89M12 8c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4zm10.74 3.7c-.12-.86-.54-1.64-1.18-2.22-1.2-1.1-2.97-1.62-5.06-1.53-.78-2.02-2.1-3.66-3.79-4.71-1.38-.85-3.04-1.24-4.71-1.24s-3.33.39-4.71 1.24c-1.69 1.05-3.01 2.69-3.79 4.71-2.09-.09-3.86.43-5.06 1.53-.64.58-1.06 1.36-1.18 2.22-.17 1.21.13 2.45.85 3.52 1.05 1.57 2.82 2.62 5.14 3.03.79 2.02 2.11 3.66 3.79 4.71 1.38.85 3.04 1.24 4.71 1.24s3.33-.39 4.71-1.24c1.69-1.05 3.01-2.69 3.79-4.71 2.32-.41 4.09-1.46 5.14-3.03.72-1.07 1.02-2.31.85-3.52z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="MySQL" aria-label="MySQL">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="PostgreSQL" aria-label="PostgreSQL">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2c5.52 0 10 4.48 10 10 0 3.31-1.61 6.24-4.09 8.04l-1.37-1.74C18.42 16.89 19.6 14.58 19.6 12c0-4.19-3.41-7.6-7.6-7.6S4.4 7.81 4.4 12c0 2.58 1.18 4.89 3.06 6.3l-1.37 1.74C3.61 18.24 2 15.31 2 12 2 6.48 6.48 2 12 2z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="MongoDB" aria-label="MongoDB">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2c-.5 0-.95.32-1.12.79L8.71 9H5c-.55 0-1 .45-1 1s.45 1 1 1h2.9l-2.19 6.21c-.17.47.05 1 .52 1.17.47.17 1-.05 1.17-.52L9.62 11h4.76l2.22 6.86c.17.47.7.7 1.17.52.47-.17.7-.7.52-1.17L16.1 11h2.9c.55 0 1-.45 1-1s-.45-1-1-1h-3.71l-2.17-6.21C12.95 2.32 12.5 2 12 2z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                            <div class="logo-loop-item" title="SQLite" aria-label="SQLite">
+                                <span class="logo-loop-icon">
+                                    <svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm1.07-7.75l-.9.92C12.45 11.9 12 12.5 12 14h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

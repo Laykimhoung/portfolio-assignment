@@ -12,20 +12,6 @@
     position: relative;
 }
 
-.section-header-left {
-    margin-bottom: var(--space-xl);
-}
-
-.section-label {
-    display: inline-block;
-    color: var(--color-accent);
-    font-size: var(--fs-small);
-    font-weight: var(--fw-bold);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: var(--space-xs);
-}
-
 .section-title {
     font-family: var(--font-heading);
     font-size: var(--fs-h1);
@@ -42,6 +28,17 @@
     line-height: 1.7;
 }
 
+.section-subtitle.quote-style {
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--color-text-secondary);
+    max-width: 680px;
+}
+
+.section-header-left {
+    margin-bottom: var(--space-xl);
+}
+
 .section-header.center {
     text-align: center;
     margin-bottom: var(--space-2xl);
@@ -53,114 +50,15 @@
 }
 
 /* ------------------------------------------
-   1. SKILLS HERO
-   ------------------------------------------ */
-.skills-hero {
-    position: relative;
-    display: flex;
-    align-items: center;
-    min-height: calc(85vh - var(--header-height));
-    padding-top: calc(var(--header-height) + var(--space-lg));
-    padding-bottom: var(--space-2xl);
-    overflow: hidden;
-}
-
-.skills-hero-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 55rem;
-    position: relative;
-    z-index: var(--z-default);
-}
-
-.skills-hero-title {
-    font-family: var(--font-heading);
-    font-size: clamp(2.75rem, 7.5vw, var(--fs-hero));
-    line-height: 0.94;
-    letter-spacing: 1px;
-    margin-bottom: var(--space-md);
-    color: var(--color-text-primary);
-}
-
-.skills-hero-title .title-line {
-    display: block;
-}
-
-.skills-hero-title .highlight-accent {
-    color: var(--color-accent);
-}
-
-.skills-hero-subtitle {
-    font-size: clamp(1.15rem, 2vw, 1.4rem);
-    color: var(--color-text-secondary);
-    line-height: 1.65;
-    max-width: 44rem;
-    margin-bottom: var(--space-xl);
-}
-
-/* Hero Ambient Glow */
-.skills-hero-glow {
-    position: absolute;
-    top: 15%;
-    left: -10%;
-    width: 450px;
-    height: 450px;
-    background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
-    opacity: 0.12;
-    filter: blur(80px);
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* Scroll Indicator */
-.hero-scroll-indicator {
-    display: flex;
-    align-items: center;
-    gap: var(--space-xs);
-    color: var(--color-text-secondary);
-    font-size: var(--fs-small);
-    font-weight: var(--fw-medium);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    opacity: 0.7;
-    margin-top: var(--space-2xl);
-    transition: var(--transition-normal);
-}
-
-.hero-scroll-indicator:hover {
-    color: var(--color-text-primary);
-    opacity: 1;
-}
-
-.scroll-arrow-icon {
-    display: inline-flex;
-    animation: scroll-bounce 2s infinite cubic-bezier(0.45, 0, 0.55, 1);
-    color: var(--color-accent);
-}
-
-@keyframes scroll-bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(6px);
-    }
-    60% {
-        transform: translateY(3px);
-    }
-}
-
-/* ------------------------------------------
-   2. CORE TECHNOLOGIES
+   1. CORE TECHNOLOGIES (FIRST SECTION)
    ------------------------------------------ */
 .core-tech-section {
-    padding-top: var(--space-xl);
+    padding-top: calc(var(--header-height) + var(--space-xl));
     padding-bottom: var(--space-3xl);
 }
 
 /* ------------------------------------------
-   3. MY FUTURE TECH STACK
+   2. FUTURE LEARNING ROADMAP
    ------------------------------------------ */
 .future-stack-section {
     padding-top: var(--space-2xl);
@@ -239,6 +137,12 @@
     transition: var(--transition-normal);
 }
 
+.tech-card-icon svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
 .tech-card:hover {
     background: var(--color-surface-hover);
     border-color: rgba(255, 255, 255, 0.16);
@@ -289,7 +193,7 @@
 }
 
 /* ------------------------------------------
-   4. TECHNOLOGY LOGO LOOP
+   3. MY FUTURE TECH STACK (LOGO LOOP)
    ------------------------------------------ */
 .logo-loop-section {
     padding-top: var(--space-xl);
@@ -298,91 +202,16 @@
 }
 
 /* ------------------------------------------
-   5. SKILLS CTA SECTION
-   ------------------------------------------ */
-.skills-cta-section {
-    padding-top: var(--space-xl);
-    padding-bottom: var(--space-3xl);
-    position: relative;
-}
-
-.skills-cta-card {
-    position: relative;
-    max-width: 880px;
-    margin: 0 auto;
-    padding: var(--space-3xl) var(--space-xl);
-    border-radius: var(--radius-xl);
-    background: var(--color-surface);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: var(--border-primary);
-    text-align: center;
-    overflow: hidden;
-}
-
-.cta-glow {
-    position: absolute;
-    inset: -30px;
-    background: radial-gradient(circle, var(--color-accent) 0%, transparent 65%);
-    opacity: 0.14;
-    z-index: -1;
-    filter: blur(35px);
-}
-
-.skills-cta-label {
-    display: inline-block;
-    color: var(--color-accent);
-    font-size: var(--fs-small);
-    font-weight: var(--fw-bold);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: var(--space-xs);
-}
-
-.skills-cta-title {
-    font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 5vw, 3.25rem);
-    color: var(--color-text-primary);
-    line-height: 1.1;
-    letter-spacing: 1px;
-    margin-bottom: var(--space-md);
-}
-
-.skills-cta-text {
-    font-size: var(--fs-body);
-    color: var(--color-text-secondary);
-    line-height: 1.7;
-    max-width: 580px;
-    margin: 0 auto var(--space-xl);
-}
-
-.skills-cta-button-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* ------------------------------------------
-   6. RESPONSIVE DESIGN BREAKPOINTS
+   4. RESPONSIVE DESIGN BREAKPOINTS
    ------------------------------------------ */
 
 @media (max-width: 992px) {
-    .skills-hero {
-        min-height: auto;
-        padding-top: calc(var(--header-height) + var(--space-lg));
-        padding-bottom: var(--space-xl);
-    }
-    
     .tech-cards-grid {
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 }
 
 @media (max-width: 768px) {
-    .skills-cta-card {
-        padding: var(--space-2xl) var(--space-lg);
-    }
-    
     .section-header-left {
         margin-bottom: var(--space-lg);
     }
@@ -393,41 +222,20 @@
         padding: var(--space-2xl) 0;
     }
     
-    .skills-hero-title {
-        font-size: clamp(2.25rem, 11vw, 3rem);
-    }
-    
     .tech-cards-grid {
         grid-template-columns: 1fr;
-    }
-    
-    .skills-cta-card {
-        padding: var(--space-xl) var(--space-md);
     }
 }
 
 @media (max-width: 340px) {
-    /* Special support for small 320px screens */
-    .skills-hero-title {
-        font-size: 2rem;
-    }
-    
-    .skills-hero-subtitle {
-        font-size: 1rem;
-    }
-    
     .tech-card {
         padding: var(--space-lg) var(--space-sm);
     }
 }
 
 /* ------------------------------------------
-   7. LIGHT THEME OVERRIDES
+   5. LIGHT THEME OVERRIDES
    ------------------------------------------ */
-[data-theme="light"] .skills-hero-title {
-    color: #18181b;
-}
-
 [data-theme="light"] .tech-card {
     background: var(--color-surface);
 }
@@ -444,8 +252,4 @@
 [data-theme="light"] .tech-card-badge {
     background: rgba(0, 0, 0, 0.04);
     border-color: rgba(0, 0, 0, 0.1);
-}
-
-[data-theme="light"] .skills-cta-card {
-    background: var(--color-surface);
 }

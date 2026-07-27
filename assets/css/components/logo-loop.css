@@ -32,24 +32,34 @@
     );
 }
 
+.logo-loop-tracks-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+    width: 100%;
+}
+
 .logo-loop-track {
     display: flex;
     align-items: center;
-    gap: 3.5rem;
+    gap: 2.75rem;
     width: max-content;
     will-change: transform;
     cursor: default;
-    padding: 0.75rem 0;
+    padding: 0.5rem 0;
 }
 
 .logo-loop-item {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem 1.4rem;
-    background: rgba(255, 255, 255, 0.035);
+    justify-content: center;
+    width: 64px;
+    height: 64px;
+    background: var(--color-surface);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     border: var(--border-primary);
-    border-radius: var(--radius-full);
+    border-radius: var(--radius-lg);
     flex-shrink: 0;
     transition: 
         transform var(--transition-normal),
@@ -64,39 +74,37 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     color: var(--color-text-primary);
-    transition: transform var(--transition-normal);
+    transition: transform var(--transition-normal), color var(--transition-normal);
 }
 
-.logo-loop-name {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    color: var(--color-text-primary);
-    letter-spacing: 0.6px;
-    white-space: nowrap;
+.logo-loop-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 /* Scale on Hover & Highlight */
 .logo-loop-item:hover {
-    transform: scale(1.14);
+    transform: scale(1.18) translateY(-4px);
     background: var(--color-surface-hover);
     border-color: var(--color-accent);
     box-shadow: 
-        0 8px 24px rgba(0, 0, 0, 0.35),
-        0 0 18px rgba(220, 38, 38, 0.38);
-    z-index: 5;
+        0 12px 28px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(220, 38, 38, 0.45);
+    z-index: 10;
 }
 
 .logo-loop-item:hover .logo-loop-icon {
-    transform: scale(1.1);
+    transform: scale(1.12);
     color: var(--color-accent);
 }
 
 /* Light Theme Overrides */
 [data-theme="light"] .logo-loop-item {
-    background: rgba(0, 0, 0, 0.025);
+    background: var(--color-surface);
     border-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -104,6 +112,6 @@
     background: #ffffff;
     border-color: var(--color-accent);
     box-shadow: 
-        0 8px 24px rgba(15, 23, 42, 0.12),
-        0 0 16px rgba(209, 26, 42, 0.18);
+        0 10px 24px rgba(15, 23, 42, 0.12),
+        0 0 16px rgba(209, 26, 42, 0.2);
 }
