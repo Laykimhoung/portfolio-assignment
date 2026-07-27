@@ -8,7 +8,7 @@
 
     <meta
         name="description"
-        content="Modern responsive portfolio website by XAKURAII"
+        content="A collection of projects by Lay Kimhoung (XAKURAII) showcasing software engineering growth, desktop applications, and AI systems."
     />
     <meta name="author" content="XAKURAII" />
     <meta name="theme-color" content="#0B0B0D" />
@@ -36,8 +36,7 @@
     <link rel="stylesheet" href="assets/css/pages/projects.css">
 </head>
 
-  
-  <body>
+<body>
     <!-- Background -->
     <div id="background"></div>
 
@@ -45,7 +44,603 @@
     <div id="navbar"></div>
 
     <!-- Main -->
-    <main></main>
+    <main>
+        <!-- 1. HERO SECTION -->
+        <section class="page-section projects-hero" aria-labelledby="projects-hero-heading">
+            <div class="container">
+                <div class="projects-hero-content" data-animation="fade-up">
+                    <span class="section-label">Portfolio Work</span>
+                    <h1 id="projects-hero-heading" class="section-title">My Projects</h1>
+                    <p class="section-subtitle">
+                        A collection of projects where I applied my knowledge, explored new technologies, and continued growing as a developer. Every project represents another step in my learning journey.
+                    </p>
+
+                    <a href="#featured-projects" class="hero-scroll-indicator" aria-label="Scroll down to featured projects">
+                        <span>Explore Work</span>
+                        <div class="scroll-chevron">
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. FEATURED PROJECTS SECTION -->
+        <section id="featured-projects" class="page-section featured-projects-section" aria-label="Featured Projects Showcase">
+            <div class="container">
+                <div class="projects-showcase-list">
+
+                    <!-- =========================================================
+                         PROJECT 1: SMART ORDER MANAGEMENT SYSTEM
+                         Layout: Image Left | Content Right
+                         ========================================================= -->
+                    <article class="project-showcase" data-animation="fade-up">
+                        <!-- Preview Column (Left) -->
+                        <div class="project-preview-col">
+                            <div class="project-preview-card">
+                                <header class="preview-window-header">
+                                    <div class="window-dots">
+                                        <span class="window-dot red"></span>
+                                        <span class="window-dot yellow"></span>
+                                        <span class="window-dot green"></span>
+                                    </div>
+                                    <span class="window-title">SmartOrderManagement.exe</span>
+                                    <span class="window-status-pill">Active</span>
+                                </header>
+
+                                <div class="preview-window-body">
+                                    <!-- User Screenshot Fallback -->
+                                    <img 
+                                        src="assets/images/projects/smart-order.webp" 
+                                        alt="Smart Order Management System preview screenshot" 
+                                        class="project-preview-img"
+                                        onerror="this.style.display='none'"
+                                    />
+
+                                    <!-- Apple x Linear Interactive UI Mockup -->
+                                    <div class="project-mockup-ui">
+                                        <div class="mockup-header-row">
+                                            <div class="mockup-app-title">
+                                                <i data-lucide="coffee"></i>
+                                                <span>CoffeeShop POS Dashboard</span>
+                                            </div>
+                                            <span class="mockup-badge">C# .NET</span>
+                                        </div>
+
+                                        <div class="pos-metrics-row">
+                                            <div class="pos-metric-card">
+                                                <span class="pos-metric-label">Daily Revenue</span>
+                                                <span class="pos-metric-value">$1,420.50</span>
+                                            </div>
+                                            <div class="pos-metric-card">
+                                                <span class="pos-metric-label">Orders Served</span>
+                                                <span class="pos-metric-value">184</span>
+                                            </div>
+                                            <div class="pos-metric-card">
+                                                <span class="pos-metric-label">QR Invoices</span>
+                                                <span class="pos-metric-value">100%</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="pos-table-preview">
+                                            <div class="pos-table-row">
+                                                <span>#ORD-1048 &middot; Iced Caramel Macchiato</span>
+                                                <span class="pos-status-pill success">Paid QR</span>
+                                            </div>
+                                            <div class="pos-table-row">
+                                                <span>#ORD-1049 &middot; Espresso Double Shot</span>
+                                                <span class="pos-status-pill success">Completed</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content Column (Right) -->
+                        <div class="project-content-col">
+                            <span class="project-category-badge">
+                                <i data-lucide="monitor"></i>
+                                <span>01 / Desktop Application</span>
+                            </span>
+
+                            <h2 class="project-title">Smart Order Management System</h2>
+
+                            <p class="project-desc">
+                                A desktop-based order management system built with C# and .NET Framework. The system includes role-based authentication, dashboards, QR code invoices, reporting, and order management for a modern coffee shop.
+                            </p>
+
+                            <!-- Tech Stack -->
+                            <div class="project-tech-stack" aria-label="Technologies used">
+                                <span class="project-tech-pill">
+                                    <img src="assets/images/tech/csharp.svg" alt="C# icon" loading="lazy" />
+                                    <span>C#</span>
+                                </span>
+                                <span class="project-tech-pill">
+                                    <img src="assets/images/tech/dotnet.svg" alt=".NET icon" loading="lazy" />
+                                    <span>.NET Framework</span>
+                                </span>
+                                <span class="project-tech-pill">
+                                    <img src="assets/images/tech/sqlserver.svg" alt="SQL Server icon" loading="lazy" />
+                                    <span>SQL Server</span>
+                                </span>
+                                <span class="project-tech-pill">
+                                    <img src="assets/images/tech/dotnet.svg" alt="WinForms icon" loading="lazy" />
+                                    <span>WinForms</span>
+                                </span>
+                            </div>
+
+                            <!-- Key Features -->
+                            <div class="project-features" aria-label="Key Features">
+                                <span class="project-feature-tag">
+                                    <i data-lucide="check-circle-2"></i>
+                                    <span>Role-based login</span>
+                                </span>
+                                <span class="project-feature-tag">
+                                    <i data-lucide="check-circle-2"></i>
+                                    <span>Dashboard</span>
+                                </span>
+                                <span class="project-feature-tag">
+                                    <i data-lucide="check-circle-2"></i>
+                                    <span>Order Management</span>
+                                </span>
+                                <span class="project-feature-tag">
+                                    <i data-lucide="check-circle-2"></i>
+                                    <span>QR Invoice</span>
+                                </span>
+                                <span class="project-feature-tag">
+                                    <i data-lucide="check-circle-2"></i>
+                                    <span>Reports</span>
+                                </span>
+                                <span class="project-feature-tag">
+                                    <i data-lucide="check-circle-2"></i>
+                                    <span>PDF Export</span>
+                                </span>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="project-actions">
+                                <a 
+                                    href="https://github.com/Laykimhoung/smart-order-management-system" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    class="btn btn-project-primary"
+                                >
+                                    <i data-lucide="github"></i>
+                                    <span>GitHub Repository</span>
+                                </a>
+                                <a 
+                                    href="https://github.com/Laykimhoung/smart-order-management-system" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    class="btn btn-project-secondary"
+                                >
+                                    <i data-lucide="file-text"></i>
+                                    <span>View Details</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         PROJECT 2: STUDENT PERFORMANCE PREDICTION
+                         Layout: Content Left | Image Right (Reverse)
+                         ========================================================= -->
+                    <article class="project-showcase layout-reverse" data-animation="fade-up">
+                        <!-- Content Column (Left) -->
+                        <div class="project-content-col">
+                            <span class="project-category-badge">
+                                <i data-lucide="cpu"></i>
+                                <span>02 / AI &amp; Predictive Analytics</span>
+                            </span>
+
+                            <h2 class="project-title">Student Performance Prediction</h2>
+
+                            <p class="project-desc">
+                                An AI-powered student management system designed to monitor academic performance and help identify students who may need additional support through predictive analysis.
+                            </p>
+
+                            <!-- Tech Stack -->
+                            <div class="project-tech-stack" aria-label="Technologies used">
+                                <span class="project-tech-pill">
+                                    <img src="assets/images/tech/python.svg" alt="Python icon" loading="lazy" />
+                                    <span>Python</span>
+                                </span>
+                                <span class="project-tech-pill">
+                                    <img src="assets/images/tech/python.svg" alt="CustomTkinter icon" loading="lazy" />
+                                    <span>CustomTkinter</span>
+                                </span>
+                                <span class="project-tech-pill">
+                                    <img src="assets/images/tech/sqlite.svg" alt="SQLite icon" loading="lazy" />
+                                    <span>SQLite</span>
+                                </span>
+                                <span class="project-tech-pill">
+                                    <img src="assets/images/tech/python.svg" alt="Machine Learning icon" loading="lazy" />
+                                    <span>Machine Learning</span>
+                                </span>
+                            </div>
+
+                            <!-- Key Features -->
+                            <div class="project-features" aria-label="Key Features">
+                                <span class="project-feature-tag">
+                                    <i data-lucide="check-circle-2"></i>
+                                    <span>Student Management</span>
+                                </span>
+                                <span class="project-feature-tag">
+                                    <i data-lucide="check-circle-2"></i>
+                                    <span>Performance Prediction</span>
+                                </span>
+                                <span class="project-feature-tag">
+                                    <i data-lucide="check-circle-2"></i>
+                                    <span>Analytics</span>
+                                </span>
+                                <span class="project-feature-tag">
+                                    <i data-lucide="check-circle-2"></i>
+                                    <span>Reports</span>
+                                </span>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="project-actions">
+                                <a 
+                                    href="https://github.com/Laykimhoung/student-performance-prediction" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    class="btn btn-project-primary"
+                                >
+                                    <i data-lucide="github"></i>
+                                    <span>GitHub Repository</span>
+                                </a>
+                                <a 
+                                    href="https://github.com/Laykimhoung/student-performance-prediction" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    class="btn btn-project-secondary"
+                                >
+                                    <i data-lucide="file-text"></i>
+                                    <span>View Details</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Preview Column (Right) -->
+                        <div class="project-preview-col">
+                            <div class="project-preview-card">
+                                <header class="preview-window-header">
+                                    <div class="window-dots">
+                                        <span class="window-dot red"></span>
+                                        <span class="window-dot yellow"></span>
+                                        <span class="window-dot green"></span>
+                                    </div>
+                                    <span class="window-title">StudentPerformancePredictor.py</span>
+                                    <span class="window-status-pill">AI Ready</span>
+                                </header>
+
+                                <div class="preview-window-body">
+                                    <!-- User Screenshot Fallback -->
+                                    <img 
+                                        src="assets/images/projects/student-prediction.webp" 
+                                        alt="Student Performance Prediction preview screenshot" 
+                                        class="project-preview-img"
+                                        onerror="this.style.display='none'"
+                                    />
+
+                                    <!-- Apple x Linear Interactive UI Mockup -->
+                                    <div class="project-mockup-ui">
+                                        <div class="mockup-header-row">
+                                            <div class="mockup-app-title">
+                                                <i data-lucide="trending-up"></i>
+                                                <span>AI Performance Analytics</span>
+                                            </div>
+                                            <span class="mockup-badge">Python ML</span>
+                                        </div>
+
+                                        <div class="ai-dashboard-main">
+                                            <div class="ai-chart-card">
+                                                <span class="pos-metric-label">Semester Predictive Growth</span>
+                                                <div class="ai-chart-bars">
+                                                    <div class="ai-bar" style="height: 45%;"></div>
+                                                    <div class="ai-bar" style="height: 60%;"></div>
+                                                    <div class="ai-bar" style="height: 72%;"></div>
+                                                    <div class="ai-bar" style="height: 85%;"></div>
+                                                    <div class="ai-bar" style="height: 94%;"></div>
+                                                </div>
+                                            </div>
+                                            <div class="ai-score-card">
+                                                <span class="ai-score-number">94.8%</span>
+                                                <span class="ai-score-label">Model Accuracy</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         PROJECT 3: MULTIMINIGAME
+                         Layout: Image Left | Content Right
+                         ========================================================= -->
+                    <article class="project-showcase" data-animation="fade-up">
+                        <!-- Preview Column (Left) -->
+                        <div class="project-preview-col">
+                            <div class="project-preview-card">
+                                <header class="preview-window-header">
+                                    <div class="window-dots">
+                                        <span class="window-dot red"></span>
+                                        <span class="window-dot yellow"></span>
+                                        <span class="window-dot green"></span>
+                                    </div>
+                                    <span class="window-title">MultiMiniGame.exe</span>
+                                    <span class="window-status-pill">Arcade Live</span>
+                                </header>
+
+                                <div class="preview-window-body">
+                                    <!-- User Screenshot Fallback -->
+                                    <img 
+                                        src="assets/images/projects/multiminigame.webp" 
+                                        alt="MultiMiniGame preview screenshot" 
+                                        class="project-preview-img"
+                                        onerror="this.style.display='none'"
+                                    />
+
+                                    <!-- Apple x Linear Interactive UI Mockup -->
+                                    <div class="project-mockup-ui">
+                                        <div class="mockup-header-row">
+                                            <div class="mockup-app-title">
+                                                <i data-lucide="gamepad-2"></i>
+                                                <span>Arcade Game Launcher</span>
+                                            </div>
+                                            <span class="mockup-badge">WinForms</span>
+                                        </div>
+
+                                        <div class="arcade-games-grid">
+                                            <div class="arcade-game-tile">
+                                                <i data-lucide="zap"></i>
+                                                <span class="arcade-game-name">Snake</span>
+                                            </div>
+                                            <div class="arcade-game-tile">
+                                                <i data-lucide="activity"></i>
+                                                <span class="arcade-game-name">Pong</span>
+                                            </div>
+                                            <div class="arcade-game-tile">
+                                                <i data-lucide="grid"></i>
+                                                <span class="arcade-game-name">Memory</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="arcade-footer-bar">
+                                            <span style="font-size: 0.8rem; color: var(--color-text-primary); font-weight: var(--fw-medium);">
+                                                Object-Oriented Desktop Gaming Suite
+                                            </span>
+                                            <span style="font-size: 0.72rem; color: var(--color-accent);">
+                                                3 Interactive Games
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content Column (Right) -->
+                        <div class="project-content-col">
+                            <span class="project-category-badge">
+                                <i data-lucide="play-circle"></i>
+                                <span>03 / Interactive Desktop Games</span>
+                            </span>
+
+                            <h2 class="project-title">MultiMiniGame</h2>
+
+                            <p class="project-desc">
+                                A collection of fun desktop mini-games built using C# and .NET Windows Forms to practice object-oriented programming and desktop application development.
+                            </p>
+
+                            <!-- Tech Stack -->
+                            <div class="project-tech-stack" aria-label="Technologies used">
+                                <span class="project-tech-pill">
+                                    <img src="assets/images/tech/csharp.svg" alt="C# icon" loading="lazy" />
+                                    <span>C#</span>
+                                </span>
+                                <span class="project-tech-pill">
+                                    <img src="assets/images/tech/dotnet.svg" alt=".NET icon" loading="lazy" />
+                                    <span>.NET Framework</span>
+                                </span>
+                                <span class="project-tech-pill">
+                                    <img src="assets/images/tech/dotnet.svg" alt="WinForms icon" loading="lazy" />
+                                    <span>WinForms</span>
+                                </span>
+                            </div>
+
+                            <!-- Key Features -->
+                            <div class="project-features" aria-label="Key Features">
+                                <span class="project-feature-tag">
+                                    <i data-lucide="check-circle-2"></i>
+                                    <span>Multiple Mini Games</span>
+                                </span>
+                                <span class="project-feature-tag">
+                                    <i data-lucide="check-circle-2"></i>
+                                    <span>Interactive Gameplay</span>
+                                </span>
+                                <span class="project-feature-tag">
+                                    <i data-lucide="check-circle-2"></i>
+                                    <span>Desktop Application</span>
+                                </span>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="project-actions">
+                                <a 
+                                    href="https://github.com/Laykimhoung/MultiMiniGame" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    class="btn btn-project-primary"
+                                >
+                                    <i data-lucide="github"></i>
+                                    <span>GitHub Repository</span>
+                                </a>
+                                <a 
+                                    href="https://github.com/Laykimhoung/MultiMiniGame" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    class="btn btn-project-secondary"
+                                >
+                                    <i data-lucide="file-text"></i>
+                                    <span>View Details</span>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- =========================================================
+                         PROJECT 4: KLAKLOUKBRAINROT
+                         Layout: Content Left | Image Right (Reverse)
+                         ========================================================= -->
+                    <article class="project-showcase layout-reverse" data-animation="fade-up">
+                        <!-- Content Column (Left) -->
+                        <div class="project-content-col">
+                            <span class="project-category-badge">
+                                <i data-lucide="dices"></i>
+                                <span>04 / Khmer Traditional Game</span>
+                            </span>
+
+                            <h2 class="project-title">KlaKloukBrainrot</h2>
+
+                            <p class="project-desc">
+                                A modern digital version of the traditional Khmer Kla Klouk game with a humorous Gen Z Brainrot-inspired style built using C# and .NET.
+                            </p>
+
+                            <!-- Tech Stack -->
+                            <div class="project-tech-stack" aria-label="Technologies used">
+                                <span class="project-tech-pill">
+                                    <img src="assets/images/tech/csharp.svg" alt="C# icon" loading="lazy" />
+                                    <span>C#</span>
+                                </span>
+                                <span class="project-tech-pill">
+                                    <img src="assets/images/tech/dotnet.svg" alt=".NET icon" loading="lazy" />
+                                    <span>.NET Framework</span>
+                                </span>
+                                <span class="project-tech-pill">
+                                    <img src="assets/images/tech/dotnet.svg" alt="WinForms icon" loading="lazy" />
+                                    <span>WinForms</span>
+                                </span>
+                            </div>
+
+                            <!-- Key Features -->
+                            <div class="project-features" aria-label="Key Features">
+                                <span class="project-feature-tag">
+                                    <i data-lucide="check-circle-2"></i>
+                                    <span>Traditional Khmer Game</span>
+                                </span>
+                                <span class="project-feature-tag">
+                                    <i data-lucide="check-circle-2"></i>
+                                    <span>Modern UI</span>
+                                </span>
+                                <span class="project-feature-tag">
+                                    <i data-lucide="check-circle-2"></i>
+                                    <span>Interactive Gameplay</span>
+                                </span>
+                            </div>
+
+                            <!-- Actions -->
+                            <div class="project-actions">
+                                <a 
+                                    href="https://github.com/Laykimhoung/KlaKloukBrainrot" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    class="btn btn-project-primary"
+                                >
+                                    <i data-lucide="github"></i>
+                                    <span>GitHub Repository</span>
+                                </a>
+                                <a 
+                                    href="https://github.com/Laykimhoung/KlaKloukBrainrot" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    class="btn btn-project-secondary"
+                                >
+                                    <i data-lucide="file-text"></i>
+                                    <span>View Details</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Preview Column (Right) -->
+                        <div class="project-preview-col">
+                            <div class="project-preview-card">
+                                <header class="preview-window-header">
+                                    <div class="window-dots">
+                                        <span class="window-dot red"></span>
+                                        <span class="window-dot yellow"></span>
+                                        <span class="window-dot green"></span>
+                                    </div>
+                                    <span class="window-title">KlaKloukBrainrot.exe</span>
+                                    <span class="window-status-pill">Gen-Z Edition</span>
+                                </header>
+
+                                <div class="preview-window-body">
+                                    <!-- User Screenshot Fallback -->
+                                    <img 
+                                        src="assets/images/projects/klaklouk.webp" 
+                                        alt="KlaKloukBrainrot preview screenshot" 
+                                        class="project-preview-img"
+                                        onerror="this.style.display='none'"
+                                    />
+
+                                    <!-- Apple x Linear Interactive UI Mockup -->
+                                    <div class="project-mockup-ui">
+                                        <div class="mockup-header-row">
+                                            <div class="mockup-app-title">
+                                                <i data-lucide="dice-6"></i>
+                                                <span>Kla Klouk Digital Board</span>
+                                            </div>
+                                            <span class="mockup-badge">C# WinForms</span>
+                                        </div>
+
+                                        <div class="klaklouk-board-grid">
+                                            <div class="klaklouk-tile active">
+                                                <span class="klaklouk-symbol-name">Gourd</span>
+                                                <span class="klaklouk-symbol-sub">Khla</span>
+                                            </div>
+                                            <div class="klaklouk-tile">
+                                                <span class="klaklouk-symbol-name">Crab</span>
+                                                <span class="klaklouk-symbol-sub">Kdam</span>
+                                            </div>
+                                            <div class="klaklouk-tile">
+                                                <span class="klaklouk-symbol-name">Fish</span>
+                                                <span class="klaklouk-symbol-sub">Trey</span>
+                                            </div>
+                                            <div class="klaklouk-tile">
+                                                <span class="klaklouk-symbol-name">Rooster</span>
+                                                <span class="klaklouk-symbol-sub">Moan</span>
+                                            </div>
+                                            <div class="klaklouk-tile active">
+                                                <span class="klaklouk-symbol-name">Lobster</span>
+                                                <span class="klaklouk-symbol-sub">Bongkong</span>
+                                            </div>
+                                            <div class="klaklouk-tile">
+                                                <span class="klaklouk-symbol-name">Tiger</span>
+                                                <span class="klaklouk-symbol-sub">Kla</span>
+                                            </div>
+                                        </div>
+
+                                        <div class="arcade-footer-bar">
+                                            <span style="font-size: 0.8rem; color: var(--color-text-primary); font-weight: var(--fw-medium);">
+                                                Traditional Khmer Board x Modern Humor
+                                            </span>
+                                            <span style="font-size: 0.72rem; color: var(--color-accent);">
+                                                Roll &amp; Win
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <div id="footer"></div>
@@ -55,5 +650,5 @@
 
     <!-- Main Script -->
     <script type="module" src="assets/js/main.js"></script>
-  </body>
+</body>
 </html>

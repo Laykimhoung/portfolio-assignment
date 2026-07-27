@@ -1,2 +1,828 @@
-/* Projects Page Styles */
+/* ==========================================
+   PROJECTS PAGE SPECIFIC STYLES
+   Apple × Linear × Vercel Premium Aesthetic
+   ========================================== */
+
 @import url("../global.css");
+
+/* ------------------------------------------
+   1. HERO SECTION
+   ------------------------------------------ */
+.projects-hero {
+    position: relative;
+    padding: calc(var(--header-height) + var(--space-2xl)) 0 var(--space-3xl);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Subtle ambient background glow */
+.projects-hero::before {
+    content: "";
+    position: absolute;
+    top: -15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 650px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(220, 38, 38, 0.12) 0%, rgba(220, 38, 38, 0.03) 45%, transparent 75%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.projects-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+.projects-hero .section-label {
+    display: inline-block;
+    color: var(--color-accent);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-bottom: var(--space-sm);
+}
+
+.projects-hero .section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3.5rem, 7vw, 5.5rem);
+    color: var(--color-text-primary);
+    line-height: 1;
+    letter-spacing: 1.5px;
+    margin-bottom: var(--space-md);
+}
+
+.projects-hero .section-subtitle {
+    color: var(--color-text-secondary);
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    line-height: 1.75;
+    max-width: 760px;
+    margin: 0 auto var(--space-2xl);
+}
+
+/* Scroll indicator */
+.hero-scroll-indicator {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+    font-weight: var(--fw-medium);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: var(--transition-normal);
+}
+
+.hero-scroll-indicator:hover {
+    color: var(--color-text-primary);
+    opacity: 1;
+}
+
+.scroll-chevron {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    animation: bounce-down 2s infinite ease-in-out;
+}
+
+@keyframes bounce-down {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+/* ------------------------------------------
+   2. FEATURED PROJECTS SECTION
+   ------------------------------------------ */
+.featured-projects-section {
+    padding: var(--space-xl) 0 var(--space-3xl);
+    position: relative;
+}
+
+.projects-showcase-list {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--space-3xl) * 1.25);
+}
+
+/* ------------------------------------------
+   3. INDIVIDUAL PROJECT SHOWCASE ROW
+   ------------------------------------------ */
+.project-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+    align-items: center;
+    position: relative;
+}
+
+/* Alternate Layout: Even projects have content on left, image on right */
+.project-showcase.layout-reverse .project-preview-col {
+    order: 2;
+}
+
+.project-showcase.layout-reverse .project-content-col {
+    order: 1;
+}
+
+/* Content Column */
+.project-content-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    position: relative;
+    z-index: 2;
+}
+
+.project-category-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem;
+    font-weight: var(--fw-bold);
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid rgba(220, 38, 38, 0.25);
+    padding: 6px 14px;
+    border-radius: var(--radius-full);
+    width: fit-content;
+}
+
+.project-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+    color: var(--color-text-primary);
+    line-height: 1.05;
+    letter-spacing: 0.5px;
+    transition: var(--transition-normal);
+}
+
+.project-desc {
+    color: var(--color-text-secondary);
+    font-size: 1.08rem;
+    line-height: 1.75;
+}
+
+/* Technology Stack Bar */
+.project-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.project-tech-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: rgba(255, 255, 255, 0.04);
+    border: var(--border-primary);
+    padding: 6px 12px;
+    border-radius: var(--radius-full);
+    font-size: 0.8rem;
+    font-weight: var(--fw-medium);
+    color: var(--color-text-primary);
+    transition: var(--transition-normal);
+}
+
+.project-tech-pill img {
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+    display: block;
+    transition: var(--transition-normal);
+}
+
+.project-showcase:hover .project-tech-pill {
+    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.project-showcase:hover .project-tech-pill img {
+    filter: brightness(0) saturate(100%) invert(21%) sepia(91%) saturate(3025%) hue-rotate(348deg) brightness(96%) contrast(92%);
+}
+
+/* Key Features List */
+.project-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.project-feature-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-normal);
+}
+
+.project-feature-tag i {
+    width: 14px;
+    height: 14px;
+    color: var(--color-accent);
+    flex-shrink: 0;
+}
+
+/* Action Buttons Bar */
+.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-sm);
+}
+
+/* Custom button overrides for project cards */
+.btn-project-primary {
+    background: var(--color-accent);
+    color: #ffffff;
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 16px rgba(220, 38, 38, 0.35);
+}
+
+.btn-project-primary:hover {
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+    box-shadow: 0 8px 24px rgba(220, 38, 38, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-project-secondary {
+    background: var(--color-surface);
+    color: var(--color-text-primary);
+    border: var(--border-primary);
+}
+
+.btn-project-secondary:hover {
+    background: var(--color-surface-hover);
+    border-color: rgba(255, 255, 255, 0.22);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ------------------------------------------
+   4. APPLE × LINEAR GLASS PREVIEW WINDOW
+   ------------------------------------------ */
+.project-preview-col {
+    position: relative;
+    z-index: 1;
+}
+
+.project-preview-card {
+    position: relative;
+    background: var(--color-surface);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: var(--border-primary);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.55s ease, border-color 0.55s ease;
+}
+
+/* Subtle gradient glow behind window on hover */
+.project-preview-card::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: var(--radius-xl);
+    background: linear-gradient(135deg, rgba(220, 38, 38, 0.5), transparent 60%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.55s ease;
+    z-index: 10;
+}
+
+.project-showcase:hover .project-preview-card {
+    transform: translateY(-10px) scale(1.015);
+    border-color: rgba(220, 38, 38, 0.45);
+    box-shadow: 
+        0 24px 60px rgba(0, 0, 0, 0.65),
+        0 0 35px rgba(220, 38, 38, 0.25);
+}
+
+.project-showcase:hover .project-preview-card::after {
+    opacity: 1;
+}
+
+/* Window Titlebar (macOS style) */
+.preview-window-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px;
+    background: rgba(0, 0, 0, 0.25);
+    border-bottom: var(--border-primary);
+}
+
+.window-dots {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.window-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.window-dot.red {
+    background: #FF5F56;
+}
+.window-dot.yellow {
+    background: #FFBD2E;
+}
+.window-dot.green {
+    background: #27C93F;
+}
+
+.window-title {
+    font-family: var(--font-body);
+    font-size: 0.78rem;
+    font-weight: var(--fw-medium);
+    color: var(--color-text-secondary);
+    letter-spacing: 0.5px;
+}
+
+.window-status-pill {
+    font-size: 0.68rem;
+    font-weight: var(--fw-semibold);
+    color: #27C93F;
+    background: rgba(39, 201, 63, 0.12);
+    border: 1px solid rgba(39, 201, 63, 0.28);
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    letter-spacing: 0.4px;
+}
+
+/* Window Body */
+.preview-window-body {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(15, 17, 23, 0.95), rgba(9, 9, 11, 0.98));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* User image screenshot support */
+.project-preview-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 5;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-showcase:hover .project-preview-img {
+    transform: scale(1.05);
+}
+
+/* ------------------------------------------
+   5. INTERACTIVE UI MOCKUP ILLUSTRATIONS
+   (Apple × Linear × Vercel style mockups)
+   ------------------------------------------ */
+.project-mockup-ui {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-showcase:hover .project-mockup-ui {
+    transform: scale(1.04);
+}
+
+/* Subtle grid overlay in mockups */
+.project-mockup-ui::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 0);
+    background-size: 24px 24px;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Shared Mockup Card Elements */
+.mockup-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.mockup-app-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    color: var(--color-text-primary);
+    letter-spacing: 0.8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.mockup-badge {
+    font-size: 0.7rem;
+    font-weight: var(--fw-semibold);
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    background: rgba(220, 38, 38, 0.15);
+    color: var(--color-accent);
+    border: 1px solid rgba(220, 38, 38, 0.3);
+}
+
+/* --- Project 1: POS Order Management Mockup --- */
+.pos-metrics-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.pos-metric-card {
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pos-metric-label {
+    font-size: 0.72rem;
+    color: var(--color-text-secondary);
+}
+
+.pos-metric-value {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    color: var(--color-text-primary);
+    letter-spacing: 0.5px;
+}
+
+.pos-table-preview {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 10px 14px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.pos-table-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.8rem;
+}
+
+.pos-table-row:last-child {
+    border-bottom: none;
+}
+
+.pos-status-pill {
+    font-size: 0.68rem;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    font-weight: var(--fw-semibold);
+}
+
+.pos-status-pill.success {
+    background: rgba(39, 201, 63, 0.15);
+    color: #27C93F;
+}
+
+/* --- Project 2: AI Predictive Analytics Mockup --- */
+.ai-dashboard-main {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 14px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.ai-chart-card {
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 140px;
+}
+
+.ai-chart-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    height: 70px;
+    padding-top: 10px;
+}
+
+.ai-bar {
+    flex: 1;
+    background: linear-gradient(180deg, var(--color-accent) 0%, rgba(220, 38, 38, 0.3) 100%);
+    border-radius: 4px 4px 0 0;
+    transition: transform 0.4s ease;
+}
+
+.project-showcase:hover .ai-bar {
+    transform: scaleY(1.08);
+}
+
+.ai-score-card {
+    background: rgba(220, 38, 38, 0.08);
+    border: 1px solid rgba(220, 38, 38, 0.25);
+    border-radius: var(--radius-md);
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 6px;
+}
+
+.ai-score-number {
+    font-family: var(--font-heading);
+    font-size: 2.6rem;
+    color: var(--color-accent);
+    line-height: 1;
+}
+
+.ai-score-label {
+    font-size: 0.72rem;
+    color: var(--color-text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+/* --- Project 3: Arcade Mini-Game Launcher Mockup --- */
+.arcade-games-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.arcade-game-tile {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    border-radius: var(--radius-md);
+    padding: 14px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    transition: var(--transition-normal);
+}
+
+.arcade-game-tile i {
+    color: var(--color-accent);
+    width: 24px;
+    height: 24px;
+}
+
+.arcade-game-name {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--color-text-primary);
+    letter-spacing: 0.5px;
+}
+
+.arcade-footer-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: var(--radius-md);
+    padding: 10px 14px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Project 4: Kla Klouk Khmer Dice Board Mockup --- */
+.klaklouk-board-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.klaklouk-tile {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-md);
+    padding: 14px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 6px;
+    transition: var(--transition-normal);
+}
+
+.klaklouk-tile.active {
+    background: rgba(220, 38, 38, 0.15);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 16px rgba(220, 38, 38, 0.3);
+}
+
+.klaklouk-symbol-name {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    color: var(--color-text-primary);
+    letter-spacing: 0.8px;
+}
+
+.klaklouk-symbol-sub {
+    font-size: 0.72rem;
+    color: var(--color-text-secondary);
+}
+
+/* ------------------------------------------
+   6. LIGHT THEME OVERRIDES
+   ------------------------------------------ */
+[data-theme="light"] .projects-hero .section-title,
+[data-theme="light"] .project-title {
+    color: #18181B;
+}
+
+[data-theme="light"] .projects-hero .section-subtitle,
+[data-theme="light"] .project-desc,
+[data-theme="light"] .hero-scroll-indicator {
+    color: #52525B;
+}
+
+[data-theme="light"] .project-tech-pill {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.12);
+    color: #18181B;
+}
+
+[data-theme="light"] .project-tech-pill img {
+    filter: brightness(0) opacity(0.85);
+}
+
+[data-theme="light"] .project-showcase:hover .project-tech-pill img {
+    filter: brightness(0) saturate(100%) invert(21%) sepia(91%) saturate(3025%) hue-rotate(348deg) brightness(96%) contrast(92%);
+}
+
+[data-theme="light"] .project-feature-tag {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.09);
+    color: #3F3F46;
+}
+
+[data-theme="light"] .project-preview-card {
+    background: #FFFFFF;
+    border-color: rgba(0, 0, 0, 0.12);
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.1);
+}
+
+[data-theme="light"] .project-showcase:hover .project-preview-card {
+    border-color: var(--color-accent);
+    box-shadow: 
+        0 20px 48px rgba(15, 23, 42, 0.15),
+        0 0 24px rgba(209, 26, 42, 0.18);
+}
+
+[data-theme="light"] .preview-window-header {
+    background: #F4F5F7;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .window-title {
+    color: #52525B;
+}
+
+[data-theme="light"] .preview-window-body {
+    background: linear-gradient(135deg, #1E222E, #11131A);
+}
+
+[data-theme="light"] .btn-project-secondary {
+    background: #FFFFFF;
+    color: #18181B;
+    border-color: rgba(0, 0, 0, 0.16);
+}
+
+[data-theme="light"] .btn-project-secondary:hover {
+    background: #F4F5F7;
+    border-color: #18181B;
+}
+
+/* ------------------------------------------
+   7. RESPONSIVE MOBILE & TABLET LAYOUTS
+   ------------------------------------------ */
+@media (max-width: 900px) {
+    .project-showcase,
+    .project-showcase.layout-reverse {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    /* On mobile, image preview is always on top, content below */
+    .project-showcase .project-preview-col,
+    .project-showcase.layout-reverse .project-preview-col {
+        order: 1;
+    }
+
+    .project-showcase .project-content-col,
+    .project-showcase.layout-reverse .project-content-col {
+        order: 2;
+    }
+
+    .project-title {
+        font-size: 2.35rem;
+    }
+
+    .project-desc {
+        font-size: 1rem;
+    }
+
+    .pos-metrics-row,
+    .arcade-games-grid,
+    .klaklouk-board-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .ai-dashboard-main {
+        grid-template-columns: 1fr;
+    }
+
+    .project-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .project-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .pos-metrics-row,
+    .arcade-games-grid,
+    .klaklouk-board-grid {
+        grid-template-columns: 1fr;
+    }
+}
