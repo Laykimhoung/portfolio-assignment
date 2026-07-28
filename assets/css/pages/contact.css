@@ -106,295 +106,306 @@
 
 .card.profile-card {
     position: relative;
+    width: 440px;
+    max-width: 100%;
+    height: 440px;
     background: var(--color-surface);
     border: 1px solid var(--border-primary);
-    border-radius: 26px;
-    padding: clamp(1.75rem, 5vw, 2.75rem);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    border-radius: 28px;
+    overflow: hidden;
     box-shadow: 
         var(--shadow-lg), 
         0 24px 60px -12px rgba(0, 0, 0, 0.5);
     transition: 
-        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
-        border-color 0.4s ease, 
-        box-shadow 0.4s ease;
-    overflow: hidden;
+        transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), 
+        border-color 0.6s cubic-bezier(0.23, 1, 0.32, 1), 
+        box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .card.profile-card:hover {
     transform: translateY(-6px);
-    border-color: rgba(220, 38, 38, 0.45);
+    border-color: rgba(220, 38, 38, 0.5);
     box-shadow: 
-        0 30px 70px -15px rgba(0, 0, 0, 0.6), 
-        0 0 45px -10px rgba(220, 38, 38, 0.22);
+        0 30px 70px -15px rgba(0, 0, 0, 0.65), 
+        0 0 45px -10px rgba(220, 38, 38, 0.25);
 }
 
-.card-glow {
+/* Floating Mail Icon Button */
+.card.profile-card .mail {
     position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 320px;
-    height: 180px;
-    background: radial-gradient(circle at 50% 0%, rgba(220, 38, 38, 0.16) 0%, transparent 75%);
-    filter: blur(35px);
-    pointer-events: none;
-    z-index: 0;
-}
-
-.card-header-bar {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--space-xl);
-}
-
-.window-dots {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-}
-
-.window-dots .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    display: inline-block;
-}
-
-.window-dots .red { background-color: #ff5f56; }
-.window-dots .yellow { background-color: #ffbd2e; }
-.window-dots .green { background-color: #27c93f; }
-
-.mail-btn {
+    top: 22px;
+    right: 22px;
+    z-index: 25;
     width: 44px;
     height: 44px;
     border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-primary);
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid var(--border-primary);
-    color: var(--color-text-secondary);
+    color: var(--color-text-primary);
     text-decoration: none;
     transition: 
-        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+        transform 0.35s cubic-bezier(0.23, 1, 0.32, 1), 
         background 0.3s ease, 
         border-color 0.3s ease, 
         color 0.3s ease, 
         box-shadow 0.3s ease;
 }
 
-.mail-btn:hover {
-    transform: scale(1.08) rotate(6deg);
-    background: rgba(220, 38, 38, 0.18);
-    border-color: rgba(220, 38, 38, 0.65);
+.card.profile-card .mail:hover {
+    transform: scale(1.1) rotate(6deg);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
     color: #ffffff !important;
-    box-shadow: 0 0 20px rgba(220, 38, 38, 0.35);
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.45);
 }
 
-.mail-btn i,
-.mail-btn svg {
-    width: 20px;
-    height: 20px;
-}
-
-/* Avatar Transform Interaction */
-.profile-pic-container {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: var(--space-lg);
-}
-
-.profile-pic-glow {
+/* Profile Picture Container (Circular Transformation on Hover) */
+.card.profile-card .profile-pic {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 170px;
-    height: 170px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(220, 38, 38, 0.28) 0%, transparent 70%);
-    filter: blur(25px);
-    opacity: 0.7;
-    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    pointer-events: none;
-}
-
-.profile-pic {
-    position: relative;
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    border: 2px solid var(--border-primary);
-    box-shadow: 
-        0 12px 30px rgba(0, 0, 0, 0.5), 
-        0 0 24px rgba(220, 38, 38, 0.22);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 28px;
     overflow: hidden;
+    z-index: 1;
+    border: 3px solid transparent;
     transition: 
-        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
-        border-color 0.4s ease, 
-        box-shadow 0.4s ease;
+        top 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+        left 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+        width 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+        height 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+        border-radius 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+        border-color 0.4s ease,
+        box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+        transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.avatar-img {
-    position: absolute;
-    inset: 0;
+.card.profile-card:hover .profile-pic {
+    top: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border-color: var(--color-accent);
+    box-shadow: 0 14px 32px -6px rgba(220, 38, 38, 0.45);
+    z-index: 15;
+}
+
+.card.profile-card .profile-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
-    transition: 
-        opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
-        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    object-position: center 20%;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.real-avatar {
-    opacity: 1;
-    transform: scale(1);
+.card.profile-card:hover .profile-img {
+    transform: scale(1.14);
 }
 
-.samurai-avatar {
-    opacity: 0;
-    transform: scale(1.15);
-}
-
-.profile-pic-container:hover .profile-pic {
-    border-color: var(--color-accent);
-    box-shadow: 0 0 35px rgba(220, 38, 38, 0.45);
-    transform: scale(1.03);
-}
-
-.profile-pic-container:hover .profile-pic-glow {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.12);
-}
-
-.profile-pic-container:hover .real-avatar {
-    opacity: 0;
-    transform: scale(0.92);
-}
-
-.profile-pic-container:hover .samurai-avatar {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.avatar-hint {
-    margin-top: 0.85rem;
-    font-size: 0.78rem;
-    color: var(--color-text-tertiary);
+/* Expanding Bottom Panel */
+.card.profile-card .bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 96px;
+    background: rgba(13, 13, 20, 0.82);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-top: 1px solid var(--border-primary);
+    padding: 20px 28px;
+    z-index: 10;
     display: flex;
-    align-items: center;
-    gap: 0.35rem;
-    font-weight: var(--fw-medium);
-    transition: color 0.3s ease;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: 
+        height 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+        background 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.avatar-hint i,
-.avatar-hint svg {
-    width: 14px;
-    height: 14px;
+.card.profile-card:hover .bottom {
+    height: 275px;
+    background: rgba(13, 13, 20, 0.94);
+    border-top-color: rgba(220, 38, 38, 0.35);
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
 }
 
-.profile-pic-container:hover .avatar-hint {
-    color: var(--color-accent);
+/* Profile Content Text */
+.card.profile-card .content {
+    display: flex;
+    flex-direction: column;
 }
 
-.profile-card-body {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-}
-
-.profile-identity {
-    margin-bottom: var(--space-md);
-}
-
-.profile-badge {
-    display: inline-block;
-    padding: 0.35rem 0.9rem;
-    border-radius: 999rem;
-    background: rgba(220, 38, 38, 0.1);
-    border: 1px solid rgba(220, 38, 38, 0.28);
-    color: var(--color-accent);
-    font-size: 0.74rem;
-    font-weight: var(--fw-bold);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    margin-bottom: 0.85rem;
-}
-
-.profile-name {
+.card.profile-card .name {
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 5vw, 2.85rem);
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
     font-weight: var(--fw-regular);
     color: var(--color-text);
-    margin: 0 0 0.25rem;
     letter-spacing: 1px;
     line-height: 1;
     text-transform: uppercase;
+    margin-bottom: 3px;
 }
 
-.profile-handle {
-    font-size: 0.95rem;
+.card.profile-card .role-title {
+    font-size: 0.9rem;
     font-weight: var(--fw-medium);
-    color: var(--color-text-tertiary);
+    color: var(--color-accent);
 }
 
-.profile-bio {
-    font-size: clamp(0.95rem, 2vw, 1.02rem);
-    line-height: 1.7;
-    color: var(--color-text-secondary);
-    max-width: 480px;
-    margin: 0 auto var(--space-xl);
+/* Information List inside Expanding Panel */
+.card.profile-card .info-list {
+    opacity: 0;
+    transform: translateY(12px);
+    max-height: 0;
+    margin-top: 0;
+    pointer-events: none;
+    transition: 
+        opacity 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+        transform 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+        max-height 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+        margin-top 0.45s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.profile-action {
+.card.profile-card:hover .info-list {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 140px;
+    margin-top: 14px;
+    pointer-events: auto;
+    transition-delay: 0.08s;
+}
+
+.card.profile-card .info-item {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+    font-size: 0.85rem;
 }
 
-.btn-profile-contact {
+.card.profile-card .info-label {
+    color: var(--color-text-tertiary);
+    font-weight: var(--fw-medium);
+}
+
+.card.profile-card .info-val {
+    color: var(--color-text-primary);
+    font-weight: var(--fw-medium);
+}
+
+/* Bottom Footer (Socials & Contact Me Button) */
+.card.profile-card .bottom-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    margin-top: auto;
+    padding-top: 12px;
+    transition: 
+        opacity 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+        transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card.profile-card:hover .bottom-bottom {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    transition-delay: 0.14s;
+}
+
+.card.profile-card .social-links-container {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.card.profile-card .social-link {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: 
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.card.profile-card .social-link:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #ffffff;
+    transform: translateY(-3px);
+}
+
+.card.profile-card .contact-me-btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.65rem;
-    padding: 0.85rem 1.85rem;
+    justify-content: center;
+    padding: 8px 20px;
     border-radius: 999rem;
     background: var(--color-accent);
     color: #ffffff !important;
+    font-size: 0.88rem;
     font-weight: var(--fw-semibold);
-    font-size: 0.98rem;
     text-decoration: none;
-    box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.4);
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.35);
     transition: 
-        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
-        background 0.3s ease, 
+        transform 0.3s ease,
+        background 0.3s ease,
         box-shadow 0.3s ease;
 }
 
-.btn-profile-contact i,
-.btn-profile-contact svg {
-    width: 18px;
-    height: 18px;
-    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+.card.profile-card .contact-me-btn:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.55);
 }
 
-.btn-profile-contact:hover {
-    transform: translateY(-3px);
-    background: var(--color-accent-hover, #b91c1c);
-    box-shadow: 0 16px 32px -6px rgba(220, 38, 38, 0.55);
+/* Light Mode Overrides for Interactive Profile Card */
+[data-theme="light"] .card.profile-card {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.1);
 }
 
-.btn-profile-contact:hover i,
-.btn-profile-contact:hover svg {
-    transform: translate(2px, -2px);
+[data-theme="light"] .card.profile-card .bottom {
+    background: rgba(255, 255, 255, 0.9);
+    border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .card.profile-card:hover .bottom {
+    background: rgba(255, 255, 255, 0.96);
+    border-top-color: rgba(220, 38, 38, 0.25);
+}
+
+[data-theme="light"] .card.profile-card .info-item {
+    border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .card.profile-card .mail,
+[data-theme="light"] .card.profile-card .social-link {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: var(--color-text-primary);
 }
 
 /* ------------------------------------------
