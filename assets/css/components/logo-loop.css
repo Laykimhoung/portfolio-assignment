@@ -7,14 +7,13 @@
 .logo-loop-wrapper {
     position: relative;
     width: 100%;
-    overflow: hidden;
-    padding: var(--space-md) 0;
 }
 
 .logo-loop-container {
     position: relative;
     width: 100%;
     overflow: hidden;
+    padding: var(--space-lg) 0;
     /* Theme-agnostic fade-out edges using CSS masks */
     mask-image: linear-gradient(
         to right,
