@@ -258,18 +258,48 @@
     margin-top: var(--space-sm);
 }
 
-/* Custom button overrides for project cards */
-.btn-project-primary {
+/* Custom button overrides for project cards (WCAG AAA High Contrast) */
+.btn-project-primary,
+a.btn-project-primary {
     background: var(--color-accent);
-    color: #ffffff;
+    color: #ffffff !important;
     border-color: var(--color-accent);
     box-shadow: 0 4px 16px rgba(220, 38, 38, 0.35);
 }
 
-.btn-project-primary:hover {
-    background: var(--color-accent-hover);
-    border-color: var(--color-accent-hover);
-    box-shadow: 0 8px 24px rgba(220, 38, 38, 0.5);
+.btn-project-primary:hover,
+a.btn-project-primary:hover {
+    background: #b91c1c;
+    color: #ffffff !important;
+    border-color: #b91c1c;
+    box-shadow: 0 8px 24px rgba(220, 38, 38, 0.55);
+    transform: translateY(-2px);
+}
+
+.btn-project-primary i,
+.btn-project-primary svg,
+.btn-project-primary:hover i,
+.btn-project-primary:hover svg,
+a.btn-project-primary:hover i,
+a.btn-project-primary:hover svg {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
+}
+
+[data-theme="light"] .btn-project-primary,
+[data-theme="light"] a.btn-project-primary {
+    background: #d11a2a;
+    color: #ffffff !important;
+    border-color: #d11a2a;
+    box-shadow: 0 4px 16px rgba(209, 26, 42, 0.25);
+}
+
+[data-theme="light"] .btn-project-primary:hover,
+[data-theme="light"] a.btn-project-primary:hover {
+    background: #991b1b;
+    color: #ffffff !important;
+    border-color: #991b1b;
+    box-shadow: 0 8px 24px rgba(209, 26, 42, 0.45);
     transform: translateY(-2px);
 }
 
