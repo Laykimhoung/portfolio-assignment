@@ -31,14 +31,13 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
 
-    <!-- CSS -->
+    <!-- Page Specific Styles -->
     <link rel="stylesheet" href="assets/css/pages/contact.css" />
   </head>
-
   <body>
     <!-- Background -->
     <div id="background"></div>
@@ -46,17 +45,18 @@
     <!-- Navbar -->
     <div id="navbar"></div>
 
-    <!-- Main -->
-    <main>
+    <main id="main-content">
       <!-- =========================================================
            SECTION 1: HERO
-           Large heading & small supporting paragraph (No CTA button)
+           Elegant intro with no CTA button
            ========================================================= -->
-      <section class="page-section contact-hero" aria-labelledby="contact-hero-heading">
+      <section class="contact-hero" aria-labelledby="contact-hero-title">
         <div class="container">
           <div class="contact-hero-content" data-animation="fade-up">
             <span class="section-label">04. Get In Touch</span>
-            <h1 id="contact-hero-heading" class="section-title">Let's Build Something Together</h1>
+            <h1 id="contact-hero-title" class="section-title">
+              Let's Build Something Together
+            </h1>
             <p class="section-subtitle">
               Whether you have a question, an exciting project idea, or simply want to connect, my inbox is always open. Let's create something meaningful.
             </p>
@@ -65,135 +65,460 @@
       </section>
 
       <!-- =========================================================
-           SECTION 2: PROFILE CARD
-           Apple × Linear × Vercel inspired Interactive Card
+           SECTION 2: PROFILE CARD & CONTACT INFORMATION CARDS
+           Side-by-side on desktop, stacked on mobile
            ========================================================= -->
-      <section class="page-section profile-card-section" aria-label="Interactive Developer Profile Card">
-        <div class="container profile-card-container">
-          <div class="profile-card-wrapper" data-animation="fade-up" data-delay="150">
-            <div class="card profile-card">
-              <!-- Glow backdrop behind card -->
-              <div class="card-glow" aria-hidden="true"></div>
+      <section class="page-section contact-profile-section" aria-label="Profile and Contact Details">
+        <div class="container">
+          <div class="contact-grid-2col">
+            <!-- Left Column: Profile Card -->
+            <div class="profile-card-wrapper" data-animation="fade-up" data-delay="100">
+              <div class="card profile-card">
+                <!-- Glow backdrop behind card -->
+                <div class="card-glow" aria-hidden="true"></div>
 
-              <!-- Top macOS bar with mail button -->
-              <div class="card-header-bar">
-                <div class="window-dots" aria-hidden="true">
-                  <span class="dot red"></span>
-                  <span class="dot yellow"></span>
-                  <span class="dot green"></span>
+                <!-- Top macOS bar -->
+                <div class="card-header-bar">
+                  <div class="window-dots" aria-hidden="true">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                  </div>
+
+                  <a
+                    href="https://t.me/Hxung_D_Xakuraii"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="mail-btn"
+                    aria-label="Contact via Telegram"
+                  >
+                    <i data-lucide="send"></i>
+                  </a>
                 </div>
 
-                <a href="#" class="mail-btn" aria-label="Send Direct Email">
+                <!-- Avatar Section (Real Profile Image with transformation on hover) -->
+                <!-- Avatar Placeholder -->
+                <div class="profile-pic-container">
+                  <div class="profile-pic-glow" aria-hidden="true"></div>
+                  <div class="profile-pic">
+                    <img
+                      src="assets/images/profile/real-version.webp"
+                      alt="Lay Kimhoung - Portrait"
+                      class="avatar-img real-avatar"
+                      loading="lazy"
+                    />
+                    <img
+                      src="assets/images/profile/samurai-version.webp"
+                      alt=""
+                      class="avatar-img samurai-avatar"
+                      aria-hidden="true"
+                      loading="lazy"
+                    />
+                  </div>
+                  <span class="avatar-hint" aria-hidden="true">
+                    <span>Hover to transform</span>
+                    <i data-lucide="sparkles"></i>
+                  </span>
+                </div>
+
+                <!-- Profile Identity & Description -->
+                <div class="profile-card-body">
+                  <div class="profile-identity">
+                    <span class="profile-badge">Computer Science Student</span>
+                    <h2 class="profile-name">Lay Kimhoung</h2>
+                    <span class="profile-handle">@XAKURAII</span>
+                  </div>
+
+                  <p class="profile-bio">
+                    Passionate about creating modern web experiences and continuously improving my skills in web development. Every project represents another step in my learning journey.
+                  </p>
+
+                  <!-- Contact Me Action Button -->
+                  <div class="profile-action">
+                    <a
+                      href="https://t.me/Hxung_D_Xakuraii"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn-profile-contact"
+                    >
+                      <span>Contact Me</span>
+                      <i data-lucide="arrow-up-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Contact Information Cards -->
+            <div class="contact-info-column" data-animation="fade-up" data-delay="200">
+              <!-- Card 1: Email -->
+              <div class="card info-card">
+                <div class="info-card-icon">
                   <i data-lucide="mail"></i>
+                </div>
+                <div class="info-card-content">
+                  <span class="info-card-label">Email</span>
+                  <a href="mailto:houngjk081@gmail.com" class="info-card-value link-accent">
+                    houngjk081@gmail.com
+                  </a>
+                  <span class="info-card-sub">Primary contact address</span>
+                </div>
+                <button
+                  type="button"
+                  class="btn-copy-email"
+                  data-email="houngjk081@gmail.com"
+                  aria-label="Copy email address"
+                >
+                  <span class="copy-text">Copy</span>
+                  <i data-lucide="copy"></i>
+                </button>
+              </div>
+
+              <!-- Card 2: Location -->
+              <div class="card info-card">
+                <div class="info-card-icon">
+                  <i data-lucide="map-pin"></i>
+                </div>
+                <div class="info-card-content">
+                  <span class="info-card-label">Location</span>
+                  <span class="info-card-value">Siem Reap, Cambodia</span>
+                  <span class="info-card-sub">GMT+7 Timezone</span>
+                </div>
+                <div class="info-badge-status">
+                  <span class="status-dot"></span>
+                  <span>Local Time</span>
+                </div>
+              </div>
+
+              <!-- Card 3: GitHub -->
+              <div class="card info-card">
+                <div class="info-card-icon">
+                  <img
+                    src="assets/icons/social/github.svg"
+                    class="social-svg-icon"
+                    alt="GitHub"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="info-card-content">
+                  <span class="info-card-label">GitHub</span>
+                  <a
+                    href="https://github.com/Laykimhoung"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="info-card-value link-accent"
+                  >
+                    @Laykimhoung
+                  </a>
+                  <span class="info-card-sub">Check out my open-source work</span>
+                </div>
+                <a
+                  href="https://github.com/Laykimhoung"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-info-action"
+                  aria-label="Open GitHub profile"
+                >
+                  <i data-lucide="external-link"></i>
                 </a>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <!-- Avatar Section (Transforms on hover) -->
-              <div class="profile-pic-container">
-                <div class="profile-pic-glow" aria-hidden="true"></div>
-                <div class="profile-pic">
-                  <!-- Real Image (Default) -->
-                  <img
-                    src="assets/images/profile/real-version.webp"
-                    alt="Lay Kimhoung - Portrait"
-                    class="avatar-img real-avatar"
-                    loading="lazy"
-                  />
-                  <!-- Samurai Image (Hover state) -->
-                  <img
-                    src="assets/images/profile/samurai-version.webp"
-                    alt=""
-                    class="avatar-img samurai-avatar"
-                    aria-hidden="true"
-                    loading="lazy"
-                  />
+      <!-- =========================================================
+           SECTION 3: QUICK CONTACT BUTTONS
+           Modular responsive grid with Simple Icons SVGs
+           ========================================================= -->
+      <section class="page-section quick-contact-section" aria-labelledby="quick-contact-heading">
+        <div class="container">
+          <div class="section-heading-center" data-animation="fade-up">
+            <span class="section-label">05. Social Network</span>
+            <h2 id="quick-contact-heading" class="section-title">
+              Quick Contact Buttons
+            </h2>
+            <p class="section-subtitle">
+              Connect with me across your favorite platforms. Let's stay in touch.
+            </p>
+          </div>
+
+          <div class="quick-contact-grid" data-animation="fade-up" data-delay="150">
+            <!-- 1. GitHub -->
+            <a
+              href="https://github.com/Laykimhoung"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="quick-btn-item"
+            >
+              <div class="quick-btn-icon">
+                <img
+                  src="assets/icons/social/github.svg"
+                  class="social-svg-icon"
+                  alt="GitHub"
+                  loading="lazy"
+                />
+              </div>
+              <span class="quick-btn-name">GitHub</span>
+              <span class="quick-btn-arrow" aria-hidden="true">
+                <i data-lucide="arrow-up-right"></i>
+              </span>
+            </a>
+
+            <!-- 2. Facebook -->
+            <a
+              href="https://web.facebook.com/Xakuraii"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="quick-btn-item"
+            >
+              <div class="quick-btn-icon">
+                <img
+                  src="assets/icons/social/facebook.svg"
+                  class="social-svg-icon"
+                  alt="Facebook"
+                  loading="lazy"
+                />
+              </div>
+              <span class="quick-btn-name">Facebook</span>
+              <span class="quick-btn-arrow" aria-hidden="true">
+                <i data-lucide="arrow-up-right"></i>
+              </span>
+            </a>
+
+            <!-- 3. Instagram -->
+            <a
+              href="https://www.instagram.com/hxung369/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="quick-btn-item"
+            >
+              <div class="quick-btn-icon">
+                <img
+                  src="assets/icons/social/instagram.svg"
+                  class="social-svg-icon"
+                  alt="Instagram"
+                  loading="lazy"
+                />
+              </div>
+              <span class="quick-btn-name">Instagram</span>
+              <span class="quick-btn-arrow" aria-hidden="true">
+                <i data-lucide="arrow-up-right"></i>
+              </span>
+            </a>
+
+            <!-- 4. Telegram -->
+            <a
+              href="https://t.me/Hxung_D_Xakuraii"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="quick-btn-item"
+            >
+              <div class="quick-btn-icon">
+                <img
+                  src="assets/icons/social/telegram.svg"
+                  class="social-svg-icon"
+                  alt="Telegram"
+                  loading="lazy"
+                />
+              </div>
+              <span class="quick-btn-name">Telegram</span>
+              <span class="quick-btn-arrow" aria-hidden="true">
+                <i data-lucide="arrow-up-right"></i>
+              </span>
+            </a>
+
+            <!-- 5. TikTok -->
+            <a
+              href="https://www.tiktok.com/@hxung_d_xakuraii"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="quick-btn-item"
+            >
+              <div class="quick-btn-icon">
+                <img
+                  src="assets/icons/social/tiktok.svg"
+                  class="social-svg-icon"
+                  alt="TikTok"
+                  loading="lazy"
+                />
+              </div>
+              <span class="quick-btn-name">TikTok</span>
+              <span class="quick-btn-arrow" aria-hidden="true">
+                <i data-lucide="arrow-up-right"></i>
+              </span>
+            </a>
+
+            <!-- 6. LinkedIn -->
+            <a
+              href="https://www.linkedin.com/in/lay-kimhoung-9b145b391/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="quick-btn-item"
+            >
+              <div class="quick-btn-icon">
+                <img
+                  src="assets/icons/social/linkedin.svg"
+                  class="social-svg-icon"
+                  alt="LinkedIn"
+                  loading="lazy"
+                />
+              </div>
+              <span class="quick-btn-name">LinkedIn</span>
+              <span class="quick-btn-arrow" aria-hidden="true">
+                <i data-lucide="arrow-up-right"></i>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SECTION 4: MODERN CONTACT FORM
+           Floating labels, validation & focus animations
+           ========================================================= -->
+      <section class="page-section contact-form-section" aria-labelledby="form-section-heading">
+        <div class="container">
+          <div class="contact-form-wrapper" data-animation="fade-up">
+            <div class="section-heading-center">
+              <span class="section-label">06. Message</span>
+              <h2 id="form-section-heading" class="section-title">
+                Send a Message
+              </h2>
+              <p class="section-subtitle">
+                Have a proposal, inquiry, or feedback? Send me a direct note using the form below.
+              </p>
+            </div>
+
+            <div class="card contact-form-card">
+              <form id="contact-form" class="modern-form" novalidate>
+                <div class="form-grid-2col">
+                  <!-- Name Field -->
+                  <div class="form-floating-group">
+                    <input
+                      type="text"
+                      name="name"
+                      id="form-name"
+                      class="floating-input"
+                      placeholder=" "
+                      required
+                    />
+                    <label for="form-name" class="floating-label">Your Name</label>
+                    <span class="form-focus-border"></span>
+                  </div>
+
+                  <!-- Email Field -->
+                  <div class="form-floating-group">
+                    <input
+                      type="email"
+                      name="email"
+                      id="form-email"
+                      class="floating-input"
+                      placeholder=" "
+                      required
+                    />
+                    <label for="form-email" class="floating-label">Your Email</label>
+                    <span class="form-focus-border"></span>
+                  </div>
                 </div>
-                <span class="avatar-hint" aria-hidden="true">
-                  <span>Hover to transform</span>
-                  <i data-lucide="sparkles"></i>
-                </span>
+
+                <!-- Subject Field -->
+                <div class="form-floating-group">
+                  <input
+                    type="text"
+                    name="subject"
+                    id="form-subject"
+                    class="floating-input"
+                    placeholder=" "
+                    required
+                  />
+                  <label for="form-subject" class="floating-label">Subject</label>
+                  <span class="form-focus-border"></span>
+                </div>
+
+                <!-- Message Field -->
+                <div class="form-floating-group">
+                  <textarea
+                    name="message"
+                    id="form-message"
+                    class="floating-input floating-textarea"
+                    placeholder=" "
+                    rows="5"
+                    required
+                  ></textarea>
+                  <label for="form-message" class="floating-label">Message</label>
+                  <span class="form-focus-border"></span>
+                </div>
+
+                <!-- Form Footer Button -->
+                <div class="form-footer">
+                  <button type="submit" class="btn-submit-message">
+                    <span>Send Message</span>
+                    <i data-lucide="send"></i>
+                  </button>
+                  <div id="form-feedback" class="form-feedback" aria-live="polite"></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SECTION 5: THANK YOU ENVELOPE
+           Animated Apple x Vercel Interactive Letter Envelope
+           ========================================================= -->
+      <section class="page-section thank-you-envelope-section" aria-labelledby="envelope-section-heading">
+        <div class="container">
+          <div class="envelope-wrapper" data-animation="fade-up" data-delay="100">
+            <div class="section-heading-center">
+              <span class="section-label">07. Appreciation</span>
+              <h2 id="envelope-section-heading" class="section-title">
+                A Final Note
+              </h2>
+            </div>
+
+            <!-- Interactive Envelope Card Component -->
+            <div class="thank-you-envelope">
+              <div class="envelope-flap" aria-hidden="true">
+                <div class="envelope-seal">
+                  <i data-lucide="heart"></i>
+                </div>
               </div>
 
-              <!-- Profile Details & Social Connection Grid -->
-              <div class="profile-card-body">
-                <div class="profile-identity">
-                  <span class="profile-badge">Developer Profile</span>
-                  <h2 class="profile-name">Lay Kimhoung</h2>
-                  <span class="profile-handle">@XAKURAII</span>
+              <div class="envelope-body">
+                <div class="envelope-letter-card">
+                  <div class="letter-header">
+                    <span class="letter-badge">Message from the Developer</span>
+                    <h3 class="letter-title">Thank You</h3>
+                  </div>
+
+                  <div class="letter-content">
+                    <p>
+                      Thank you for taking the time to explore my portfolio.
+                    </p>
+                    <p>
+                      Every project here represents another step in my journey as a Computer Science student and aspiring web developer.
+                    </p>
+                    <p>
+                      I truly appreciate your visit and hope you enjoyed exploring my work as much as I enjoyed creating it.
+                    </p>
+                    <p>
+                      Wishing you a wonderful day, and I hope we have the opportunity to connect again.
+                    </p>
+                    <p class="letter-signature">
+                      — Lay Kimhoung (XAKURAII)
+                    </p>
+                  </div>
+
+                  <div class="letter-footer">
+                    <span class="letter-timestamp">Siem Reap, Cambodia</span>
+                    <a href="#contact-hero-title" class="btn-back-top" aria-label="Back to top">
+                      <span>Back to top</span>
+                      <i data-lucide="arrow-up"></i>
+                    </a>
+                  </div>
                 </div>
-
-                <p class="profile-bio">
-                  Computer Science student from Siem Reap, Cambodia, passionate about building modern web applications with clean code, scalable architecture, and premium user experiences.
-                </p>
-
-                <!-- Social Links Grid -->
-                <div class="profile-social-divider" aria-hidden="true">
-                  <span>Connect Across The Web</span>
-                </div>
-
-                <div class="profile-social-grid">
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social-link-item"
-                    aria-label="GitHub Profile"
-                  >
-                    <span class="social-icon"><i data-lucide="github"></i></span>
-                    <span class="social-name">GitHub</span>
-                    <span class="social-arrow"><i data-lucide="arrow-up-right"></i></span>
-                  </a>
-
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social-link-item"
-                    aria-label="LinkedIn Profile"
-                  >
-                    <span class="social-icon"><i data-lucide="linkedin"></i></span>
-                    <span class="social-name">LinkedIn</span>
-                    <span class="social-arrow"><i data-lucide="arrow-up-right"></i></span>
-                  </a>
-
-                  <a
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="social-link-item"
-                    aria-label="Telegram Message"
-                  >
-                    <span class="social-icon"><i data-lucide="send"></i></span>
-                    <span class="social-name">Telegram</span>
-                    <span class="social-arrow"><i data-lucide="arrow-up-right"></i></span>
-                  </a>
-
-                  <a
-                    href="#"
-                    class="social-link-item"
-                    aria-label="Send Direct Email"
-                  >
-                    <span class="social-icon"><i data-lucide="mail"></i></span>
-                    <span class="social-name">Email</span>
-                    <span class="social-arrow"><i data-lucide="arrow-up-right"></i></span>
-                  </a>
-                </div>
-              </div>
-
-              <!-- Card Footer -->
-              <div class="profile-card-footer">
-                <span class="location-tag">
-                  <i data-lucide="map-pin"></i> Siem Reap, Cambodia
-                </span>
-
-                <button
-                  class="btn-copy-email"
-                  type="button"
-                  aria-label="Copy Email Address to Clipboard"
-                >
-                  <i data-lucide="copy"></i>
-                  <span class="copy-text">Copy Email</span>
-                </button>
               </div>
             </div>
           </div>
@@ -204,10 +529,10 @@
     <!-- Footer -->
     <div id="footer"></div>
 
-    <!-- Lucide -->
+    <!-- Lucide Icons Library -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Main Script -->
+    <!-- Main JS (ES Modules) -->
     <script type="module" src="assets/js/main.js"></script>
   </body>
 </html>
