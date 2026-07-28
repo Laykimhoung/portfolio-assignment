@@ -39,51 +39,146 @@ export function initScreenshotStack() {
 
             stackImages.push(src);
             stackTitles.push(title);
+        });
 
-            // Compute depth-layered idle and hover fan-out custom properties
-            const reverseIdx = total - 1 - index;
-            const centerOffset = index - (total - 1) / 2;
+        // Visual stack order: index 0 (1st image) sits in front by default
+        const cardOrder = cards.map((_, i) => i);
 
-            // Idle parameters (layered depth in Z-space)
-            const idleX = `${reverseIdx * -12}px`;
-            const idleY = `${reverseIdx * 9}px`;
-            const idleScale = Math.max(0.88, 1 - reverseIdx * 0.035);
-            const idleRot = `${reverseIdx * -1.8}deg`;
+        function applyStackDepths() {
+            cards.forEach((card, domIndex) => {
+                const stackPos = cardOrder.indexOf(domIndex);
+                const centerOffset = stackPos - (total - 1) / 2;
 
-            // Hover parameters (Apple / Linear fan-out)
-            const fanX = `${centerOffset * 32}px`;
-            const fanY = `${Math.abs(centerOffset) * -8 - reverseIdx * 4}px`;
-            const fanScale = Math.max(0.92, 1 - reverseIdx * 0.015);
-            const fanRot = `${centerOffset * 3.5}deg`;
+                // Idle parameters (layered depth in Z-space, front is stackPos = 0)
+                const idleX = `${stackPos * -12}px`;
+                const idleY = `${stackPos * 9}px`;
+                const idleScale = Math.max(0.88, 1 - stackPos * 0.035);
+                const idleRot = `${stackPos * -1.8}deg`;
 
-            card.style.setProperty("--idle-x", idleX);
-            card.style.setProperty("--idle-y", idleY);
-            card.style.setProperty("--idle-scale", idleScale);
-            card.style.setProperty("--idle-rot", idleRot);
+                // Hover parameters (Apple / Linear fan-out)
+                const fanX = `${centerOffset * 32}px`;
+                const fanY = `${Math.abs(centerOffset) * -8 - stackPos * 4}px`;
+                const fanScale = Math.max(0.92, 1 - stackPos * 0.015);
+                const fanRot = `${centerOffset * 3.5}deg`;
 
-            card.style.setProperty("--fan-x", fanX);
-            card.style.setProperty("--fan-y", fanY);
-            card.style.setProperty("--fan-scale", fanScale);
-            card.style.setProperty("--fan-rot", fanRot);
-            card.style.setProperty("--card-z", index + 1);
+                card.style.setProperty("--idle-x", idleX);
+                card.style.setProperty("--idle-y", idleY);
+                card.style.setProperty("--idle-scale", idleScale);
+                card.style.setProperty("--idle-rot", idleRot);
 
-            if (index === total - 1) {
-                card.setAttribute("data-front", "true");
-            } else {
-                card.removeAttribute("data-front");
-            }
+                card.style.setProperty("--fan-x", fanX);
+                card.style.setProperty("--fan-y", fanY);
+                card.style.setProperty("--fan-scale", fanScale);
+                card.style.setProperty("--fan-rot", fanRot);
+                card.style.setProperty("--card-z", total - stackPos);
 
-            // Clicking any card opens the lightbox modal at this image's index
-            card.addEventListener("click", (e) => {
-                e.stopPropagation();
-                openLightbox(stackImages, stackTitles, index);
+                if (stackPos === 0) {
+                    card.setAttribute("data-front", "true");
+                } else {
+                    card.removeAttribute("data-front");
+                }
+            });
+        }
+
+        applyStackDepths();
+
+        // Add Drag-to-Cycle (swipe) and Click-to-Open-Lightbox interactions
+        cards.forEach((card, domIndex) => {
+            let startX = 0;
+            let startY = 0;
+            let isDragging = false;
+            let isDown = false;
+
+            const onStart = (clientX, clientY) => {
+                isDown = true;
+                isDragging = false;
+                startX = clientX;
+                startY = clientY;
+            };
+
+            const onMove = (clientX, clientY) => {
+                if (!isDown) return;
+                const dx = clientX - startX;
+                const dy = clientY - startY;
+
+                if (Math.abs(dx) > 6 || Math.abs(dy) > 6) {
+                    isDragging = true;
+                    card.style.transition = "none";
+                    card.style.transform = `translate3d(${dx}px, ${dy}px, 0) rotate(${dx * 0.04}deg)`;
+                    card.style.zIndex = "100";
+                }
+            };
+
+            const onEnd = (clientX, clientY) => {
+                if (!isDown) return;
+                isDown = false;
+
+                const dx = clientX - startX;
+                const dy = clientY - startY;
+
+                if (isDragging) {
+                    if (Math.abs(dx) > 60 || Math.abs(dy) > 60) {
+                        // Dragged past threshold: fly away and cycle to back of stack
+                        card.style.transition = "transform 0.28s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.28s ease";
+                        card.style.transform = `translate3d(${dx * 3.5}px, ${dy * 3.5}px, 0) rotate(${dx * 0.1}deg)`;
+                        card.style.opacity = "0";
+
+                        setTimeout(() => {
+                            card.style.transition = "";
+                            card.style.transform = "";
+                            card.style.opacity = "";
+                            card.style.zIndex = "";
+
+                            // Rotate current front card to end of order
+                            cardOrder.push(cardOrder.shift());
+                            applyStackDepths();
+                        }, 280);
+                    } else {
+                        // Dragged below threshold: snap back
+                        card.style.transition = "transform 0.28s cubic-bezier(0.25, 1, 0.5, 1)";
+                        card.style.transform = "";
+                        card.style.zIndex = "";
+                        setTimeout(() => {
+                            card.style.transition = "";
+                        }, 280);
+                    }
+                } else {
+                    // Quick tap/click: open Lightbox at this image's index
+                    openLightbox(stackImages, stackTitles, domIndex);
+                }
+            };
+
+            // Mouse events
+            card.addEventListener("mousedown", (e) => {
+                e.preventDefault();
+                onStart(e.clientX, e.clientY);
+            });
+            window.addEventListener("mousemove", (e) => onMove(e.clientX, e.clientY));
+            window.addEventListener("mouseup", (e) => onEnd(e.clientX, e.clientY));
+
+            // Touch events
+            card.addEventListener("touchstart", (e) => {
+                const touch = e.touches[0];
+                if (touch) onStart(touch.clientX, touch.clientY);
+            }, { passive: true });
+            window.addEventListener("touchmove", (e) => {
+                const touch = e.touches[0];
+                if (touch) onMove(touch.clientX, touch.clientY);
+            }, { passive: true });
+            window.addEventListener("touchend", (e) => {
+                const touch = e.changedTouches ? e.changedTouches[0] : null;
+                if (touch) onEnd(touch.clientX, touch.clientY);
             });
         });
 
-        // Clicking the stack wrapper itself opens from the front image
-        stack.addEventListener("click", () => {
-            openLightbox(stackImages, stackTitles, total - 1);
-        });
+        // Clicking the stack count pill ("X Screenshots") opens Lightbox at current front image
+        const pill = stack.querySelector(".stack-count-pill");
+        if (pill) {
+            pill.addEventListener("click", (e) => {
+                e.stopPropagation();
+                openLightbox(stackImages, stackTitles, cardOrder[0]);
+            });
+        }
     });
 }
 

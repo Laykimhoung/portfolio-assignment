@@ -308,19 +308,20 @@
     transition: opacity 0.25s ease;
 }
 
-/* Navigation Buttons (Prev / Next) */
+/* Navigation Buttons (Prev / Next) - High Contrast Glassmorphism */
 .lightbox-nav-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 46px;
-    height: 46px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background: rgba(18, 19, 23, 0.75);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(24, 24, 27, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     color: var(--color-text-primary);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -333,11 +334,26 @@
         box-shadow var(--transition-normal);
 }
 
+.lightbox-nav-btn svg,
+.lightbox-nav-btn i {
+    color: #FAFAFA !important;
+    stroke: #FAFAFA !important;
+    width: 24px;
+    height: 24px;
+    transition: stroke var(--transition-normal), color var(--transition-normal);
+}
+
 .lightbox-nav-btn:hover {
     background: var(--color-accent);
     border-color: var(--color-accent);
-    transform: translateY(-50%) scale(1.08);
-    box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 0 24px rgba(220, 38, 38, 0.6);
+}
+
+.lightbox-nav-btn:hover svg,
+.lightbox-nav-btn:hover i {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
 }
 
 .lightbox-prev-btn { left: 20px; }
@@ -361,6 +377,29 @@
 
 [data-theme="light"] .stack-window-title {
     color: #475569;
+}
+
+[data-theme="light"] .lightbox-nav-btn {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    box-shadow: 0 4px 15px rgba(15, 23, 42, 0.15);
+}
+
+[data-theme="light"] .lightbox-nav-btn svg,
+[data-theme="light"] .lightbox-nav-btn i {
+    color: #18181b !important;
+    stroke: #18181b !important;
+}
+
+[data-theme="light"] .lightbox-nav-btn:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+[data-theme="light"] .lightbox-nav-btn:hover svg,
+[data-theme="light"] .lightbox-nav-btn:hover i {
+    color: #ffffff !important;
+    stroke: #ffffff !important;
 }
 
 [data-theme="light"] .stack-count-pill {
