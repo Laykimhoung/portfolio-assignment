@@ -1,2 +1,625 @@
-/* Contact Page Styles */
+/* ==========================================
+   CONTACT PAGE SPECIFIC STYLES
+   Apple × Linear × Vercel Premium Aesthetic
+   ========================================== */
+
 @import url("../global.css");
+
+/* ------------------------------------------
+   1. HERO SECTION
+   ------------------------------------------ */
+.contact-hero {
+    position: relative;
+    padding: calc(var(--header-height) + var(--space-2xl)) 0 var(--space-xl);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Subtle ambient background glow */
+.contact-hero::before {
+    content: "";
+    position: absolute;
+    top: -15%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 650px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(220, 38, 38, 0.12) 0%, rgba(220, 38, 38, 0.03) 45%, transparent 75%);
+    filter: blur(60px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.contact-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.contact-hero .section-label {
+    display: inline-block;
+    color: var(--color-accent);
+    font-size: var(--fs-small);
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-bottom: var(--space-sm);
+}
+
+.contact-hero .section-title {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: var(--fw-bold);
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.contact-hero .section-subtitle {
+    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+/* ------------------------------------------
+   2. PROFILE CARD SECTION
+   ------------------------------------------ */
+.profile-card-section {
+    position: relative;
+    padding: 0 0 var(--space-3xl);
+    z-index: 1;
+}
+
+.profile-card-container {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-card-wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Main Card Container */
+.card.profile-card {
+    position: relative;
+    background: var(--color-surface);
+    border: 1px solid var(--border-primary);
+    border-radius: 26px;
+    padding: clamp(1.75rem, 5vw, 2.75rem);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 
+        var(--shadow-lg), 
+        0 24px 60px -12px rgba(0, 0, 0, 0.5);
+    transition: 
+        transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+        border-color 0.4s ease, 
+        box-shadow 0.4s ease;
+    overflow: hidden;
+}
+
+.card.profile-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(220, 38, 38, 0.45);
+    box-shadow: 
+        0 30px 70px -15px rgba(0, 0, 0, 0.6), 
+        0 0 45px -10px rgba(220, 38, 38, 0.22);
+}
+
+/* Internal Card Glow Orb */
+.card-glow {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 180px;
+    background: radial-gradient(circle at 50% 0%, rgba(220, 38, 38, 0.16) 0%, transparent 75%);
+    filter: blur(35px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ------------------------------------------
+   2.1 macOS Card Header Bar
+   ------------------------------------------ */
+.card-header-bar {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-xl);
+}
+
+.window-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.window-dots .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.window-dots .red { background-color: #ff5f56; }
+.window-dots .yellow { background-color: #ffbd2e; }
+.window-dots .green { background-color: #27c93f; }
+
+/* Mail Action Button */
+.mail-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-primary);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: 
+        transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), 
+        background 0.3s ease, 
+        border-color 0.3s ease, 
+        color 0.3s ease, 
+        box-shadow 0.3s ease;
+}
+
+.mail-btn:hover {
+    transform: scale(1.08) rotate(6deg);
+    background: rgba(220, 38, 38, 0.18);
+    border-color: rgba(220, 38, 38, 0.65);
+    color: #ffffff !important;
+    box-shadow: 0 0 20px rgba(220, 38, 38, 0.35);
+}
+
+.mail-btn i,
+.mail-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* ------------------------------------------
+   2.2 Avatar Section (Hover Transform)
+   ------------------------------------------ */
+.profile-pic-container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--space-lg);
+}
+
+.profile-pic-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(220, 38, 38, 0.28) 0%, transparent 70%);
+    filter: blur(25px);
+    opacity: 0.7;
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+}
+
+.profile-pic {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 2px solid var(--border-primary);
+    box-shadow: 
+        0 12px 30px rgba(0, 0, 0, 0.5), 
+        0 0 24px rgba(220, 38, 38, 0.22);
+    overflow: hidden;
+    transition: 
+        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+        border-color 0.4s ease, 
+        box-shadow 0.4s ease;
+}
+
+.avatar-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: 
+        opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.real-avatar {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.samurai-avatar {
+    opacity: 0;
+    transform: scale(1.15);
+}
+
+.profile-pic-container:hover .profile-pic {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 35px rgba(220, 38, 38, 0.45);
+    transform: scale(1.03);
+}
+
+.profile-pic-container:hover .profile-pic-glow {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.12);
+}
+
+.profile-pic-container:hover .real-avatar {
+    opacity: 0;
+    transform: scale(0.92);
+}
+
+.profile-pic-container:hover .samurai-avatar {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.avatar-hint {
+    margin-top: 0.85rem;
+    font-size: 0.78rem;
+    color: var(--color-text-tertiary);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: var(--fw-medium);
+    transition: color 0.3s ease;
+}
+
+.avatar-hint i,
+.avatar-hint svg {
+    width: 14px;
+    height: 14px;
+}
+
+.profile-pic-container:hover .avatar-hint {
+    color: var(--color-accent);
+}
+
+/* ------------------------------------------
+   2.3 Profile Body & Bio
+   ------------------------------------------ */
+.profile-card-body {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: var(--space-xl);
+}
+
+.profile-identity {
+    margin-bottom: var(--space-md);
+}
+
+.profile-badge {
+    display: inline-block;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999rem;
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid rgba(220, 38, 38, 0.28);
+    color: var(--color-accent);
+    font-size: 0.74rem;
+    font-weight: var(--fw-bold);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.85rem;
+}
+
+.profile-name {
+    font-size: clamp(1.8rem, 5vw, 2.35rem);
+    font-weight: var(--fw-bold);
+    color: var(--color-text);
+    margin: 0 0 0.25rem;
+    letter-spacing: -0.01em;
+}
+
+.profile-handle {
+    font-size: 0.95rem;
+    font-weight: var(--fw-medium);
+    color: var(--color-text-tertiary);
+}
+
+.profile-bio {
+    font-size: clamp(0.95rem, 2vw, 1.02rem);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    max-width: 480px;
+    margin: 0 auto var(--space-xl);
+}
+
+/* ------------------------------------------
+   2.4 Social Connection Grid
+   ------------------------------------------ */
+.profile-social-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 0 0 var(--space-md);
+}
+
+.profile-social-divider::before,
+.profile-social-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border-primary);
+}
+
+.profile-social-divider span {
+    padding: 0 1rem;
+    font-size: 0.78rem;
+    font-weight: var(--fw-medium);
+    color: var(--color-text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.profile-social-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.85rem;
+}
+
+.social-link-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.95rem 1.15rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-primary);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-weight: var(--fw-medium);
+    font-size: 0.95rem;
+    transition: 
+        transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+        background 0.3s ease, 
+        border-color 0.3s ease, 
+        color 0.3s ease, 
+        box-shadow 0.3s ease;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+}
+
+.social-icon i,
+.social-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.social-name {
+    flex: 1;
+    text-align: left;
+    margin-left: 0.75rem;
+}
+
+.social-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.5;
+    transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-arrow i,
+.social-arrow svg {
+    width: 16px;
+    height: 16px;
+}
+
+.social-link-item:hover {
+    transform: translateY(-3px);
+    background: rgba(220, 38, 38, 0.12);
+    border-color: rgba(220, 38, 38, 0.48);
+    color: #ffffff !important;
+    box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.2);
+}
+
+.social-link-item:hover .social-arrow {
+    opacity: 1;
+    transform: translate(2px, -2px);
+}
+
+/* ------------------------------------------
+   2.5 Profile Card Footer
+   ------------------------------------------ */
+.profile-card-footer {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border-primary);
+    font-size: 0.85rem;
+    color: var(--color-text-tertiary);
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.location-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-weight: var(--fw-medium);
+}
+
+.location-tag i,
+.location-tag svg {
+    width: 16px;
+    height: 16px;
+    color: var(--color-accent);
+}
+
+.btn-copy-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.15rem;
+    border-radius: 999rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border-primary);
+    color: var(--color-text-secondary);
+    font-size: 0.82rem;
+    font-weight: var(--fw-medium);
+    cursor: pointer;
+    transition: 
+        transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+        background 0.3s ease, 
+        border-color 0.3s ease, 
+        color 0.3s ease, 
+        box-shadow 0.3s ease;
+}
+
+.btn-copy-email i,
+.btn-copy-email svg {
+    width: 14px;
+    height: 14px;
+}
+
+.btn-copy-email:hover {
+    background: rgba(220, 38, 38, 0.18);
+    border-color: rgba(220, 38, 38, 0.6);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px -3px rgba(220, 38, 38, 0.25);
+}
+
+.btn-copy-email.copied {
+    background: rgba(39, 201, 63, 0.15);
+    border-color: rgba(39, 201, 63, 0.5);
+    color: #27c93f;
+}
+
+/* ------------------------------------------
+   3. RESPONSIVE MEDIA QUERIES
+   ------------------------------------------ */
+@media (max-width: 576px) {
+    .card.profile-card {
+        border-radius: 20px;
+        padding: 1.5rem;
+    }
+
+    .card-header-bar {
+        margin-bottom: 1.5rem;
+    }
+
+    .profile-social-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card-footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.85rem;
+    }
+
+    .btn-copy-email {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ------------------------------------------
+   4. LIGHT MODE THEME SYNCHRONIZATION
+   ------------------------------------------ */
+[data-theme="light"] .card.profile-card {
+    background: rgba(255, 255, 255, 0.88);
+    border-color: rgba(0, 0, 0, 0.08);
+    box-shadow: 
+        0 20px 45px -10px rgba(0, 0, 0, 0.08), 
+        0 10px 20px -5px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .card.profile-card:hover {
+    border-color: rgba(220, 38, 38, 0.35);
+    box-shadow: 
+        0 25px 60px -15px rgba(0, 0, 0, 0.12), 
+        0 0 35px -5px rgba(220, 38, 38, 0.15);
+}
+
+[data-theme="light"] .mail-btn {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.08);
+    color: var(--color-text-secondary);
+}
+
+[data-theme="light"] .mail-btn:hover {
+    background: #d11a2a;
+    border-color: #b91c1c;
+    color: #ffffff !important;
+    box-shadow: 0 0 20px rgba(209, 26, 42, 0.25);
+}
+
+[data-theme="light"] .profile-badge {
+    background: rgba(209, 26, 42, 0.08);
+    border-color: rgba(209, 26, 42, 0.22);
+    color: #d11a2a;
+}
+
+[data-theme="light"] .social-link-item {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.08);
+    color: var(--color-text-secondary);
+}
+
+[data-theme="light"] .social-link-item:hover {
+    background: #d11a2a;
+    border-color: #b91c1c;
+    color: #ffffff !important;
+    box-shadow: 0 10px 25px -5px rgba(209, 26, 42, 0.22);
+}
+
+[data-theme="light"] .social-link-item:hover .social-icon {
+    color: #ffffff;
+}
+
+[data-theme="light"] .btn-copy-email {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.08);
+    color: var(--color-text-secondary);
+}
+
+[data-theme="light"] .btn-copy-email:hover {
+    background: #d11a2a;
+    border-color: #b91c1c;
+    color: #ffffff;
+    box-shadow: 0 5px 15px -3px rgba(209, 26, 42, 0.22);
+}
+
+[data-theme="light"] .btn-copy-email.copied {
+    background: rgba(39, 201, 63, 0.12);
+    border-color: rgba(39, 201, 63, 0.4);
+    color: #1a9e2d;
+}

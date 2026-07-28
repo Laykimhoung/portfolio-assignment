@@ -7,6 +7,7 @@ import { initScrollAnimations } from "./modules/scroll-animations.js";
 import { initProgressBars } from "./modules/progress-bars.js";
 import { initLogoLoop } from "./modules/logo-loop.js";
 import { initScreenshotStack } from "./modules/screenshot-stack.js";
+import { initContactCard } from "./modules/contact-card.js";
 
 /* Load Components */
 await Promise.all([
@@ -47,3 +48,4 @@ initScrollAnimations();
 initProgressBars();
 initLogoLoop();
 initScreenshotStack();
+initContactCard();

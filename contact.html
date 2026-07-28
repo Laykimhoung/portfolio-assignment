@@ -1,42 +1,44 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Contact | XAKURAII</title>
 
     <meta
-        name="description"
-        content="Modern responsive portfolio website by XAKURAII"
+      name="description"
+      content="Get in touch with Lay Kimhoung (XAKURAII) — Computer Science student and web developer."
     />
     <meta name="author" content="XAKURAII" />
     <meta name="theme-color" content="#0B0B0D" />
 
     <!-- Theme (Run BEFORE CSS) -->
     <script>
-    (() => {
+      (() => {
         const savedTheme = localStorage.getItem("theme");
         const theme = savedTheme ? savedTheme : "dark";
         document.documentElement.setAttribute("data-theme", theme);
-    })();
+      })();
     </script>
 
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <link
-        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100..900&display=swap"
-        rel="stylesheet"
-    >
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/pages/contact.css">
-</head>
+    <link rel="stylesheet" href="assets/css/pages/contact.css" />
+  </head>
 
-  
   <body>
     <!-- Background -->
     <div id="background"></div>
@@ -45,7 +47,159 @@
     <div id="navbar"></div>
 
     <!-- Main -->
-    <main></main>
+    <main>
+      <!-- =========================================================
+           SECTION 1: HERO
+           Large heading & small supporting paragraph (No CTA button)
+           ========================================================= -->
+      <section class="page-section contact-hero" aria-labelledby="contact-hero-heading">
+        <div class="container">
+          <div class="contact-hero-content" data-animation="fade-up">
+            <span class="section-label">04. Get In Touch</span>
+            <h1 id="contact-hero-heading" class="section-title">Let's Build Something Together</h1>
+            <p class="section-subtitle">
+              Whether you have a question, an exciting project idea, or simply want to connect, my inbox is always open. Let's create something meaningful.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           SECTION 2: PROFILE CARD
+           Apple × Linear × Vercel inspired Interactive Card
+           ========================================================= -->
+      <section class="page-section profile-card-section" aria-label="Interactive Developer Profile Card">
+        <div class="container profile-card-container">
+          <div class="profile-card-wrapper" data-animation="fade-up" data-delay="150">
+            <div class="card profile-card">
+              <!-- Glow backdrop behind card -->
+              <div class="card-glow" aria-hidden="true"></div>
+
+              <!-- Top macOS bar with mail button -->
+              <div class="card-header-bar">
+                <div class="window-dots" aria-hidden="true">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+
+                <a href="#" class="mail-btn" aria-label="Send Direct Email">
+                  <i data-lucide="mail"></i>
+                </a>
+              </div>
+
+              <!-- Avatar Section (Transforms on hover) -->
+              <div class="profile-pic-container">
+                <div class="profile-pic-glow" aria-hidden="true"></div>
+                <div class="profile-pic">
+                  <!-- Real Image (Default) -->
+                  <img
+                    src="assets/images/profile/real-version.webp"
+                    alt="Lay Kimhoung - Portrait"
+                    class="avatar-img real-avatar"
+                    loading="lazy"
+                  />
+                  <!-- Samurai Image (Hover state) -->
+                  <img
+                    src="assets/images/profile/samurai-version.webp"
+                    alt=""
+                    class="avatar-img samurai-avatar"
+                    aria-hidden="true"
+                    loading="lazy"
+                  />
+                </div>
+                <span class="avatar-hint" aria-hidden="true">
+                  <span>Hover to transform</span>
+                  <i data-lucide="sparkles"></i>
+                </span>
+              </div>
+
+              <!-- Profile Details & Social Connection Grid -->
+              <div class="profile-card-body">
+                <div class="profile-identity">
+                  <span class="profile-badge">Developer Profile</span>
+                  <h2 class="profile-name">Lay Kimhoung</h2>
+                  <span class="profile-handle">@XAKURAII</span>
+                </div>
+
+                <p class="profile-bio">
+                  Computer Science student from Siem Reap, Cambodia, passionate about building modern web applications with clean code, scalable architecture, and premium user experiences.
+                </p>
+
+                <!-- Social Links Grid -->
+                <div class="profile-social-divider" aria-hidden="true">
+                  <span>Connect Across The Web</span>
+                </div>
+
+                <div class="profile-social-grid">
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link-item"
+                    aria-label="GitHub Profile"
+                  >
+                    <span class="social-icon"><i data-lucide="github"></i></span>
+                    <span class="social-name">GitHub</span>
+                    <span class="social-arrow"><i data-lucide="arrow-up-right"></i></span>
+                  </a>
+
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link-item"
+                    aria-label="LinkedIn Profile"
+                  >
+                    <span class="social-icon"><i data-lucide="linkedin"></i></span>
+                    <span class="social-name">LinkedIn</span>
+                    <span class="social-arrow"><i data-lucide="arrow-up-right"></i></span>
+                  </a>
+
+                  <a
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-link-item"
+                    aria-label="Telegram Message"
+                  >
+                    <span class="social-icon"><i data-lucide="send"></i></span>
+                    <span class="social-name">Telegram</span>
+                    <span class="social-arrow"><i data-lucide="arrow-up-right"></i></span>
+                  </a>
+
+                  <a
+                    href="#"
+                    class="social-link-item"
+                    aria-label="Send Direct Email"
+                  >
+                    <span class="social-icon"><i data-lucide="mail"></i></span>
+                    <span class="social-name">Email</span>
+                    <span class="social-arrow"><i data-lucide="arrow-up-right"></i></span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Card Footer -->
+              <div class="profile-card-footer">
+                <span class="location-tag">
+                  <i data-lucide="map-pin"></i> Siem Reap, Cambodia
+                </span>
+
+                <button
+                  class="btn-copy-email"
+                  type="button"
+                  aria-label="Copy Email Address to Clipboard"
+                >
+                  <i data-lucide="copy"></i>
+                  <span class="copy-text">Copy Email</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <!-- Footer -->
     <div id="footer"></div>
