@@ -51,13 +51,19 @@
     margin-bottom: var(--space-sm);
 }
 
-.contact-hero .section-title {
-    font-size: clamp(2.4rem, 6vw, 4rem);
-    font-weight: var(--fw-bold);
-    color: var(--color-text);
+.section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+    font-weight: var(--fw-regular);
+    color: var(--color-text-primary);
     margin-bottom: var(--space-md);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    line-height: 1;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.contact-hero .section-title {
+    font-size: clamp(3.2rem, 7vw, 5rem);
 }
 
 .contact-hero .section-subtitle {
@@ -326,11 +332,14 @@
 }
 
 .profile-name {
-    font-size: clamp(1.8rem, 5vw, 2.35rem);
-    font-weight: var(--fw-bold);
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 5vw, 2.85rem);
+    font-weight: var(--fw-regular);
     color: var(--color-text);
     margin: 0 0 0.25rem;
-    letter-spacing: -0.01em;
+    letter-spacing: 1px;
+    line-height: 1;
+    text-transform: uppercase;
 }
 
 .profile-handle {
@@ -958,11 +967,14 @@ a.info-card-value:hover {
 }
 
 .letter-title {
-    font-size: clamp(2rem, 5vw, 2.75rem);
-    font-weight: var(--fw-bold);
+    font-size: clamp(2.4rem, 5.5vw, 3.25rem);
+    font-weight: var(--fw-regular);
     color: var(--color-text);
     margin: 0;
     font-family: var(--font-heading);
+    letter-spacing: 1px;
+    line-height: 1;
+    text-transform: uppercase;
 }
 
 .letter-content {
