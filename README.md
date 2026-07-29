@@ -2,179 +2,93 @@
 
 # 🐉 Portfolio Assignment
 
-A modern, responsive, multi-page portfolio website developed using **HTML**, **CSS**, and **JavaScript**.
+### Modern Multi-Page Portfolio Website
 
-Designed as a university Web Design assignment while following modern front-end development practices.
+A modern, responsive, and component-based portfolio website built with **HTML5**, **CSS3**, and **JavaScript**.
 
-![Status](https://img.shields.io/badge/Status-In%20Development-red?style=for-the-badge)
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+Developed as part of a **Web Design** course while applying modern front-end development practices including reusable components, responsive layouts, and clean project architecture.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Responsive-Yes-success?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Theme-Dark%20%26%20Light-black?style=for-the-badge"/>
+</p>
+
 
 </div>
 
 ---
+# 📚 Table of Contents
 
-## 📚 Table of Contents
-
-- [📖 Overview](#-overview)
+- [📖 About](#-about)
 - [✨ Features](#-features)
-- [🛠 Tech Stack](#-tech-stack)
-- [📂 Project Structure](#-project-structure)
-- [📄 Pages](#-pages)
-- [🎨 Design System](#-design-system)
-- [⚡ Performance](#-performance)
+  - [User Experience](#user-experience)
+  - [Technical Features](#technical-features)
+- [📄 Website Pages](#-website-pages)
 - [📱 Responsive Design](#-responsive-design)
+- [⚡ Performance](#-performance)
 - [🚀 Getting Started](#-getting-started)
-- [📜 License](#-license)
+  - [Clone the Repository](#clone-the-repository)
+  - [Navigate to the Project](#navigate-to-the-project)
+  - [Run](#run)
+- [📄 License](#-license)
 
 ---
 
-## 📖 Overview
+# 📖 About
 
-This project is a modern multi-page portfolio website created as part of a **Web Design** course assignment.
+This project is a fully responsive multi-page portfolio website created as a university Web Design assignment.
 
-Although developed for academic purposes, the project follows real-world front-end development practices, including clean architecture, responsive layouts, reusable components, theme switching, language switching, and performance optimization.
+Rather than focusing solely on completing the assignment requirements, the project was designed using modern front-end development principles commonly found in professional websites.
+
+The project emphasizes clean architecture, reusable components, maintainable code, responsive design, smooth animations, accessibility, and performance optimization while using only **HTML**, **CSS**, and **Vanilla JavaScript**.
 
 ---
 
-## ✨ Features
+# ✨ Features
+
+## User Experience
 
 - 🌑 Dark Mode (Default)
 - ☀️ Light Mode
-- 🌐 English / Khmer Language
-- 📱 Fully Responsive
-- 🎭 Hero Hover Reveal Mask
-- 🚀 Smooth Animations
-- 🎨 Modern UI Design
-- 🧩 Reusable Components
-- ⚡ Optimized Performance
-- 💼 Multi-page Layout
+- 📱 Fully Responsive Design
+- ⚡ Smooth Page Animations
+- 🎭 Interactive Hero Reveal Effect
+- 🎨 Modern Glassmorphism Interface
+- 🖱 Hover & Scroll Animations
+
+## Technical Features
+
+- 🧩 Reusable HTML Components
+- 🎯 Modular JavaScript Architecture
+- 🎨 CSS Variables for Theming
+- 🖼 Optimized WebP Images
+- 📦 SVG Icons
+- ⚡ Lightweight Vanilla JavaScript
+- 📁 Organized Folder Structure
+- 🚀 Performance Optimized
+
 
 ---
 
-## 🛠 Tech Stack
+# 📄 Website Pages
 
-| Technology | Purpose |
-|------------|----------|
-| HTML5 | Structure |
-| CSS3 | Styling |
-| JavaScript (Vanilla) | Interactivity |
-| Google Fonts | Typography |
-| Font Awesome | Icons |
-
----
-
-## 📂 Project Structure
-
-```text
-portfolio/
-│
-├── index.html
-├── about.html
-├── skills.html
-├── projects.html
-├── contact.html
-│
-├── assets/
-│   ├── css/
-│   ├── js/
-│   ├── images/
-│   └── lang/
-│
-├── README.md
-└── .gitignore
-```
+| Page | Description |
+|------|-------------|
+| 🏠 Home | Hero section, featured skills, projects, call-to-action |
+| 👤 About | Biography, education, journey, career goals |
+| 💻 Skills | Technologies, tools, programming languages |
+| 🚀 Projects | Interactive portfolio gallery |
+| 📩 Contact | Contact information and social links |
 
 ---
 
-## 📄 Pages
 
-### 🏠 Home
+# 📱 Responsive Design
 
-- Hero Section
-- Hover Reveal Mask
-- Featured Skills
-- Featured Projects
-- Call To Action
-
----
-
-### 👤 About
-
-- Biography
-- Education
-- Timeline
-- Career Goals
-
----
-
-### 💻 Skills
-
-- Programming Languages
-- Frameworks
-- Databases
-- Tools
-- Soft Skills
-
----
-
-### 🚀 Projects
-
-- Project Gallery
-- Filter Categories
-- Interactive Cards
-
----
-
-### 📩 Contact
-
-- Contact Form
-- Social Media
-- Contact Information
-
----
-
-## 🎨 Design System
-
-### Theme
-
-- Dark Mode (Default)
-- Light Mode
-
-### Accent Color
-
-Crimson Red
-
-### Fonts
-
-- Bebas Neue
-- Inter
-
-### UI Style
-
-- Glassmorphism
-- Modern Minimal
-- Smooth Motion
-- Soft Shadows
-- Neon Highlights
-
----
-
-## ⚡ Performance
-
-- Optimized WebP Images
-- SVG Icons
-- CSS Variables
-- Lightweight Vanilla JavaScript
-- Responsive Images
-- Optimized Animations
-
----
-
-## 📱 Responsive Design
-
-Designed for
+The website is optimized for:
 
 - 🖥 Desktop
 - 💻 Laptop
@@ -183,26 +97,57 @@ Designed for
 
 ---
 
-## 🚀 Getting Started
+# ⚡ Performance
 
-Clone the repository
+Performance improvements include:
+
+- WebP Image Optimization
+- SVG Assets
+- Modular CSS
+- Modular JavaScript
+- CSS Variables
+- Responsive Images
+- Lightweight Animations
+
+---
+
+# 🚀 Getting Started
+
+## Clone the Repository
 
 ```bash
 git clone https://github.com/Laykimhoung/portfolio-assignment.git
 ```
 
-Open the project
+## Navigate to the Project
+
+```bash
+cd portfolio-assignment
+```
+
+## Run
+
+Open
 
 ```text
 index.html
 ```
 
-or run it using **Live Server** in Visual Studio Code.
+or launch the project using **Live Server** in Visual Studio Code.
 
 ---
 
-# 📜 License
 
-This project was created for educational purposes as part of a university Web Design assignment.
+# 📄 License
 
-© 2026 Lay Kimhoung. All Rights Reserved.
+This project is licensed for educational purposes only.
+
+© 2026 **Lay Kimhoung**. All Rights Reserved.
+
+---
+
+<div align="center">
+
+Made with ❤️ using HTML, CSS & JavaScript
+
+</div>
