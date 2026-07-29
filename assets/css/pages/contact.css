@@ -154,11 +154,16 @@
         box-shadow 0.3s ease;
 }
 
+.card.profile-card .mail svg,
+.card.profile-card .social-link svg {
+    color: currentColor;
+    transition: color 0.3s ease, transform 0.25s ease;
+}
+
 .card.profile-card .mail:hover {
     transform: scale(1.1) rotate(6deg);
     background: var(--color-accent);
     border-color: var(--color-accent);
-    color: #ffffff !important;
     box-shadow: 0 0 20px rgba(220, 38, 38, 0.45);
 }
 
@@ -233,7 +238,8 @@
 }
 
 .card.profile-card:hover .bottom {
-    height: 275px;
+    height: 265px;
+    padding: 22px 28px 24px;
     background: rgba(13, 13, 20, 0.94);
     border-top-color: rgba(220, 38, 38, 0.35);
     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
@@ -289,7 +295,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 0;
+    padding: 7px 0;
     border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
     font-size: 0.85rem;
 }
@@ -341,7 +347,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-text-secondary);
+    color: var(--color-text-primary);
     text-decoration: none;
     transition: 
         transform 0.25s ease,
@@ -353,7 +359,6 @@
 .card.profile-card .social-link:hover {
     background: var(--color-accent);
     border-color: var(--color-accent);
-    color: #ffffff;
     transform: translateY(-3px);
 }
 
